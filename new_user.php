@@ -12,6 +12,8 @@
     $pincode = $_POST['pincode'];
     $refer_id = $_POST['refer_id'];
     $refer_name = $_POST['refer_name'];
+    $username_type = $_POST['username_type'];
+    $role_id = $_POST['role_id'];
 
     include_once 'php/db_operations.php';
 
@@ -22,7 +24,7 @@
     $dbobj->connect();
 
     $dbobj->insert('mlf_users','(username)','("'.$username.'")');
-    $dbobj->insert('mlf_users_roles','(username, role_id)','("'.$username.'", 4)');
+    $dbobj->insert('mlf_users_roles','(username, role_id)','("'.$username.'", '.$role_id.')');
 
     $values = '("'.$username.'", "'.$fname.'", "'.$lname.'", "'.$cntact_num.'", "'.$alt_cntact_num.'", "'.$dno.'", "'.$street.'", "'.$locality.'", "'.$location.'", "'.$district.'", "'.$pincode.'", "'.$refer_id.'", "'.$refer_name.'")';
 

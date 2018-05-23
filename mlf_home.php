@@ -37,7 +37,7 @@ http://www.templatemo.com/preview/templatemo_455_visual_admin
 <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
 
 <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
-
+<script src="validation.js"></script>
 <script type="text/javascript" src="js/clicks.js"></script>
 
 <style>
@@ -68,7 +68,7 @@ height:250px;
 </div>
 <nav class="templatemo-left-nav" >          
 <ul>
-<li><a href="#customer" id="link1" onclick="sidemenu(1)" class="active">Customer</a></li>
+<li><a href="#users" id="link1" onclick="sidemenu(1)" class="active">Users</a></li>
 <li><a href="#article_finance" id="link2" onclick="sidemenu(2)" >Article Finance</a></li>
 <li><a href="#cash_finance" id="link3" onclick="sidemenu(3)" >Cash Finance</a></li>
 <li><a href="#buy_back_items" id="link4" onclick="sidemenu(4)" >Buy Back Items</a></li>
@@ -113,21 +113,36 @@ height:250px;
 <div class="templatemo-content-widget white-bg">
 
 
-<form action="new_customer.php" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="new_user.php" name="new_user" onsubmit="return user_form('new_user')"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">Unique ID</label><br>
-<div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="radio" id="r4" value="">
-<label for="r4" class="font-weight-400"><span></span>Aadhar</label>
-</div>
-<div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="radio" id="r5" value="" checked>
-<label for="r5" class="font-weight-400"><span></span>Phone Number</label>
-</div>
-<input name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
-</div>
+  <div class="col-lg-6 col-md-6 form-group">                  
+    <label for="inputFirstName">Unique ID</label><br>
+    <div class="margin-right-15 templatemo-inline-block">
+      <input type="radio" name="username_type" id="r1" value="1" checked>
+      <label for="r1" class="font-weight-400"><span></span>Aadhar</label>
+    </div>
+    <div class="margin-right-15 templatemo-inline-block">
+      <input type="radio" name="username_type" id="r2" value="2">
+      <label for="r2" class="font-weight-400"><span></span>Phone Number</label>
+    </div>
+    <input name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+  </div>
+  <div class="col-lg-6 col-md-6 form-group">                  
+    <label for="inputFirstName">Role ID</label><br>
+    <div class="margin-right-15 templatemo-inline-block">
+      <input type="radio" name="role_id" id="r3" value="3" >
+      <label for="r3" class="font-weight-400"><span></span>Employee</label>
+    </div>
+    <div class="margin-right-15 templatemo-inline-block">
+      <input type="radio" name="role_id" id="r4" value="4">
+      <label for="r4" class="font-weight-400"><span></span>Customer</label>
+    </div><br>
+    <div class="margin-right-15 templatemo-inline-block">
+      <input type="radio" name="role_id" id="r5" value="5" checked>
+      <label for="r5" class="font-weight-400"><span></span>Other</label>
+    </div>
+  </div>
 </div>
 
 <div class="row form-group">
@@ -419,7 +434,7 @@ USER NOT FOUND
 </div>
 <div class="templatemo-content-container" id="subcontent14" style="display: none">
 <div class="templatemo-content-widget white-bg">
-<form class="templatemo-login-form" action="view_customer.php" method="POSt"enctype="multipart/form-data" id="unverified13">
+<form class="templatemo-login-form" action="view_user.php" method="POSt"enctype="multipart/form-data" id="unverified13">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
