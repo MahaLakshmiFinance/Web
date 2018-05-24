@@ -9,7 +9,7 @@
         die();
     }
 
-    include_once 'php/db_operations.php';
+    include_once 'db_operations.php';
 
     $dbobj = new DBConnect;
 
@@ -26,7 +26,7 @@
         }
     }
 
-    header('Location: mlf_home.php');
+    header('Location: ../mlf_home.php');
     die();
     
 ?>

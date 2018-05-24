@@ -37,7 +37,7 @@ http://www.templatemo.com/preview/templatemo_455_visual_admin
 <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
 
 <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
-<script src="validation.js"></script>
+<script src="js/validation.js"></script>
 <script type="text/javascript" src="js/clicks.js"></script>
 
 <style>
@@ -68,7 +68,8 @@ height:250px;
 </div>
 <nav class="templatemo-left-nav" >          
 <ul>
-<li><a href="#users" id="link1" onclick="sidemenu(1)" class="active">Users</a></li>
+<li><a href="#profile" id="link10" onclick="sidemenu(10)" class="active">Profile</a></li>
+<li><a href="#users" id="link1" onclick="sidemenu(1)">Users</a></li>
 <li><a href="#article_finance" id="link2" onclick="sidemenu(2)" >Article Finance</a></li>
 <li><a href="#cash_finance" id="link3" onclick="sidemenu(3)" >Cash Finance</a></li>
 <li><a href="#buy_back_items" id="link4" onclick="sidemenu(4)" >Buy Back Items</a></li>
@@ -76,7 +77,7 @@ height:250px;
 <li><a href="#accessories" id="link6" onclick="sidemenu(6)" >Accessories</a></li>
 <li><a href="#summary" id="link7"  onclick="sidemenu(7)" >Summary</a></li>
 <li><a href="#change_password" id="link8"  onclick="sidemenu(8)" >Change Password</a></li>
-<li><a href="signout.php" id="link9"  onclick="sidemenu(9)" >Sign Out</a></li>
+<li><a href="php/signout.php" id="link9"  onclick="sidemenu(9)" >Sign Out</a></li>
 
 </ul>  
 </nav>
@@ -111,38 +112,36 @@ height:250px;
 </div>
 <div class="templatemo-content-container" id="subcontent11">
 <div class="templatemo-content-widget white-bg">
-
-
-<form action="new_user.php" name="new_user" onsubmit="return user_form('new_user')"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="php/new_user.php" name="new_user" onsubmit="return user_form('new_user')"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
-  <div class="col-lg-6 col-md-6 form-group">                  
-    <label for="inputFirstName">Unique ID</label><br>
-    <div class="margin-right-15 templatemo-inline-block">
-      <input type="radio" name="username_type" id="r1" value="1" checked>
-      <label for="r1" class="font-weight-400"><span></span>Aadhar</label>
-    </div>
-    <div class="margin-right-15 templatemo-inline-block">
-      <input type="radio" name="username_type" id="r2" value="2">
-      <label for="r2" class="font-weight-400"><span></span>Phone Number</label>
-    </div>
-    <input name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
-  </div>
-  <div class="col-lg-6 col-md-6 form-group">                  
-    <label for="inputFirstName">Role ID</label><br>
-    <div class="margin-right-15 templatemo-inline-block">
-      <input type="radio" name="role_id" id="r3" value="3" >
-      <label for="r3" class="font-weight-400"><span></span>Employee</label>
-    </div>
-    <div class="margin-right-15 templatemo-inline-block">
-      <input type="radio" name="role_id" id="r4" value="4">
-      <label for="r4" class="font-weight-400"><span></span>Customer</label>
-    </div><br>
-    <div class="margin-right-15 templatemo-inline-block">
-      <input type="radio" name="role_id" id="r5" value="5" checked>
-      <label for="r5" class="font-weight-400"><span></span>Other</label>
-    </div>
-  </div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputFirstName">Unique ID</label><br>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="username_type" id="r1" value="1" checked>
+<label for="r1" class="font-weight-400"><span></span>Aadhar</label>
+</div>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="username_type" id="r2" value="2">
+<label for="r2" class="font-weight-400"><span></span>Phone Number</label>
+</div>
+<input name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputFirstName">Role ID</label><br>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="role_id" id="r3" value="3" >
+<label for="r3" class="font-weight-400"><span></span>Employee</label>
+</div>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="role_id" id="r4" value="4">
+<label for="r4" class="font-weight-400"><span></span>Customer</label>
+</div><br>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="role_id" id="r5" value="5" checked>
+<label for="r5" class="font-weight-400"><span></span>Other</label>
+</div>
+</div>
 </div>
 
 <div class="row form-group">
@@ -213,27 +212,30 @@ height:250px;
 </form>
 </div>
 </div>
+
+
 <div class="templatemo-content-container" id="subcontent12" style="display: none">
-<div class="templatemo-content-widget white-bg">
+	<div class="templatemo-content-widget white-bg">
 
-<form class="templatemo-login-form" enctype="multipart/form-data" id="unverified11">
+	<form class="templatemo-login-form" action="verify_user.php" method="GET" enctype="multipart/form-data" id="unverified11">
 
-<div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">Unique ID</label><br>
-<input type="text" class="form-control" id="uniqueid_edit_customer" placeholder="Aadhar / Phone Number">                  
-</div>
-</div>
-<div class="row form-group" id="error_edit_customer" style="display: none">
-<div class="col-lg-6 col-md-6 form-group" style="font-size: 20px;color:red;">                  
-USER NOT FOUND              
-</div>
-</div>
+		<div class="row form-group">
+		<div class="col-lg-6 col-md-6 form-group">                  
+		<label for="inputFirstName">Unique ID</label><br>
+		<input type="text" class="form-control" name="username" id="uniqueid_edit_customer" placeholder="Aadhar / Phone Number">                  
+		</div>
+		</div>
+		<div class="row form-group" id="error_edit_customer" style="display: none">
+		<div class="col-lg-6 col-md-6 form-group" style="font-size: 20px;color:red;">                  
+		USER NOT FOUND              
+		</div>
+		</div>
 
-<div class="form-group text-right">
-<button onclick="verify(11)" class="templatemo-blue-button">Check</button>
-</div>                           
-</form>
+		<div class="form-group text-right">
+		<button type="submit" class="templatemo-blue-button">Check</button>
+		</div>                           
+	</form>
+</div>
 <div class="templatemo-content-widget white-bg" id="verified11" style="display:none">
 
 

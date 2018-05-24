@@ -54,7 +54,7 @@
 		</div>  
 			
 			</header>
-			<form action="login.php" method="POST" class="templatemo-login-form">
+			<form action="php/login.php" method="POST" class="templatemo-login-form">
 				<div class="form-group">
 					<div class="input-group">
 						<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	        		

@@ -10,7 +10,7 @@
         $password = $_POST['password'];
     }
 
-    include_once 'php/db_operations.php';
+    include_once 'db_operations.php';
 
     $dbobj = new DBConnect;
 
@@ -25,10 +25,10 @@
             session_start();
             $_SESSION['username'] = $username;
             $_SESSION['logged_in'] = True;
-            header('Location: mlf_home.php');
+            header('Location: ../mlf_home.php');
             die();
         }
     }
-    header('Location: index.php');
+    header('Location: ../index.php');
     die();
 ?>
