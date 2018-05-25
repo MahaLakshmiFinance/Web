@@ -1,4 +1,5 @@
-id="content1" class="templatemo-content col-1 light-gray-bg"><div class="templatemo-top-nav-container-1">
+<div class="templatemo-content col-1 light-gray-bg">
+<div class="templatemo-top-nav-container-1">
 <div class="row">
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
@@ -122,7 +123,7 @@ id="content1" class="templatemo-content col-1 light-gray-bg"><div class="templat
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Unique ID</label><br>
-<input type="text" class="form-control" id="uniqueid_edit_customer" placeholder="Aadhar / Phone Number">                  
+<input type="text" class="form-control" name="Aadhar" placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
 <div class="row form-group" id="error_edit_customer" style="display: none">
@@ -158,60 +159,60 @@ USER NOT FOUND
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">First Name</label>
-<input type="text" class="form-control" id="inputFirstName" placeholder="First Name">                  
+<input type="text" class="form-control" name="FirstName" placeholder="First Name">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputLastName">Last Name</label>
-<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">                  
+<input type="text" class="form-control" name="LastName" placeholder="Last Name">                  
 </div> 
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Contact Number</label>
-<input type="tel" class="form-control" id="inputUsername" placeholder="+91">                  
+<input type="tel" class="form-control" name="Username" placeholder="+91">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputEmail">Alternate Number</label>
-<input type="tel" class="form-control" id="inputEmail" placeholder="+91">                  
+<input type="tel" class="form-control" name="Email" placeholder="+91">                  
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">D/No</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Door Number">
+<input type="text" class="form-control" name="Door_num" placeholder="Door Number">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Street</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="ABC Street">
+<input type="text" class="form-control" name="Street" placeholder="ABC Street">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">Locality</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Locality">
+<input type="text" class="form-control" name="locality" placeholder="Locality">
 </div>
 </div>
 <div class="row form-group">
 
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Village / Town / City</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Location">
+<input type="text" class="form-control" name="Village" placeholder="Location">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">District</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="District">
+<input type="text" class="form-control" name="district" placeholder="District">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Pincode</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Pincode">
+<input type="text" class="form-control" name="Pincode" placeholder="Pincode">
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-6 form-group">                  
 <label for="inputNewPassword">Reference ID</label>
-<input type="Number" class="form-control" id="inputNewPassword" placeholder="Reference ID">
+<input type="Number" class="form-control" name="ref_id" placeholder="Reference ID">
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputConfirmNewPassword">Reference Name</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Reference Name">
+<input type="text" class="form-control" name="ref_name" placeholder="Reference Name">
 </div> 
 </div>
 
@@ -231,7 +232,7 @@ USER NOT FOUND
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Unique ID</label><br>
-<input type="text" class="form-control" id="uniqueid_edit_customer" placeholder="Aadhar / Phone Number">                  
+<input type="text" class="form-control" name="Aadhar" placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
 <div class="row form-group" id="error_edit_customer" style="display: none">
@@ -260,67 +261,67 @@ USER NOT FOUND
 <input type="radio" name="radio" id="r5" value="" checked>
 <label for="r5" class="font-weight-400"><span></span>Phone Number</label>
 </div>
-<input type="text" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+<input type="text" class="form-control" name="Aadhar_num" placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">First Name</label>
-<input type="text" class="form-control" id="inputFirstName" placeholder="First Name">                  
+<input type="text" class="form-control" name="first_name" placeholder="First Name">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputLastName">Last Name</label>
-<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">                  
+<input type="text" class="form-control" name="Last_name" placeholder="Last Name">                  
 </div> 
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Contact Number</label>
-<input type="tel" class="form-control" id="inputUsername" placeholder="+91">                  
+<input type="tel" class="form-control" name="contact_num" placeholder="+91">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputEmail">Alternate Number</label>
-<input type="tel" class="form-control" id="inputEmail" placeholder="+91">                  
+<input type="tel" class="form-control" name="alt_num" placeholder="+91">                  
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">D/No</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Door Number">
+<input type="text" class="form-control"name="Door_num" placeholder="Door Number">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Street</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="ABC Street">
+<input type="text" class="form-control" name="ConfirmNewPassword_street" placeholder="ABC Street">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">Locality</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Locality">
+<input type="text" class="form-control" name="NewPassword_locality" placeholder="Locality">
 </div>
 </div>
 <div class="row form-group">
 
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Village / Town / City</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Location">
+<input type="text" class="form-control" name="ConfirmNewPassword_location" placeholder="Location">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">District</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="District">
+<input type="text" class="form-control" name="NewPassword_district" placeholder="District">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Pincode</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Pincode">
+<input type="text" class="form-control" name="ConfirmNewPassword_pincode" placeholder="Pincode">
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-6 form-group">                  
 <label for="inputNewPassword">Reference ID</label>
-<input type="Number" class="form-control" id="inputNewPassword" placeholder="Reference ID">
+<input type="Number" class="form-control" name="NewPassword_Ref_id" placeholder="Reference ID">
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputConfirmNewPassword">Reference Name</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Reference Name">
+<input type="text" class="form-control" name="ConfirmNewPassword_Ref_id" placeholder="Reference Name">
 </div> 
 </div>
 
@@ -340,7 +341,7 @@ USER NOT FOUND
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Unique ID</label><br>
-<input type="text" class="form-control" id="uniqueid_edit_customer" placeholder="Aadhar / Phone Number">                  
+<input type="text" class="form-control" name="uniqueid_aadhar_no" placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
 <div class="row form-group" id="error_edit_customer" style="display: none">
@@ -362,74 +363,74 @@ USER NOT FOUND
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Unique ID</label><br>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="radio" id="r4" value="">
+<input type="radio" name="radio" value="">
 <label for="r4" class="font-weight-400"><span></span>Aadhar</label>
 </div>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="radio" id="r5" value="" checked>
+<input type="radio" name="radio" value="" checked>
 <label for="r5" class="font-weight-400"><span></span>Phone Number</label>
 </div>
-<input type="text" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+<input type="text" class="form-control" name="Aadhar" placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">First Name</label>
-<input type="text" class="form-control" id="inputFirstName" placeholder="First Name">                  
+<input type="text" class="form-control" name="FirstName" placeholder="First Name">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputLastName">Last Name</label>
-<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">                  
+<input type="text" class="form-control" name="LastName" placeholder="Last Name">                  
 </div> 
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Contact Number</label>
-<input type="tel" class="form-control" id="inputUsername" placeholder="+91">                  
+<input type="tel" class="form-control" name="Username" placeholder="+91">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputEmail">Alternate Number</label>
-<input type="tel" class="form-control" id="inputEmail" placeholder="+91">                  
+<input type="tel" class="form-control" name="Email" placeholder="+91">                  
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">D/No</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Door Number">
+<input type="text" class="form-control" name="Door_num" placeholder="Door Number">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Street</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="ABC Street">
+<input type="text" class="form-control" name="Street" placeholder="ABC Street">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">Locality</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Locality">
+<input type="text" class="form-control" name="Locality" placeholder="Locality">
 </div>
 </div>
 <div class="row form-group">
 
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Village / Town / City</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Location">
+<input type="text" class="form-control" name="Location" placeholder="Location">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">District</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="District">
+<input type="text" class="form-control" name="District" placeholder="District">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Pincode</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Pincode">
+<input type="text" class="form-control" name="Pincode" placeholder="Pincode">
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-6 form-group">                  
 <label for="inputNewPassword">Reference ID</label>
-<input type="Number" class="form-control" id="inputNewPassword" placeholder="Reference ID">
+<input type="Number" class="form-control" name="ref_id" placeholder="Reference ID">
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputConfirmNewPassword">Reference Name</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Reference Name">
+<input type="text" class="form-control" name="ref_name" placeholder="Reference Name">
 </div> 
 </div>
 
