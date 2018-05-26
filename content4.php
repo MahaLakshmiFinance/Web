@@ -1,4 +1,4 @@
-id="content4" style="display: none;" class="templatemo-content col-1 light-gray-bg"><div class="templatemo-top-nav-container-1">
+<div class="templatemo-content col-1 light-gray-bg"><div class="templatemo-top-nav-container-1">
 <div class="row">
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">

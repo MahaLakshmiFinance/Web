@@ -1,21 +1,16 @@
-id="content3" style="display: none;" class="templatemo-content col-1 light-gray-bg">
+<div class="templatemo-content col-1 light-gray-bg">
 <div class="templatemo-top-nav-container-1">
 <div class="row">
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
-<li><a href="#cash_finance_" onclick="nav(31)"><font style="color:  black">FINANCE</font></a></li>
-<li><a href="#cash_transaction" onclick="nav(32)"><font style="color: black">TRANSACTIONS</font></a></li>    
+<li><a href="#articles_add" onclick="nav(21)"><font style="color:  black">ARTICLES</font></a></li>
+<li><a href="#articles_finance_" onclick="nav(22)"><font style="color: black">FINANCE</font></a></li>
+<li><a href="#articles_transaction" onclick="nav(23)"><font style="color: black">TRANSACTIONS</font></a></li>  
 </ul>  
 </nav> 
 </div>
-<div class="templatemo-content-container" id="subcontent31">
-<div class="templatemo-flex-row flex-content-row">
-<div class="templatemo-content-widget white-bg col-2">
-
-
 <div class="templatemo-content-container" id="subcontent21">
 <div class="templatemo-content-widget white-bg">
-<h2 class="margin-bottom-10" align="middle" style="color: #47bac1">Cash Finance</h2>
 
 <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
 
@@ -36,64 +31,28 @@ id="content3" style="display: none;" class="templatemo-content col-1 light-gray-
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputLastName">Contact Number</label>
-<input type="tel" class="form-control" id="inputLastName" placeholder="Contact Number">                  
+<input type="tel" class="form-control" name="56456fdf3" placeholder="Contact Number">                  
 </div> 
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputUsername">Issued Date</label>
-<input type="date" class="form-control" id="inputUsername" placeholder="ID">                  
+<label for="inputUsername">Article ID</label>
+<input type="Number" class="form-control" id="inputUsername" placeholder="ID">                  
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputEmail">Interest Issue Date</label>
-<input type="date" class="form-control" id="inputEmail" placeholder="Article Name">                  
+<label for="inputEmail">Article Name</label>
+<input type="text" class="form-control" id="inputEmail" placeholder="Article Name">                  
 </div> 
 </div>
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Issued Amount</label>
-<input type="number" class="form-control" id="inputNewPassword" placeholder="Amount in Rupees">
+<label for="inputNewPassword">Article Type</label>
+<input type="text" class="form-control" id="inputNewPassword" placeholder="Type">
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputConfirmNewPassword">Interest Amount</label>
+<label for="inputConfirmNewPassword">Article Cost</label>
 <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
-</div> 
-</div>
-<div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputUsername">Issued Date</label>
-<input type="date" class="form-control" id="inputUsername" placeholder="ID">                  
-</div>
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputEmail">Interest Issue Date</label>
-<input type="date" class="form-control" id="inputEmail" placeholder="Article Name">                  
-</div> 
-</div>
-
-<div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Interest received Date</label>
-<input type="date" class="form-control" id="inputNewPassword" placeholder="Amount in Rupees">
-</div>
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputConfirmNewPassword">Received Amount</label>
-<input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
-</div> 
-</div>
-<div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">In / Out</label>
-<input type="number" class="form-control" id="inputNewPassword" placeholder="Interest received">
-</div>
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputConfirmNewPassword">In / Out</label>
-<input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest Given">
-</div> 
-</div>
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputConfirmNewPassword">Remark</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="">
 </div> 
 </div>
 
@@ -106,11 +65,72 @@ id="content3" style="display: none;" class="templatemo-content col-1 light-gray-
 </div>
 
 </div>
+<div class="templatemo-content-container" id="subcontent22" style="display: none">
+<div class="templatemo-content-widget white-bg">
+<h2 class="margin-bottom-10" align="middle" style="color: #47bac1">Finance Details</h2>
+
+<form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputFirstName">Unique ID</label><br>
+
+<input type="text" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group">                                   
 </div>
 </div>
 
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputFirstName">Customer Name</label>
+<input type="text" class="form-control" id="inputFirstName" placeholder="Customer Name">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputLastName">Contact Number</label>
+<input type="tel" class="form-control" id="inputLastName" placeholder="+91">                  
+</div> 
+</div>
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputUsername">Given Amount </label>
+<input type="Number" class="form-control" id="inputUsername" placeholder="In Rupees Funded">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputEmail"> Installment Amount</label>
+<input type="Number" class="form-control" id="inputEmail" placeholder="Every Month Installment">                  
+</div> 
+</div>
 
-<div class="templatemo-content-container" id="subcontent32" style="display: none">
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputNewPassword">Documentation Charges</label>
+<input type="Number" class="form-control" id="inputNewPassword" placeholder="processing fee">
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputConfirmNewPassword">Reference Number</label>
+<input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Bill Number">
+</div> 
+</div>
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputNewPassword">Total EMI'S</label>
+<input type="Number" class="form-control" id="inputNewPassword" placeholder="Number of Installments">
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputConfirmNewPassword">Total Amount</label>
+<input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
+</div> 
+</div>
+
+
+
+</form>
+</div>
+</div>
+</div>
+<div class="templatemo-content-container" id="subcontent23" style="display: none">
+
 <div class="templatemo-content-widget white-bg">
 <h2 class="margin-bottom-10" align="middle" style="color: #47bac1">Transaction Details</h2>
 
@@ -186,4 +206,4 @@ id="content3" style="display: none;" class="templatemo-content col-1 light-gray-
 
 
 </div>
-</div></div>
+  </div>
