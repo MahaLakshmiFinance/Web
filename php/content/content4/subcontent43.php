@@ -1,5 +1,5 @@
-<div class="templatemo-content-container">
 
+<div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
 
 <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
@@ -59,19 +59,10 @@
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputNewPassword">Remark</label>
 <input type="text" class="form-control" id="inputNewPassword" placeholder="Remark">
-</div><br>
-<div class="col-lg-6 col-md-6 form-group">                  
-<div class="templatemo-block margin-bottom-5">
-<input type="checkbox" name="emailOptions" id="c1" value="new" checked> 
-<label for="c1" class="font-weight-400"><span></span>Final Settlement</label> 
+</div></div>
 
+<div class="form-group text-right">
+<button type="submit" class="templatemo-blue-button">FINISH</button>
 </div> 
-</div>
-
-
 </form>
 </div>
-
-
-</div>
-  </div>

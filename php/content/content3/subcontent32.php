@@ -1,6 +1,5 @@
 <div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
-<h2 class="margin-bottom-10" align="middle" style="color: #47bac1">Transaction Details</h2>
 
 <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
 

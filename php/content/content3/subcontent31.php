@@ -1,9 +1,5 @@
-<div class="templatemo-content-container" id="subcontent31">
-<div class="templatemo-flex-row flex-content-row">
-<div class="templatemo-content-widget white-bg col-2">
 
-
-<div class="templatemo-content-container" id="subcontent21">
+<div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
 
 <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
