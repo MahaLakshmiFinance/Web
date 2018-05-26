@@ -11,7 +11,7 @@
 <div class="templatemo-content-widget white-bg">
 
 
-<form action="change_password.php" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="php/change_password.php" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  

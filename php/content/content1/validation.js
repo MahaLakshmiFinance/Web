@@ -171,7 +171,4 @@ function user_form(form_name){
             return false
         }
     }
-
-
-    return false
 }

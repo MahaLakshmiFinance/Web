@@ -18,24 +18,30 @@
   $result = $dbobj->search('mlf_users_info',$columnNames,$findByColumnName,$fndByValue);
 
   while($row = $result->fetch_assoc()){
+    if(isset($_SESSION['content'])){
+      if($_SESSION['content']!=0){
+        break;
+      }
+    }
 
    echo "<script>
     setTimeout(function(){
-    document.forms['profile']['username'].value = '".$row['username']."';
-    document.forms['profile']['fname'].value = '".$row['first_name']."';
-    document.forms['profile']['lname'].value = '".$row['last_name']."';
-    document.forms['profile']['cntact_num'].value = '".$row['contact_num']."';
-    document.forms['profile']['alt_cntact_num'].value = '".$row['alternate_num']."';
-    document.forms['profile']['dno'].value = '".$row['d_no']."';
-    document.forms['profile']['street'].value = '".$row['street']."';
-    document.forms['profile']['locality'].value = '".$row['locality']."';
-    document.forms['profile']['location'].value = '".$row['town_or_city']."';
-    document.forms['profile']['district'].value = '".$row['district']."';
-    document.forms['profile']['pincode'].value = '".$row['pincode']."';
-    document.forms['profile']['refer_id'].value = '".$row['refer_username']."';
-    document.forms['profile']['refer_name'].value = '".$row['refer_name']."';
-   },500);
+        document.forms['profile']['username'].value = '".$row['username']."';
+        document.forms['profile']['fname'].value = '".$row['first_name']."';
+        document.forms['profile']['lname'].value = '".$row['last_name']."';
+        document.forms['profile']['cntact_num'].value = '".$row['contact_num']."';
+        document.forms['profile']['alt_cntact_num'].value = '".$row['alternate_num']."';
+        document.forms['profile']['dno'].value = '".$row['d_no']."';
+        document.forms['profile']['street'].value = '".$row['street']."';
+        document.forms['profile']['locality'].value = '".$row['locality']."';
+        document.forms['profile']['location'].value = '".$row['town_or_city']."';
+        document.forms['profile']['district'].value = '".$row['district']."';
+        document.forms['profile']['pincode'].value = '".$row['pincode']."';
+        document.forms['profile']['refer_id'].value = '".$row['refer_username']."';
+        document.forms['profile']['refer_name'].value = '".$row['refer_name']."';
+   },20);
    </script>" ;
+   break;
   }
 
 ?>

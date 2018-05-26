@@ -5,8 +5,11 @@ if (!isset($_SESSION['logged_in'])) {
   die();
 }
 
-?>
+if(isset($_SESSION['req_script'])){
+	echo $_SESSION['req_script'];
+}
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,27 +19,15 @@ if (!isset($_SESSION['logged_in'])) {
 <title>MLF - Home</title>
 <meta name="description" content="">
 <meta name="author" content="templatemo">
-<!-- 
-Visual Admin Template
-http://www.templatemo.com/preview/templatemo_455_visual_admin
--->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/templatemo-style.css" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-<!-- JS -->
 <script src="js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
 <script src="js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
 <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
 
 <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
-<script src="js/validation.js"></script>
 <script type="text/javascript" src="js/clicks.js"></script>
 <style>
 .templatemo-left-nav{
@@ -61,7 +52,7 @@ height:250px;
 </div>
 <nav class="templatemo-left-nav" >          
 <ul>
-<li><a href="#profile" id="link0" onclick="sidemenu(0)" class="active">Profile</a></li>
+<li><a href="#profile" id="link0" onclick="sidemenu(0);" class="active">Profile</a></li>
 <li><a href="#users" id="link1" onclick="sidemenu(1)">Users</a></li>
 <li><a href="#article_finance" id="link2" onclick="sidemenu(2)" >Article Finance</a></li>
 <li><a href="#cash_finance" id="link3" onclick="sidemenu(3)" >Cash Finance</a></li>
@@ -95,6 +86,8 @@ height:250px;
 		});
 	</script>
 	</div>
+
+	<script id="additional"></script>
 </div>
 </div>
 </body>

@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <script src="php/content/content1/content1clicks.js"></script>
 
 <div class="templatemo-content col-1 light-gray-bg">

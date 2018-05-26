@@ -1,5 +1,5 @@
 
-<div class="templatemo-content-container" id="subcontent14">
+<div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
 <form class="templatemo-login-form" action="view_user.php" method="POSt"enctype="multipart/form-data" id="unverified13">
 

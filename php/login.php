@@ -1,4 +1,7 @@
 <?php
+    session_unset();
+    session_destroy();
+    
     $username = "";
 
     $password = "";
@@ -25,6 +28,7 @@
             session_start();
             $_SESSION['username'] = $username;
             $_SESSION['logged_in'] = True;
+            $_SESSION['content'] = 0;
             header('Location: ../mlf_home.php');
             die();
         }

@@ -51,10 +51,16 @@
             }
         }
 
-        function update($tableName,$columnName,$value,$fndByColumnName,$findByValue){
+        function update($tableName,$columnName,$value,$fndByColumnName=null,$findByValue=null){
             //UPDATE users SET user_pwd='password' WHERE user_id='user_i'
 
-            $sqlQry = "UPDATE ".$tableName." SET ".$columnName."=".$value." WHERE ".$fndByColumnName."=".$findByValue.";";
+            if($fndByColumnName==null){
+                $sqlQry = "UPDATE ".$tableName." SET ".$columnName."=".$value." WHERE 1;";
+            }
+            else{
+                $sqlQry = "UPDATE ".$tableName." SET ".$columnName."=".$value." WHERE ".$fndByColumnName."=".$findByValue.";";
+            }
+            
 
             echo "<script>console.log('".$sqlQry."')</script>";
             
@@ -67,10 +73,10 @@
 
         }
 
-        function delete($tableName,$columnName,$value){
+        function delete($tableName,$findByColumnName,$findByValue){
             //DELETE FROM table_name WHERE some_column = some_value
 
-            $sqlQry = "DELETE FROM ".$tableName." WHERE ".$columnName."=".$value.";";
+            $sqlQry = "DELETE FROM ".$tableName." WHERE ".$findByColumnName."=".$findByValue.";";
 
             echo "<script>console.log('".$sqlQry."')</script>";
             

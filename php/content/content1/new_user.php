@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $username = $_POST['username'];
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -15,13 +17,26 @@
     $username_type = $_POST['username_type'];
     $role_id = $_POST['role_id'];
 
-    include_once 'db_operations.php';
+    include_once '../../db_operations.php';
 
     $dbobj = new DBConnect;
 
     $dbobj->setDBName('mlf');
 
     $dbobj->connect();
+
+    $result = $dbobj->search('mlf_users_info',"`username`",'username','"'.$refer_id.'"');
+
+    if(!$row = $result->fetch_assoc()){
+        $alert = '"'.'PLEASE REGISTER REFER FIRST.'.'"';
+        $_SESSION['req_script']="<script>
+        setTimeout(function(){
+            document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
+        },80);
+        </script>";
+        header('Location: ../../../mlf_home.php');
+        die();
+    }
 
     $dbobj->insert('mlf_users','(username)','("'.$username.'")');
     $dbobj->insert('mlf_users_roles','(username, role_id)','("'.$username.'", '.$role_id.')');
@@ -30,6 +45,6 @@
 
     $dbobj->insert('mlf_users_info',"(`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`)",$values);
     
-    header('Location: ../mlf_home.php');
+    header('Location: ../../../mlf_home.php');
     die();
 ?>
