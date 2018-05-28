@@ -66,13 +66,11 @@ function user_form(form_name){
     }
 
     var alt_cntact_num = document.forms[form_name]["alt_cntact_num"]
-    if(alt_cntact_num.value == ""){
-        foundEmpty(alt_cntact_num)
-        return false
-    }
-    else if(alt_cntact_num.value.length != 10 || alt_cntact_num.value.match(/^[0-9]+$/) == null){
-        incorrectField(alt_cntact_num)
-        return false
+    if(alt_cntact_num.value != ""){
+        if(alt_cntact_num.value.length != 10 || alt_cntact_num.value.match(/^[0-9]+$/) == null){
+            incorrectField(alt_cntact_num)
+            return false
+        }
     }
 
     var dno = document.forms[form_name]["dno"]
@@ -81,7 +79,7 @@ function user_form(form_name){
         return false
     }
     else{
-        if(dno.value.match(/^[A-Za-z\s]+$/) == null){
+        if(dno.value.match(/^[A-Za-z0-9.\/-]+$/) == null){
             incorrectField(dno)
             return false
         }

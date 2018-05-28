@@ -14,7 +14,6 @@
     $dbobj->connect();
 
     $result = $dbobj->search('mlf_users_info',"`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`",'username','"'.$username.'"');
-    $_SESSION['content'] = 1;
 
     if($row = $result->fetch_assoc()){
         $_SESSION['id_available'] = True;

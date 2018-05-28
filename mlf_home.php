@@ -7,6 +7,7 @@ if (!isset($_SESSION['logged_in'])) {
 
 if(isset($_SESSION['req_script'])){
 	echo $_SESSION['req_script'];
+	$_SESSION['req_script']="";
 }
 
 ?>

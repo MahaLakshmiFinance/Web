@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  echo "<script>
+  setTimeout(function(){
+    document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
+  },20);
+  </script>";
+?>
+
+
+
 <script src="php/content/content3/content3clicks.js"></script>
 
 <div class="templatemo-content col-1 light-gray-bg">
@@ -7,8 +18,8 @@
 <ul class="text-uppercase">
 <li><a href="#cash_finance" onclick="nav(31)"><font style="color:  black">FINANCE</font></a></li>
 <li><a href="#cash_transaction" onclick="nav(32)"><font style="color: black">TRANSACTIONS</font></a></li>
-
 </ul>  
+<div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div>
 </nav> 
 </div>
 

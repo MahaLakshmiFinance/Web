@@ -41,7 +41,7 @@
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputConfirmNewPassword">Condition</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="working / not working">
+<input type="radio" class="form-control" id="inputConfirmNewPassword" placeholder="working / not working">
 </div> 
 </div>
 <div class="row form-group">

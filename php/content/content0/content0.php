@@ -1,5 +1,7 @@
 <?php
+  
   session_start();
+
 
   include_once '../../db_operations.php';
 
@@ -18,15 +20,16 @@
   $result = $dbobj->search('mlf_users_info',$columnNames,$findByColumnName,$fndByValue);
 
   while($row = $result->fetch_assoc()){
-    if(isset($_SESSION['content'])){
-      if($_SESSION['content']!=0){
-        break;
-      }
-    }
+    // if(isset($_SESSION['content'])){
+    //   if($_SESSION['content']!=0){
+    //     break;
+    //   }
+    // }
+
+    $_SESSION['username'] = $row['username'];
 
    echo "<script>
     setTimeout(function(){
-        document.forms['profile']['username'].value = '".$row['username']."';
         document.forms['profile']['fname'].value = '".$row['first_name']."';
         document.forms['profile']['lname'].value = '".$row['last_name']."';
         document.forms['profile']['cntact_num'].value = '".$row['contact_num']."';
@@ -39,6 +42,7 @@
         document.forms['profile']['pincode'].value = '".$row['pincode']."';
         document.forms['profile']['refer_id'].value = '".$row['refer_username']."';
         document.forms['profile']['refer_name'].value = '".$row['refer_name']."';
+        document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
    },20);
    </script>" ;
    break;
@@ -54,8 +58,8 @@
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
 <li><a href="#profile"><font style="color:  black">Profile</font></a></li>
-
 </ul>  
+<div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div>
 </nav> 
 </div>
 <div class="templatemo-content-container" id="subcontent01">
@@ -63,15 +67,6 @@
 
 
 <form action="" name="profile" onsubmit="return user_form('new_user')"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
-
-<div class="row form-group">
-  <div class="col-lg-6 col-md-6 form-group">                  
-    <label for="inputFirstName">Username</label><br>
-    <input disabled name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
-  </div>
-  <div class="col-lg-6 col-md-6 form-group">
-  </div>
-</div>
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  

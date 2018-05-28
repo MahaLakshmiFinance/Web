@@ -16,7 +16,7 @@
 </div>
 <input name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
 </div>
-<div class="col-lg-6 col-md-6 form-group">                  
+<div class="col-lg-6 col-md-6 form-group" style="display:none;">                  
 <label for="inputFirstName">Role ID</label><br>
 <div class="margin-right-15 templatemo-inline-block">
 <input type="radio" name="role_id" id="r3" value="3" >

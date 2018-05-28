@@ -16,6 +16,9 @@
     $refer_name = $_POST['refer_name'];
     $username_type = $_POST['username_type'];
     $role_id = $_POST['role_id'];
+    if(!$role_id){
+        $role_id = 4;
+    }
 
     include_once '../../db_operations.php';
 
@@ -25,10 +28,23 @@
 
     $dbobj->connect();
 
+    $result = $dbobj->search('mlf_users_info',"`username`",'username','"'.$username.'"');
+    
+        if($row = $result->fetch_assoc()){
+            $alert = '"'.'USER ALREADY EXIXTS.'.'"';
+            $_SESSION['req_script']="<script>
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
+            },80);
+            </script>";
+            header('Location: ../../../mlf_home.php');
+            die();
+    }
+
     $result = $dbobj->search('mlf_users_info',"`username`",'username','"'.$refer_id.'"');
 
     if(!$row = $result->fetch_assoc()){
-        $alert = '"'.'PLEASE REGISTER REFER FIRST.'.'"';
+        $alert = '"'.'PLEASE REGISTER REFERENCE ID FIRST.'.'"';
         $_SESSION['req_script']="<script>
         setTimeout(function(){
             document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'

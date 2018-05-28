@@ -5,7 +5,7 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">Unique ID</label><br>
+<label for="inputFirstName">User ID</label><br>
 
 <input type="text" class="form-control" id="inputFirstName" placeholder="Name">                  
 </div>
@@ -40,8 +40,18 @@
 <input type="date" class="form-control" id="inputNewPassword" placeholder="">
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputConfirmNewPassword">Condition</label>
-<input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="working / not working">
+<label for="inputFirstName">Condition ID</label><br>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="item_cond" id="r1" value="1" >
+<label for="r1" class="font-weight-400"><span></span>Working</label>
+</div>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="item_cond" id="r2" value="0" >
+<label for="r2" class="font-weight-400"><span></span>Not Working</label>
+</div>
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+
 </div> 
 </div>
 <div class="row form-group">

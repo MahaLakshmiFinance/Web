@@ -1,5 +1,10 @@
 <?php
   session_start();
+  echo "<script>
+  setTimeout(function(){
+    document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
+  },20);
+  </script>";
 ?>
 
 <script src="php/content/content1/content1clicks.js"></script>
@@ -14,7 +19,8 @@
 <li><a href="#delete" onclick="nav(13)"><font style="color: black">DELETE</font></a></li>
 <li><a href="#view" onclick="nav(14)"><font style="color: black">VIEW</font></a></li>
 
-</ul>  
+</ul> 
+<div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div>
 </nav> 
 </div>
 
