@@ -13,8 +13,7 @@
 <div class="row">
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
-<li><a href="#buy" onclick="nav(42)"><font style="color: black">BUY</font></a></li>
-<li><a href="#sell" onclick="nav(41)"><font style="color:  black">SELL</font></a></li>
+<li><a href="#buy" onclick="nav(42)"><font style="color: black">EXCHANGE</font></a></li>
 </ul> 
 <div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div> 
 </nav> 

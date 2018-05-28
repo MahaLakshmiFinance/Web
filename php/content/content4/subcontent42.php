@@ -5,6 +5,21 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="username_type" id="r1" value="1" checked>
+<label for="r1" class="font-weight-400"><span></span>Purchase</label>
+</div>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="username_type" id="r2" value="2">
+<label for="r2" class="font-weight-400"><span></span>Sell</label>
+</div>                
+</div>
+<div class="col-lg-6 col-md-6 form-group">                                   
+</div>
+</div>
+
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">User ID</label><br>
 
 <input type="text" class="form-control" id="inputFirstName" placeholder="Name">                  
