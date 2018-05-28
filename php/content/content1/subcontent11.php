@@ -14,7 +14,7 @@
 <input type="radio" name="username_type" id="r2" value="2">
 <label for="r2" class="font-weight-400"><span></span>Phone Number</label>
 </div>
-<input name="username" type="text"  class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+<input name="username" type="text"  class="form-control"placeholder="Aadhar / Phone Number">                  
 </div>
 <div class="col-lg-6 col-md-6 form-group" style="display:none;">                  
 <label for="inputFirstName">Role ID</label><br>
@@ -36,60 +36,60 @@
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">First Name</label>
-<input name="fname" type="text" class="form-control" id="inputFirstName" placeholder="First Name">                  
+<input name="fname" type="text" class="form-control"placeholder="First Name">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputLastName">Last Name</label>
-<input name="lname" type="text" class="form-control" id="inputLastName" placeholder="Last Name">                  
+<input name="lname" type="text" class="form-control"placeholder="Last Name">                  
 </div> 
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Contact Number</label>
-<input name="cntact_num" type="tel" class="form-control" id="inputUsername" placeholder="+91">                  
+<input name="cntact_num" type="tel" class="form-control"placeholder="+91">                  
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputEmail">Alternate Number</label>
-<input name="alt_cntact_num" type="tel" class="form-control" id="inputEmail" placeholder="+91">                  
+<input name="alt_cntact_num" type="tel" class="form-control"placeholder="+91">                  
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">D/No</label>
-<input name="dno" type="text" class="form-control" id="inputNewPassword" placeholder="Door Number">
+<input name="dno" type="text" class="form-control"placeholder="Door Number">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Street</label>
-<input name="street" type="text" class="form-control" id="inputConfirmNewPassword" placeholder="ABC Street">
+<input name="street" type="text" class="form-control"placeholder="ABC Street">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">Locality</label>
-<input name="locality" type="text" class="form-control" id="inputNewPassword" placeholder="Locality">
+<input name="locality" type="text" class="form-control"placeholder="Locality">
 </div>
 </div>
 <div class="row form-group">
 
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Village / Town / City</label>
-<input name="location" type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Location">
+<input name="location" type="text" class="form-control" placeholder="Location">
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">District</label>
-<input name="district" type="text" class="form-control" id="inputNewPassword" placeholder="District">
+<input name="district" type="text" class="form-control"  placeholder="District">
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Pincode</label>
-<input name="pincode" type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Pincode">
+<input name="pincode" type="text" class="form-control" placeholder="Pincode">
 </div> 
 </div><hr>
 <div class="row form-group">
 <div class="col-lg-6 form-group">                  
 <label for="inputNewPassword">Reference ID</label>
-<input name="refer_id" type="text" class="form-control" id="inputNewPassword" placeholder="Reference ID">
+<input name="refer_id" type="text" class="form-control" placeholder="Reference ID">
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputConfirmNewPassword">Reference Name</label>
-<input name="refer_name" type="text" class="form-control" id="inputConfirmNewPassword" placeholder="Reference Name">
+<input name="refer_name" type="text" class="form-control" placeholder="Reference Name">
 </div> 
 </div>
 <div class="form-group text-right">
