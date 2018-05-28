@@ -4,11 +4,6 @@
     $new_pwd = $_POST['new_pwd'];
     $retype_new_pwd = $_POST['retype_new_pwd'];
 
-    if($new_pwd != $retype_new_pwd){
-        header('Location: mlf_home.php');
-        die();
-    }
-
     include_once 'db_operations.php';
 
     $dbobj = new DBConnect;
@@ -22,7 +17,7 @@
     while($row = $result->fetch_assoc()){
         if($row['password'] == $old_pwd){
             $dbobj->update('mlf_users','password','"'.$new_pwd.'"','username','"'.$_SESSION['username'].'"');
-        
+            echo ""
         }
     }
 

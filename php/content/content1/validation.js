@@ -92,7 +92,7 @@ function user_form(form_name){
         return false
     }
     else{
-        if(street.value.match(/^[A-Za-z\s]+$/) == null){
+        if(street.value.match(/^[A-Za-z0-9. ]+$/) == null){
             incorrectField(street)
             return false
         }

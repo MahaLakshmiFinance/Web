@@ -41,9 +41,9 @@
             die();
     }
 
-    $result = $dbobj->search('mlf_users_info',"`username`",'username','"'.$refer_id.'"');
-
-    if(!$row = $result->fetch_assoc()){
+    $result = $dbobj->search('mlf_users_info',"`username`, `first_name`",'username','"'.$refer_id.'"');
+    $row = $result->fetch_assoc();
+    if(!$row){
         $alert = '"'.'PLEASE REGISTER REFERENCE ID FIRST.'.'"';
         $_SESSION['req_script']="<script>
         setTimeout(function(){
@@ -52,6 +52,8 @@
         </script>";
         header('Location: ../../../mlf_home.php');
         die();
+    }else{
+        $refer_name = $row['first_name'];
     }
 
     $dbobj->insert('mlf_users','(username)','("'.$username.'")');
@@ -60,6 +62,13 @@
     $values = '("'.$username.'", "'.$fname.'", "'.$lname.'", "'.$cntact_num.'", "'.$alt_cntact_num.'", "'.$dno.'", "'.$street.'", "'.$locality.'", "'.$location.'", "'.$district.'", "'.$pincode.'", "'.$refer_id.'", "'.$refer_name.'")';
 
     $dbobj->insert('mlf_users_info',"(`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`)",$values);
+    
+    $alert = '"'.'SUCESSFULLY ADDED THE CUSTOMER <br>PLEASE VERIFY USING VIEW TAB'.'"';
+    $_SESSION['req_script']="<script>
+    setTimeout(function(){
+        document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
+    },80);
+    </script>";
     
     header('Location: ../../../mlf_home.php');
     die();

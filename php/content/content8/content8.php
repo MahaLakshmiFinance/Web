@@ -7,11 +7,13 @@
   </script>";
 ?>
 
+<script src="php/content/content8/validation.js"></script>
+
 <div class="templatemo-content col-1 light-gray-bg"><div class="templatemo-top-nav-container-1">
 <div class="row">
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
-<li><a href="#add" onclick="nav(81)"><font style="color:  black">CHANGE PASSOWRD</font></a></li>
+<li><a href="#change_password" onclick="nav(81)"><font style="color:  black">CHANGE PASSOWRD</font></a></li>
 
 </ul> 
 <div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div>
@@ -21,7 +23,7 @@
 <div class="templatemo-content-widget white-bg">
 
 
-<form action="php/change_password.php" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="php/content/content8/change_password.php" onsumbit="return chngepwd('change_pwd')" name="change_pwd" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  

@@ -1,6 +1,33 @@
 <script src="php/content/content1/validation.js"></script>
 
 <div class="templatemo-content-widget white-bg">
+<script>
+    function findname(){
+    $('#refer_id').keyup(function(){
+         $.ajax({
+               type: "GET",
+               url: "php/content/content1/refer_name.php",
+               data: "refer_name="+document.forms['new_user']['refer_id'].value,
+               error: function(msg){
+                   console.log(msg);
+               },
+               success: function(msg){
+                   <?php
+                    session_start();
+                    echo "
+                    console.log('".$_SESSION['refer_name']."')
+                    ";
+                   echo "
+                   document.getElementById('refer_name').value = '".$_SESSION['refer_name']."'
+                   ";
+                   $_SESSION['refer_name'] = "";
+                    
+                    ?>
+            }
+        })
+    });
+}
+</script>
 <form action="php/content/content1/new_user.php" name="new_user" onsubmit="return user_form('new_user')"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
@@ -85,11 +112,11 @@
 <div class="row form-group">
 <div class="col-lg-6 form-group">                  
 <label for="inputNewPassword">Reference ID</label>
-<input name="refer_id" type="text" class="form-control" placeholder="Reference ID">
+<input name="refer_id" onkeyup="findname()" id="refer_id" type="text" class="form-control" placeholder="Reference ID">
 </div>
 <div class="col-lg-6 form-group">                  
 <label for="inputConfirmNewPassword">Reference Name</label>
-<input name="refer_name" type="text" class="form-control" placeholder="Reference Name">
+<input name="refer_name" type="text" id="refer_name" class="form-control" placeholder="Reference Name">
 </div> 
 </div>
 <div class="form-group text-right">
