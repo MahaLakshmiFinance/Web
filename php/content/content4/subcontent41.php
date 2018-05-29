@@ -1,7 +1,7 @@
 <div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
 <div id="temp"></div>
-<form action="" name="exchange" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+<form action="php/content/content4/exhange.php" method="POST"name="exchange" onsubmit="return form_verify()"class="templatemo-login-form" method="post" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -22,7 +22,7 @@
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">User ID</label><br>
 
-<input type="text" class="form-control" name="username" id="inputFirstName" placeholder="Name">                  
+<input type="text"onfocusout="user()" class="form-control" name="username" id="inputFirstName" placeholder="Aadhar / Mobile Number">                  
 </div>
 <div class="col-lg-6 col-md-6 form-group">                                   
 </div>
@@ -31,7 +31,7 @@
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Customer Name</label>
-<input type="text" onfocus="user()" class="form-control" name="cstmr_name" placeholder="Name">                  
+<input type="text"class="form-control" name="cstmr_name" placeholder="Name">                  
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputLastName">Contact Number</label>
@@ -45,14 +45,14 @@
 <script>serialNumb();</script>                  
 </div> 
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">Condition</label><br>
+<label>Condition</label><br>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="item_cond" id="r1" value="1" >
-<label for="r1" class="font-weight-400"><span></span>Working</label>
+<input type="radio" name="item_cond" id="working" value="1" >
+<label for="working" class="font-weight-400"><span></span>Working</label>
 </div>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="item_cond" id="r2" value="0" >
-<label for="r2" class="font-weight-400"><span></span>Not Working</label>
+<input type="radio" name="item_cond" id="ntworking" value="0" >
+<label for="ntworking" class="font-weight-400"><span></span>Not Working</label>
 </div>
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -71,7 +71,7 @@
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Model</label>
-<input type="text" class="form-control" id="inputUsername" placeholder="Name of the Item">                  
+<input type="text" name="model_name" class="form-control" id="inputUsername" placeholder="Name of the Item">                  
 </div>
 </div>
 
@@ -83,7 +83,7 @@
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputNewPassword">Amount</label>
-<input type="Number" class="form-control" placeholder="Purchase rate">
+<input type="Number" name="cost" class="form-control" placeholder="Purchase rate">
 </div>
 </div>
 <div class="row form-group">
@@ -92,8 +92,8 @@
 </div>
 <div class="row form-group">
 <div class="col-lg-12 col-md-12 form-group">                  
-<label for="inputNewPassword">Remark</label>
-<input type="text" class="form-control" id="inputNewPassword" placeholder="Remark">
+<label for="inputNewPassword">Remarks</label>
+<input type="text" name="remarks"class="form-control" id="inputNewPassword" placeholder="Remark">
 </div>
 </div>
 
