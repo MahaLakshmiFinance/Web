@@ -83,7 +83,7 @@ height:250px;
 <nav class="templatemo-left-nav" >          
 <ul>
 <li><a href="#profile" id="link0" onclick="sidemenu(0);" class="active">Profile</a></li>
-<li><a href="#users" id="link1" onclick="sidemenu(1)">Users</a></li>
+<li><a href="#users" id="link1" onclick="sidemenu(1)">Customer</a></li>
 <li><a href="#article_finance" id="link2" onclick="sidemenu(2)" >Article Finance</a></li>
 <li><a href="#cash_finance" id="link3" onclick="sidemenu(3)" >Cash Finance</a></li>
 <li><a href="#buy_back_items" id="link4" onclick="sidemenu(4)" >Buy Back Items</a></li>

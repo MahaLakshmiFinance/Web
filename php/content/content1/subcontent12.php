@@ -1,4 +1,5 @@
-
+<script src="php/content/content1/validation.js">
+</script>
 <script>
 function verify_usr(){
          $.ajax({
@@ -36,7 +37,7 @@ function verify_usr(){
         <button onclick="verify_usr()" class="templatemo-blue-button">Check</button>
         </div> 
         </div>
-        <form action="php/content/content1/update_user.php" name="edit_user" style="display:none;"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+        <form action="php/content/content1/update_user.php"onsubmit="return user_form_modified('edit_user')" name="edit_user" style="display:none;"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
