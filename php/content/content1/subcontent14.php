@@ -1,96 +1,41 @@
-<?php
-session_start();
 
-if(isset($_SESSION['id_available'])){
-    if($_SESSION['id_available']==True){
-        echo '<script>
-            document.forms["verify_user"].style="display:none"
-            document.forms["view_user"].style=""
-        </script>';
-        fetchDetails($_SESSION['id']);
-    }
-
-}
-if(isset($_SESSION['error_typed_view'])){
-    if($_SESSION['error_typed_view']==True)
-        echo '<script>
-            document.getElementById("error").style=""
-        </script>';
-    
+<script>
+function verify_usr(){
+         $.ajax({
+               type: "GET",
+               url: "php/content/content1/verify_user.php",
+               data: "subcontent_num=4&&id="+document.getElementById("id").value,
+               error: function(msg){
+                   alert('error')
+                   console.log(msg);
+               },
+               success: function(msg){
+                   document.getElementById('temp').innerHTML = "";
+                    $("#temp").html(msg);
+               }
+            });
 }
 
-
-function fetchDetails($id){
-    
-      include_once '../../db_operations.php';
-    
-      $dbobj = new DBConnect;
-    
-      $dbobj->setDBName('mlf');
-    
-      $dbobj->connect();
-      
-      $columnNames = '`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`';
-    
-      $findByColumnName = "username";
-    
-      $fndByValue = '"'.$id.'"';
-    
-      $result = $dbobj->search('mlf_users_info',$columnNames,$findByColumnName,$fndByValue);
-    
-      while($row = $result->fetch_assoc()){
-        if(isset($_SESSION['content'])){
-          if($_SESSION['content']!=1){
-            break;
-          }
-        }
-    
-       echo "<script>
-        setTimeout(function(){
-            document.forms['view_user']['username'].value = '".$row['username']."';
-            document.forms['view_user']['fname'].value = '".$row['first_name']."';
-            document.forms['view_user']['lname'].value = '".$row['last_name']."';
-            document.forms['view_user']['cntact_num'].value = '".$row['contact_num']."';
-            document.forms['view_user']['alt_cntact_num'].value = '".$row['alternate_num']."';
-            document.forms['view_user']['dno'].value = '".$row['d_no']."';
-            document.forms['view_user']['street'].value = '".$row['street']."';
-            document.forms['view_user']['locality'].value = '".$row['locality']."';
-            document.forms['view_user']['location'].value = '".$row['town_or_city']."';
-            document.forms['view_user']['district'].value = '".$row['district']."';
-            document.forms['view_user']['pincode'].value = '".$row['pincode']."';
-            document.forms['view_user']['refer_id'].value = '".$row['refer_username']."';
-            document.forms['view_user']['refer_name'].value = '".$row['refer_name']."';
-       },20);
-       </script>" ;
-       break;
-      }
-    
-}
-
-
-
-$_SESSION['id_available'] = False;
-$_SESSION['error_typed_view'] = False;
-?>
+</script>
 <div class="templatemo-content-container">
-<div class="templatemo-content-widget white-bg">
-    <form class="templatemo-login-form" name="verify_user" method="GET"onsubmit="document.getElementById('x').style=''" action="php/content/content1/verify_user.php?subcontent_num=3" enctype="multipart/form-data" id="unverified11">
-    <div class="row form-group">
-    <div class="col-lg-6 col-md-6 form-group">                  
-    <label for="inputFirstName">Unique ID</label><br>
-    <input type="text" class="form-control" name="id" placeholder="Aadhar / Phone Number">                  
-    </div>
-    <input type="number" id="x" class="form-control" name="subcontent_num" value="4" style="display:none;" placeholder="Aadhar / Phone Number">
-    </div>
-    <div class="row form-group" id="error" style="display: none">
-    <div class="col-lg-6 col-md-6 form-group" style="font-size: 12px;color:red;">                  
-    USER NOT FOUND!!!           
-    </div>
-    </div>
-    <div class="form-group text-right">
-    <button type="submit" class="templatemo-blue-button">Check</button>
-    </div> 
-    </form>
+    <div id="temp"></div>
+    <div class="templatemo-content-widget white-bg">
+        <div class="templatemo-login-form" id="verify_user"enctype="multipart/form-data">
+        <div class="row form-group">
+        <div class="col-lg-6 col-md-6 form-group">                  
+        <label for="inputFirstName">User ID</label><br>
+        <input type="text" class="form-control" id="id" placeholder="Aadhar / Phone Number">                  
+        </div>
+        </div>
+        <div class="row form-group" id="error" style="display: none">
+        <div class="col-lg-6 col-md-6 form-group" style="font-size: 12px;color:red;">                  
+        USER NOT FOUND!!!           
+        </div>
+        </div>
+        <div class="form-group text-right">
+        <button onclick="verify_usr()" class="templatemo-blue-button">Check</button>
+        </div> 
+        </div>
     <form action="php/content/content1/view_user.php" name="view_user" style="display:none;"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">

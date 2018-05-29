@@ -3,7 +3,10 @@
 
     $username = $_GET['id'];
     $_SESSION['id'] = $username;
+    $subcontent = 2;
+    if(isset($_GET['subcontent_num'])){
     $subcontent = $_GET['subcontent_num'];
+    }
 
     include_once '../../db_operations.php';
 
@@ -14,34 +17,48 @@
     $dbobj->connect();
 
     $result = $dbobj->search('mlf_users_info',"`username`",'username','"'.$username.'"');
+    $row = $result->fetch_assoc();
 
-    if($row = $result->fetch_assoc()){
+    if($row['username']==$username){
         $_SESSION['id_available'] = True;
     }
     else{
         $_SESSION['error_typed_edit'] = True;
     }
-    session_start();
+
+    if($subcontent==2) 
+            $form_name = "edit_user";
+        if($subcontent == 3)
+            $form_name = "delete_user";
+        if($subcontent == 4)
+            $form_name = "view_user";
 
         if(isset($_SESSION['id_available'])){
             if($_SESSION['id_available']==True){
                 echo '<script>
-                    document.forms["verify_user"].style="display:none"
-                    document.forms["edit_user"].style=""
+                    document.getElementById("verify_user").style="display:none";
+                    document.forms["'.$form_name.'"].style=""
                 </script>';
+                $_SESSION['id_available'] = False;
+    $_SESSION['error_typed_edit'] = False;
                 fetchDetails($_SESSION['id']);
             }
-    
         }
+
         if(isset($_SESSION['error_typed_edit'])){
-            if($_SESSION['error_typed_edit']==True)
+            if($_SESSION['error_typed_edit']==True){
                 echo '<script>
                     document.getElementById("error").style=""
                 </script>';
+                $_SESSION['id_available'] = False;
+    $_SESSION['error_typed_edit'] = False;
+                die();
+            }
             
         }
 
     function fetchDetails($id){
+        global $form_name;
         
           include_once '../../db_operations.php';
         
@@ -59,8 +76,6 @@
         
           $result = $dbobj->search('mlf_users_info',$columnNames,$findByColumnName,$fndByValue);
 
-          if($subcontent==2) 
-            $form_name = "edit_username";
         
           while($row = $result->fetch_assoc()){
         
@@ -85,10 +100,5 @@
           }
         
     }
-
-
-
-    $_SESSION['id_available'] = False;
-    $_SESSION['error_typed_edit'] = False;
 
 ?>

@@ -4,13 +4,14 @@ function verify_usr(){
          $.ajax({
                type: "GET",
                url: "php/content/content1/verify_user.php",
-               data: "subcontent_num=2",
+               data: "subcontent_num=2&&id="+document.getElementById("id").value,
                error: function(msg){
+                   alert('error')
                    console.log(msg);
                },
-               sucess: function(msg){
-                    alert('good');
-                   document.getElementById('temp').innerHTML = temp;
+               success: function(msg){
+                   document.getElementById('temp').innerHTML = "";
+                    $("#temp").html(msg);
                }
             });
 }
@@ -19,11 +20,11 @@ function verify_usr(){
 <div class="templatemo-content-container">
     <div id="temp"></div>
     <div class="templatemo-content-widget white-bg">
-        <form class="templatemo-login-form" name="verify_user" method="GET" action="" enctype="multipart/form-data" id="unverified11">
+        <div class="templatemo-login-form" id="verify_user"enctype="multipart/form-data">
         <div class="row form-group">
         <div class="col-lg-6 col-md-6 form-group">                  
-        <label for="inputFirstName">Unique ID</label><br>
-        <input type="text" class="form-control" name="id" placeholder="Aadhar / Phone Number">                  
+        <label for="inputFirstName">User ID</label><br>
+        <input type="text" class="form-control" id="id" placeholder="Aadhar / Phone Number">                  
         </div>
         </div>
         <div class="row form-group" id="error" style="display: none">
@@ -32,14 +33,14 @@ function verify_usr(){
         </div>
         </div>
         <div class="form-group text-right">
-        <button type="submit" onclick="verify_usr()" class="templatemo-blue-button">Check</button>
+        <button onclick="verify_usr()" class="templatemo-blue-button">Check</button>
         </div> 
-        </form>
+        </div>
         <form action="php/content/content1/update_user.php" name="edit_user" style="display:none;"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">Unique ID</label><br>
+<label for="inputFirstName">User ID</label><br>
 <input type="text" name="username" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
