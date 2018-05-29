@@ -131,6 +131,25 @@
             return $result;
     
         }
+        function searchByOrder($tableName,$columnNames,$orderByColumnName){
+            // SELECT user,password FROM table_name WHRER user=1
+    
+            $sqlQry = "SELECT ".$columnNames." FROM ".$tableName." ORDER BY ".$orderByColumnName.";";
+
+            echo "<script>console.log('".$sqlQry."')</script>";
+            
+            $result = $this->conn->query($sqlQry);
+    
+            if($result->num_rows > 0){
+               echo "<script>console.log('Searched Data Successfully.')</script>";
+            }
+            else {
+                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+            }
+    
+            return $result;
+    
+        }
 
         function __destruct(){
             $this->conn->close();
