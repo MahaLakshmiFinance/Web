@@ -5,7 +5,7 @@
 function findname(){
          $.ajax({
                type: "GET",
-               url: "php/content/content1/verify_user.php",
+               url: "php/content/content1/refer_name.php",
                data: "refer_name="+document.forms['new_user']['refer_id'].value,
                error: function(msg){
                    console.log(msg);

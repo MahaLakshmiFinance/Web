@@ -11,7 +11,7 @@ if(isset($_SESSION['req_script'])){
 }
 if(isset($_SESSION['role'])){
 	$role = $_SESSION['role'];
-	if($role == 4){
+	if($role == 3){
 		echo "<script>
 		setTimeout(function(){
 			for(var i=1;i<=9;i++){
@@ -22,6 +22,17 @@ if(isset($_SESSION['role'])){
 			document.getElementById('link3').style=''
 			document.getElementById('link4').style=''
 			document.getElementById('link6').style=''
+			document.getElementById('link8').style=''
+			document.getElementById('link9').style=''
+		},100);
+		</script>";
+	}
+	if($role == 4){
+		echo "<script>
+		setTimeout(function(){
+			for(var i=1;i<=9;i++){
+				document.getElementById('link'+i).style='display:none;'
+			}
 			document.getElementById('link8').style=''
 			document.getElementById('link9').style=''
 		},100);

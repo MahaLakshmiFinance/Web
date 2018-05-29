@@ -67,11 +67,11 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Purchase Date</label>
+<label for="inputNewPassword">Date</label>
 <input type="date" class="form-control" placeholder="">
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Purchase Amount</label>
+<label for="inputNewPassword">Amount</label>
 <input type="Number" class="form-control" placeholder="Purchase rate">
 </div>
 </div>
