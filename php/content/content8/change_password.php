@@ -4,7 +4,7 @@
     $new_pwd = $_POST['new_pwd'];
     $retype_new_pwd = $_POST['retype_new_pwd'];
 
-    include_once 'db_operations.php';
+    include_once '../../db_operations.php';
 
     $dbobj = new DBConnect;
 
@@ -17,11 +17,24 @@
     while($row = $result->fetch_assoc()){
         if($row['password'] == $old_pwd){
             $dbobj->update('mlf_users','password','"'.$new_pwd.'"','username','"'.$_SESSION['username'].'"');
-            echo ""
+            $alert = '"'.'PASSWORD CHANGED SUCESSFULLY.'.'"';
+            $_SESSION['req_script']="<script>
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(8);setTimeout(function(){alert(".$alert.");},20);'
+            },80);
+            </script>";
+        }
+        else{
+            $alert = '"'.'PASSWORD CHANGE FAILED.'.'"';
+            $_SESSION['req_script']="<script>
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(8);setTimeout(function(){alert(".$alert.");},20);'
+            },80);
+            </script>";
         }
     }
 
-    header('Location: ../mlf_home.php');
+    header('Location: ../../../mlf_home.php');
     die();
     
 ?>
