@@ -23,7 +23,7 @@
 <div class="templatemo-content-widget white-bg">
 
 
-<form action="php/content/content8/change_password.php" onsumbit="return chngepwd('change_pwd')" name="change_pwd" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="php/content/content8/change_password.php" onsubmit="return chngepwd('change_pwd')" name="change_pwd" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
