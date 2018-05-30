@@ -13,7 +13,7 @@
             //$this->serverName = "192.168.0.101";
             $this->username = "admin";
             $this->password = "12345";
-            $this->dbName = "test";
+            $this->dbName = "mlf";
         }
         function setTable($tableName){
             $this->tableName = $tableName;

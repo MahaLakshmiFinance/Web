@@ -20,8 +20,6 @@
 
     $dbobj = new DBConnect;
 
-    $dbobj->setDBName('mlf');
-
     $dbobj->connect();
 
     $result = $dbobj->search('mlf_users',"username, password",'username','"'.$username.'"');

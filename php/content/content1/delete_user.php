@@ -19,8 +19,6 @@
 
     $dbobj = new DBConnect;
 
-    $dbobj->setDBName('mlf');
-
     $dbobj->connect();
 
     $dbobj->delete('mlf_users','username','"'.$username.'"');

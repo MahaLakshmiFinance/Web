@@ -1,3 +1,5 @@
+<?php?>
+
 <script src="php/content/content1/validation.js">
 </script>
 

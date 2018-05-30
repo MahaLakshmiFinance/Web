@@ -7,8 +7,6 @@
 
   $dbobj = new DBConnect;
 
-  $dbobj->setDBName('mlf');
-
   $dbobj->connect();
   
   $columnNames = '`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`';

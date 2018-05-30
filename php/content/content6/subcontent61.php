@@ -4,7 +4,7 @@
 <div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
 
-<form action="php/content/content4/exchange.php" name="exchange" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="php/content/content6/small_appliances.php" name="exchange" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -43,22 +43,20 @@
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputEmail">Quantity</label>
+<input type="Number" class="form-control" name="quantity" placeholder="100">                
+</div> 
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputEmail">Serial Number</label>
+<input type="Number" disabled class="form-control" id="in_serial" name="serial_num1" placeholder="Serial number">
+<script>serialNumb()</script>                 
+</div> 
+<div class="col-lg-6 col-md-6 form-group" style="display:none">                  
 <label for="inputEmail">Serial Number</label>
 <input type="Number" class="form-control" id="in_serial" name="serial_num1" placeholder="Serial number">
 <select id="serial" name="serial_num2" style="display:none" class="form-control" onchange="serial_change()"></select>
 <script>serialNumb()</script>                  
 </div> 
-<div class="col-lg-6 col-md-6 form-group">                  
-<label>Condition</label><br>
-<div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="item_cond" id="working" value="1" >
-<label for="working" class="font-weight-400"><span></span>Working</label>
-</div>
-<div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="item_cond" id="ntworking" value="0" >
-<label for="ntworking" class="font-weight-400"><span></span>Not Working</label>
-</div>
-</div>
 <div class="col-lg-6 col-md-6 form-group">                  
 
 </div> 
@@ -67,10 +65,12 @@
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Type</label>
 <select  class="form-control" name="item_type">
-  <option value="1">Refrigerator</option>
-  <option value="2">Television</option>
-  <option value="3">Air Conditioner</option>
-  <option value="4">Washing Machine</option>
+  <option value="TLWMC">Top Load Washing Machine Covers</option>
+  <option value="FLWMC">Front Load Washing Machine Covers</option>
+  <option value="TLWMS">Top Load Washing Machine Stands</option>
+  <option value="FLWMS">Front Load Washing Maching Stands</option>
+  <option value="RSS">Refrigerator Stands Small</option>
+  <option value="RSB">Refrigerator Stands Big</option>
 </select>          
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -86,18 +86,12 @@
 <script>document.getElementById('date').value = getTheDate()</script>
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Amount</label>
+<label for="inputNewPassword">Total Amount</label>
 <input type="Number" name="cost" class="form-control" placeholder="9999.99">
 </div>
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-</div>
-</div>
-<div class="row form-group">
-<div class="col-lg-12 col-md-12 form-group">                  
-<label for="inputNewPassword">Remarks</label>
-<input type="text" name="remarks"class="form-control" id="inputNewPassword" placeholder="Remark">
 </div>
 </div>
 

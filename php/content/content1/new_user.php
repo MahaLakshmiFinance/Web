@@ -24,8 +24,6 @@
 
     $dbobj = new DBConnect;
 
-    $dbobj->setDBName('mlf');
-
     $dbobj->connect();
 
     $result = $dbobj->search('mlf_users_info',"`username`",'username','"'.$username.'"');
@@ -59,9 +57,9 @@
     $dbobj->insert('mlf_users','(username)','("'.$username.'")');
     $dbobj->insert('mlf_users_roles','(username, role_id)','("'.$username.'", '.$role_id.')');
 
-    $values = '("'.$username.'", "'.$fname.'", "'.$lname.'", "'.$cntact_num.'", "'.$alt_cntact_num.'", "'.$dno.'", "'.$street.'", "'.$locality.'", "'.$location.'", "'.$district.'", "'.$pincode.'", "'.$refer_id.'", "'.$refer_name.'")';
+    $values = '("'.$username.'", "'.$fname.'", "'.$lname.'", "'.$cntact_num.'", "'.$alt_cntact_num.'", "'.$dno.'", "'.$street.'", "'.$locality.'", "'.$location.'", "'.$district.'", "'.$pincode.'", "'.$refer_id.'", "'.$refer_name.'", "'.$_SESSION["username"].'")';
 
-    $dbobj->insert('mlf_users_info',"(`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`)",$values);
+    $dbobj->insert('mlf_users_info',"(`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`, `added_by`)",$values);
     
     $alert = '"'.'SUCESSFULLY ADDED THE CUSTOMER <br>PLEASE VERIFY USING VIEW TAB'.'"';
     $_SESSION['req_script']="<script>

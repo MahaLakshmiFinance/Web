@@ -7,8 +7,6 @@
     
     $dbobj = new DBConnect;
     
-    $dbobj->setDBName('mlf');
-    
     $dbobj->connect();
     
         $result = $dbobj->search('mlf_users_info',"`username`, `first_name`, `last_name`",'username','"'.$refer_name.'"');
