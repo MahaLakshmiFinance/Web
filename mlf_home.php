@@ -11,6 +11,13 @@ if(isset($_SESSION['req_script'])){
 }
 if(isset($_SESSION['role'])){
 	$role = $_SESSION['role'];
+	if($role<=2){
+		echo "<script>
+		setTimeout(function(){
+			document.getElementById('link1').innerHTML='Users'
+		},100);
+		</script>";
+	}
 	if($role == 3){
 		echo "<script>
 		setTimeout(function(){
