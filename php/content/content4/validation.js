@@ -1,57 +1,61 @@
 function form_verify(){
-    var username = document.forms['exchange']['username'].value;
+var username = document.forms['exchange']['username'];
 
-    if(username == ""){
-        alert('PLEASE ENTER CUSTOMER ID.');
-        document.forms['exchange']['username'].focus()
-        return false;
-    }
+if(username.value == ""){
+alert('PLEASE ENTER CUSTOMER ID.');
+username.focus()
+return false;
+}
+document.forms['exchange']['cstmr_name'].disabled = false;
+var cstmr_name = document.forms['exchange']['cstmr_name'];
 
-    var cstmr_name = document.forms['exchange']['cstmr_name'].value;
-    
-        if(cstmr_name == ""){
-            alert('PLEASE ADD THE CUSTOMER TO DATABASE FIRST.');
-            document.forms['exchange']['cstmr_name'].focus()
-            return false;
-        }
+if(cstmr_name.value == ""){
+alert('PLEASE ADD THE CUSTOMER TO DATABASE FIRST.');
+cstmr_name.focus()
+document.forms['exchange']['cstmr_name'].disabled = true;
+return false;
+}
 
-        var item_cond = document.forms['exchange']['item_cond'].value;
-        
-            if(item_cond == ""){
-                alert('PLEASE CHECK THE ITEM CONDITION.');
-                document.forms['exchange']['item_cond'].focus()
-                return false;
-            }
-            var model_name = document.forms['exchange']['model_name'].value;
-            
-                if(model_name == ""){
-                    alert('PLEASE ENTER THE ITEM MODEL.');
-                    document.forms['exchange']['model_name'].focus()
-                    return false;
-                }
+var item_cond = document.forms['exchange']['item_cond'];
 
-                var cost = document.forms['exchange']['cost'].value;
-                
-                    if(cost == ""){
-                        alert('PLEASE ENTER COST OF THE PRODUCT.');
-                        document.forms['exchange']['cost'].focus()
-                        return false;
-                    }
-                    if(cost < 1 ){
-                        alert("COST SHOULDN'T BE NEGATIVE.");
-                        document.forms['exchange']['cost'].focus()
-                        return false;
-                    }
+if(item_cond.value == ""){
+alert('PLEASE CHECK THE ITEM CONDITION.');
+item_cond.focus()
+return false;
+}
+var model_name = document.forms['exchange']['model_name'];
 
-                    var remarks = document.forms['exchange']['remarks'].value;
-                    
-                        if(remarks == ""){
-                            alert('PLEASE DESCRIBE THE PRODUCT CONDITION.');
-                            document.forms['exchange']['cost'].focus()
-                            return false;
-                        }
+if(model_name.value == ""){
+alert('PLEASE ENTER THE ITEM MODEL.');
+model_name.focus()
+return false;
+}
 
+var cost = document.forms['exchange']['cost'];
 
-    return true;
+if(cost.value == ""){
+alert('PLEASE ENTER COST OF THE PRODUCT.');
+cost.focus()
+return false;
+}
+if(cost.value < 1 ){
+alert("COST SHOULDN'T BE NEGATIVE.");
+cost.focus()
+return false;
+}
+
+var remarks = document.forms['exchange']['remarks'];
+
+if(remarks.value == ""){
+alert('PLEASE DESCRIBE THE PRODUCT CONDITION.');
+remarks.focus()
+return false;
+}
+
+document.forms['exchange']['cstmr_name'].disabled = false;
+document.forms['exchange']['cntact_num'].disabled = false;
+document.forms['exchange']['serial_num'].disabled = false;
+document.forms['exchange']['date'].disabled = false;
+
 
 }

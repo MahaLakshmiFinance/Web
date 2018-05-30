@@ -1,16 +1,19 @@
+<script src="php/content/content4/validation.js"></script>
+<script src="php/content/content4/content4.js"></script>
+<div id="temp"></div>
 <div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
-<div id="temp"></div>
-<form action="php/content/content4/exhange.php" method="POST"name="exchange" onsubmit="return form_verify()"class="templatemo-login-form" method="post" enctype="multipart/form-data">
+
+<form action="php/content/content4/exchange.php" name="exchange" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="username_type" id="r1" value="1" checked>
+<input type="radio" name="type" id="r1" value="0" checked onchange="revert_to_purchase()">
 <label for="r1" class="font-weight-400"><span></span>Purchase</label>
 </div>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="username_type" id="r2" value="2">
+<input type="radio" name="type" id="r2" value="1" onchange="get_existing_serial()">
 <label for="r2" class="font-weight-400"><span></span>Sell</label>
 </div>                
 </div>
@@ -31,18 +34,19 @@
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Customer Name</label>
-<input type="text"class="form-control" name="cstmr_name" placeholder="Name">                  
+<input disabled type="text"class="form-control" name="cstmr_name" placeholder="Name">                  
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputLastName">Contact Number</label>
-<input type="tel" name="cntact_num"class="form-control" id="inputLastName" placeholder="+91">                  
+<input disabled type="tel" name="cntact_num"class="form-control" id="inputLastName" placeholder="+91">                  
 </div> 
 </div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputEmail">Serial Number</label>
-<input type="Number" class="form-control" name="serial_num" placeholder="Serial number">
-<script>serialNumb();</script>                  
+<input type="Number" class="form-control" id="in_serial" name="serial_num" placeholder="Serial number">
+<select id="serial" name="serial_num" style="display:none" class="form-control"></select>
+<script>serialNumb()</script>                  
 </div> 
 <div class="col-lg-6 col-md-6 form-group">                  
 <label>Condition</label><br>
@@ -62,7 +66,7 @@
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Type</label>
-<select  class="form-control">
+<select  class="form-control" name="item_type">
   <option value="1">Refrigerator</option>
   <option value="2">Television</option>
   <option value="3">Air Conditioner</option>
@@ -78,8 +82,8 @@
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputNewPassword">Date</label>
-<input type="text" disabled id="date"class="form-control" placeholder="">
-<script>document.getElementById('date').value = getTheDate();</script>
+<input type="text" disabled name="date"id="date"class="form-control" placeholder="">
+<script>document.getElementById('date').value = getTheDate()</script>
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputNewPassword">Amount</label>

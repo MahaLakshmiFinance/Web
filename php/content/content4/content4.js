@@ -47,8 +47,35 @@ function serialNumb(){
             else{
                 val=year+""+'001'
             }
-            document.forms['exchange']['serial_num'].value = val;
-            document.forms['exchange']['serial_num'].disabled = true;
+            document.getElementById('in_serial').value = val;
+            document.getElementById('in_serial').disabled = true;
+            
      }
     });
+}
+
+
+function get_existing_serial(){
+    document.getElementById('serial').style=""
+    document.getElementById('in_serial').style="display:none"
+
+    $.ajax({
+        type: "GET",
+        url: "php/content/content4/get_existing_serial.php",
+        error: function(msg){
+            console.log(msg);
+        },
+        success: function(msg){
+            $('#temp').html(msg);
+     }
+    });
+
+}
+
+function revert_to_purchase(){
+    if(document.getElementById('r1').checked==true){
+        document.getElementById('serial').style="display:none"
+        document.getElementById('in_serial').style=""
+        serialNumb()
+    }
 }
