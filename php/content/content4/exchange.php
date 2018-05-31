@@ -87,7 +87,7 @@
         
         $values = '("'.$serial_num.'", "'.$_SESSION['username'].'", "'.$model_name.'", "'.$item_type.'", "'.$username.'", "'.$date.'", "'.$cost.'", "'.$item_cond.'", "'.$remarks.'") ';
         
-        $dbobj->insert('mlf_old_materials_sell',$columnNames,$values);
+        $dbobj->insert('mlf_old_materials_sold',$columnNames,$values);
 
         $dbobj->update('mlf_old_materials_purchase','is_sold','1','serial_number',$serial_num);
 

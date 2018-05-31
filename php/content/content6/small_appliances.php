@@ -5,11 +5,6 @@
     $username = $_POST['username'];
     $customer_name = $_POST['cstmr_name'];
     $cntact_num = $_POST['cntact_num'];
-    $quantity = $_POST['quantity'];
-    if(isset($_POST['serial_num1']))
-        $serial_num = $_POST['serial_num1'];
-    if($serial_num == "")
-        $serial_num = $_POST['serial_num2'];
     $item_type = $_POST['item_type'];
     $model_name = $_POST['model_name'];
     $date =  $_POST['date'];
@@ -22,8 +17,16 @@
     $dbobj->connect();
 
     if($actn==0){
+        $quantity = $_POST['quantity'];
+        if(isset($_POST['serial_num1']))
+            $serial_num = $_POST['serial_num1'];
 
-        $result = $dbobj->search('mlf_old_materials_purchase','serial_number','serial_number',$serial_num);
+        $serial_num_list = array($serial_num)
+        for(var $i=0;i<$quantity-1;$i++){
+            A
+        }
+
+        $result = $dbobj->search('mlf_accessories_purchase','serial_number','serial_number',$serial_num);
 
         $row = $result->fetch_assoc();
 
@@ -43,7 +46,7 @@
         $columnNames = "(`serial_number`, `transaction_by` , `item_model`, `item_type`, `purchased_from`, `purchased_date`, `purchased_cost`, `purchased_condition`, `purchased_remark`, `is_sold`)";
 
         $values = '("'.$serial_num.'", "'.$_SESSION['username'].'", "'.$model_name.'", "'.$item_type.'", "'.$username.'", "'.$date.'", "'.$cost.'", "'.$item_cond.'", "'.$remarks.'", "'.$actn.'") ';
-        $dbobj->insert('mlf_old_materials_purchase',$columnNames,$values);
+        $dbobj->insert('mlf_accessories_purchase',$columnNames,$values);
         $alert = '"'.'PURCHASE COMPLETED.'.'"';
         $_SESSION['req_script']="<script>
         setTimeout(function(){
@@ -55,7 +58,7 @@
         //         die();
     }
     // else{
-    //     $result = $dbobj->search('mlf_old_materials_purchase','serial_number, is_sold','serial_number',$serial_num);
+    //     $result = $dbobj->search('mlf_accessories_purchase','serial_number, is_sold','serial_number',$serial_num);
 
     //     $row = $result->fetch_assoc();
 
@@ -88,7 +91,7 @@
         
     //     $dbobj->insert('mlf_old_materials_sell',$columnNames,$values);
 
-    //     $dbobj->update('mlf_old_materials_purchase','is_sold','1','serial_number',$serial_num);
+    //     $dbobj->update('mlf_accessories_purchase','is_sold','1','serial_number',$serial_num);
 
     //     $alert = '"'.'SUCESSFULLY SOLD THE PRODUCT'.'"';
     // $_SESSION['req_script']="<script>

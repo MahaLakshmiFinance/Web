@@ -13,7 +13,7 @@ $dbobj->connect();
 
     $result = $dbobj->search('mlf_old_materials_purchase',"`serial_number`, `item_model`",'serial_number','"'.$serial.'"');
 
-    $string ='<script>document.forms["exchange"]["model_name"].value=`';
+    $string ='<script>document.forms["small_appliances"]["model_name"].value=`';
 
     while($row = $result->fetch_assoc()){
         if($row['serial_number']==$serial){

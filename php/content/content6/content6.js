@@ -16,7 +16,7 @@ function user(){
         $.ajax({
               type: "GET",
               url: "php/content/content6/get_user.php",
-              data: "username="+document.forms['exchange']['username'].value,
+              data: "username="+document.forms['small_appliances']['username'].value,
               error: function(msg){
                   console.log(msg);
               },
@@ -32,7 +32,7 @@ function serialNumb(){
     var year = d.getFullYear()
     $.ajax({
         type: "GET",
-        url: "php/content/content4/get_serial_num.php",
+        url: "php/content/content6/get_serial_num.php",
         error: function(msg){
             console.log(msg);
         },
@@ -72,10 +72,10 @@ function get_existing_serial(){
     document.getElementById('serial').style="";
     document.getElementById('in_serial').value = "";
     document.getElementById('in_serial').style="display:none"
-    document.forms['exchange']['model_name'].disabled = true;
+    document.forms['small_appliances']['model_name'].disabled = true;
     $.ajax({
         type: "GET",
-        url: "php/content/content4/get_existing_serial.php",
+        url: "php/content/content6/get_existing_serial.php",
         error: function(msg){
             console.log(msg);
         },
@@ -89,8 +89,8 @@ function get_existing_serial(){
 function serial_change(){
     $.ajax({
         type: "GET",
-        url: "php/content/content4/get_model_name.php",
-        data: "serial_num="+document.forms['exchange']['serial'].value,
+        url: "php/content/content6/get_model_name.php",
+        data: "serial_num="+document.forms['small_appliances']['serial'].value,
         error: function(msg){
             console.log(msg);
         },
@@ -105,8 +105,8 @@ function revert_to_purchase(){
         document.getElementById('serial').style="display:none"
         document.getElementById('serial').value =""
         document.getElementById('in_serial').style=""
-        document.forms['exchange']['model_name'].disabled = false;
-        document.forms['exchange']['model_name'].value = "";
+        document.forms['small_appliances']['model_name'].disabled = false;
+        document.forms['small_appliances']['model_name'].value = "";
         serialNumb()
     }
 }
