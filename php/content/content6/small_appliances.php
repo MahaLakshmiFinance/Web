@@ -35,8 +35,8 @@
     },80);
     </script>";
     
-    header('Location: ../../../mlf_home.php');
-            die();
+    // header('Location: ../../../mlf_home.php');
+    //         die();
         }
     
 
@@ -51,8 +51,8 @@
         },80);
         </script>";
         
-        header('Location: ../../../mlf_home.php');
-                die();
+        // header('Location: ../../../mlf_home.php');
+        //         die();
     }
     // else{
     //     $result = $dbobj->search('mlf_old_materials_purchase','serial_number, is_sold','serial_number',$serial_num);

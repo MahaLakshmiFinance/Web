@@ -42,22 +42,23 @@ function serialNumb(){
             var yearfrmserial = val[0]+""+val[1]+""+val[2]+""+val[3];
             
             if(yearfrmserial==year){
-                sum = ""
-                for(i=4;i<val.length;i++){
+                var sum = ""
+                for(var i=4;i<val.length;i++){
                     sum+=""+val[i]+""
                 }
                 if(sum[0]==0){
                     sum = "1"+sum
                 }
                 val = ""+(parseInt(sum)+1)
-                val.slice(1)
-                val = year+""+val
-                alert(val)
+                sum = ""
+                for(var i=1;i<val.length;i++){
+                    sum += val[i]+""
+                }
+                val = year+""+sum
             }
             else{
                 val=year+""+'001'
             }
-            alert(val)
             document.getElementById('in_serial').value = val;
             document.getElementById('in_serial').disabled = true;
             document.getElementById('serial').value = "";

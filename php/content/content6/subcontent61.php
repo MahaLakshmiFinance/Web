@@ -1,10 +1,10 @@
-<script src="php/content/content4/validation.js"></script>
-<script src="php/content/content4/content4.js"></script>
+<script src="php/content/content6/validation.js"></script>
+<script src="php/content/content6/content6.js"></script>
 <div id="temp"></div>
 <div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">
 
-<form action="php/content/content6/small_appliances.php" name="exchange" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+<form action="php/content/content6/small_appliances.php" name="small_appliances" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -47,7 +47,7 @@
 <input type="Number" class="form-control" name="quantity" placeholder="100">                
 </div> 
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputEmail">Serial Number</label>
+<label for="inputEmail">Serial Number Starts</label>
 <input type="Number" disabled class="form-control" id="in_serial" name="serial_num1" placeholder="Serial number">
 <script>serialNumb()</script>                 
 </div> 

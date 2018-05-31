@@ -15,7 +15,7 @@ if(isset($_SESSION['role'])){
 		echo "<script>
 		setTimeout(function(){
 			document.getElementById('link1').innerHTML='Users'
-		},100);
+		},200);
 		</script>";
 	}
 	if($role == 3){
@@ -33,7 +33,7 @@ if(isset($_SESSION['role'])){
 			document.getElementById('link6').style=''
 			document.getElementById('link8').style=''
 			document.getElementById('link9').style=''
-		},100);
+		},200);
 		</script>";
 	}
 	if($role == 4){
@@ -46,7 +46,7 @@ if(isset($_SESSION['role'])){
 			}
 			document.getElementById('link8').style=''
 			document.getElementById('link9').style=''
-		},100);
+		},200);
 		</script>";
 	}
 }
