@@ -25,7 +25,7 @@
     $result = $dbobj->search('mlf_users',"username, password",'username','"'.$username.'"');
 
     while($row = $result->fetch_assoc()){
-        if($row['password'] == $password){
+        if($row['password'] == md5($password)){
             $_SESSION['username'] = $username;
             $_SESSION['logged_in'] = True;
             $_SESSION['content'] = 0;

@@ -12,7 +12,7 @@ $dbobj->connect();
     $result = $dbobj->fetch('mlf_accessories_purchase',"`serial_number`, `is_sold`");
 
     $string ='<script>document.getElementById("serial").innerHTML=`';
-    $string = $string.'<option value=""> </option>';
+    $string = $string.'<option value="">Serial Number</option>';
 
     while($row = $result->fetch_assoc()){
         if($row['is_sold']!=1){
