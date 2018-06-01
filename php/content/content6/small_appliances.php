@@ -3,8 +3,6 @@
     session_start();
     $actn = $_POST['type'];
     $username = $_POST['username'];
-    $customer_name = $_POST['cstmr_name'];
-    $cntact_num = $_POST['cntact_num'];
     $item_type = $_POST['item_type'];
     $model_name = $_POST['model_name'];
     $date =  $_POST['date'];
@@ -20,6 +18,8 @@
         $quantity = $_POST['quantity'];
         if(isset($_POST['serial_num1']))
             $serial_num = $_POST['serial_num1'];
+
+        $total_cost = $total_cost/$quantity;
 
         $year = $serial_num[0]."".$serial_num[1]."".$serial_num[2]."".$serial_num[3];
         $start_serial = "";
@@ -51,7 +51,7 @@
                 $alert = '"'.'SERIAL NUMBER LIMIT EXCEEED.'.'"';
                 $_SESSION['req_script']="<script>
             setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
+                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
             },80);
             console.log('".$alert."');
             </script>";
@@ -70,7 +70,7 @@
             $alert = '"'.'PRODUCT ALREADY PURCHASED.'.'"';
             $_SESSION['req_script']="<script>
             setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
+                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
             },80);
             console.log('".$alert."');
             </script>";
@@ -88,7 +88,7 @@
         $alert = '"'.'PURCHASE COMPLETED.'.'"';
         $_SESSION['req_script']="<script>
         setTimeout(function(){
-            document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
+            document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
         },80);
         console.log('".$alert."');
         </script>";
@@ -96,51 +96,53 @@
         header('Location: ../../../mlf_home.php');
         die();
     }
-    // else{
-    //     $result = $dbobj->search('mlf_accessories_purchase','serial_number, is_sold','serial_number',$serial_num);
+    else{
+        if(isset($_POST['serial_num2']))
+            $serial_num = $_POST['serial_num2'];
+        $result = $dbobj->search('mlf_accessories_purchase','serial_number, is_sold','serial_number',$serial_num);
 
-    //     $row = $result->fetch_assoc();
+        $row = $result->fetch_assoc();
 
-    //     if(!$row){
-    //         $alert = '"'.'SERIAL NUMBER DOES NOT EXIST.'.'"';
-    // $_SESSION['req_script']="<script>
-    // setTimeout(function(){
-    //     document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    // },80);
-    // </script>";
+        if(!$row){
+            $alert = '"'.'SERIAL NUMBER DOES NOT EXIST.'.'"';
+    $_SESSION['req_script']="<script>
+    setTimeout(function(){
+        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
+    },80);
+    </script>";
     
-    // header('Location: ../../../mlf_home.php');
-    //         die();
-    //     }
-    //     else if($row['is_sold']==1){
-    //         $alert = '"'.'PRODUCT WAS ALREADY SOLD.'.'"';
-    // $_SESSION['req_script']="<script>
-    // setTimeout(function(){
-    //     document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    // },80);
-    // </script>";
+    header('Location: ../../../mlf_home.php');
+            die();
+        }
+        else if($row['is_sold']==1){
+            $alert = '"'.'PRODUCT WAS ALREADY SOLD.'.'"';
+    $_SESSION['req_script']="<script>
+    setTimeout(function(){
+        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
+    },80);
+    </script>";
     
-    // header('Location: ../../../mlf_home.php');
-    //         die();
-    //     }
+    header('Location: ../../../mlf_home.php');
+            die();
+        }
 
-    //     $columnNames = "(`serial_number`, `transaction_by` , `item_model`, `item_type`, `sold_to`, `sold_date`, `sold_cost`, `sold_condition`, `sold_remark`)";
+        $columnNames = "(`serial_number`, `transaction_by` , `item_name`, `item_type`, `sold_to`, `sold_date`, `sold_cost`)";
         
-    //     $values = '("'.$serial_num.'", "'.$_SESSION['username'].'", "'.$model_name.'", "'.$item_type.'", "'.$username.'", "'.$date.'", "'.$cost.'", "'.$item_cond.'", "'.$remarks.'") ';
+        $values = '("'.$serial_num.'", "'.$_SESSION['username'].'", "'.$model_name.'", "'.$item_type.'", "'.$username.'", "'.$date.'", "'.$total_cost.'") ';
         
-    //     $dbobj->insert('mlf_old_materials_sell',$columnNames,$values);
+        $dbobj->insert('mlf_accessories_sold',$columnNames,$values);
 
-    //     $dbobj->update('mlf_accessories_purchase','is_sold','1','serial_number',$serial_num);
+        $dbobj->update('mlf_accessories_purchase','is_sold','1','serial_number',$serial_num);
 
-    //     $alert = '"'.'SUCESSFULLY SOLD THE PRODUCT'.'"';
-    // $_SESSION['req_script']="<script>
-    // setTimeout(function(){
-    //     document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    // },80);
-    // </script>";
+        $alert = '"'.'SUCESSFULLY SOLD THE PRODUCT'.'"';
+    $_SESSION['req_script']="<script>
+    setTimeout(function(){
+        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
+    },80);
+    </script>";
     
-    // header('Location: ../../../mlf_home.php');
-    // die();
+    header('Location: ../../../mlf_home.php');
+    die();
 
-    // }
+    }
 ?>

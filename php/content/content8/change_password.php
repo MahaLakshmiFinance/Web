@@ -15,8 +15,8 @@
     $result = $dbobj->search('mlf_users',"username, password",'username','"'.$_SESSION["username"].'"');
 
     while($row = $result->fetch_assoc()){
-        if($row['password'] == $old_pwd){
-            $dbobj->update('mlf_users','password','"'.$new_pwd.'"','username','"'.$_SESSION['username'].'"');
+        if($row['password'] == md5($old_pwd)){
+            $dbobj->update('mlf_users','password','"'.md5($new_pwd).'"','username','"'.$_SESSION['username'].'"');
             $alert = '"'.'PASSWORD CHANGED SUCESSFULLY.'.'"';
             $_SESSION['req_script']="<script>
             setTimeout(function(){

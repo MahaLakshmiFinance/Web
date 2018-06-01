@@ -60,7 +60,7 @@
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Type</label>
 <select  class="form-control" name="item_type">
-  <option value=""></option>
+  <option value="">Item type</option>
   <option value="TLWMC">Top Load Washing Machine Covers ( TLWMC )</option>
   <option value="FLWMC">Front Load Washing Machine Covers ( FLWMC )</option>
   <option value="TLWMS">Top Load Washing Machine Stands ( TLWMS )</option>

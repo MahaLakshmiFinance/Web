@@ -73,7 +73,8 @@ function get_existing_serial(){
     document.getElementById('in_serial').value = "";
     document.getElementById('in_serial').style="display:none"
     document.getElementById('quantity').style="display:none"
-    document.forms['small_appliances']['model_name'].disabled = true;
+    document.forms["small_appliances"]["model_name"].disabled=true;
+    document.forms["small_appliances"]["item_type"].disabled=true;
     $.ajax({
         type: "GET",
         url: "php/content/content6/get_existing_serial.php",
@@ -105,6 +106,7 @@ function revert_to_purchase(){
     if(document.getElementById('r1').checked==true){
         document.getElementById('serial').style="display:none"
         document.getElementById('serial').value =""
+        document.forms["small_appliances"]["item_type"].disabled=false;
         document.getElementById('in_serial').style=""
         document.forms['small_appliances']['model_name'].disabled = false;
         document.forms['small_appliances']['model_name'].value = "";

@@ -73,6 +73,10 @@ function get_existing_serial(){
     document.getElementById('in_serial').value = "";
     document.getElementById('in_serial').style="display:none"
     document.forms['exchange']['model_name'].disabled = true;
+    document.getElementById('ntworking').disabled = true;
+    document.getElementById('working').disabled = true;
+    document.forms['exchange']['item_type'].value = "";
+    document.forms['exchange']['item_type'].disabled = true;
     $.ajax({
         type: "GET",
         url: "php/content/content4/get_existing_serial.php",
@@ -105,8 +109,12 @@ function revert_to_purchase(){
         document.getElementById('serial').style="display:none"
         document.getElementById('serial').value =""
         document.getElementById('in_serial').style=""
+        document.forms['exchange']['item_type'].value = "";
+    document.forms['exchange']['item_type'].disabled = false;
         document.forms['exchange']['model_name'].disabled = false;
         document.forms['exchange']['model_name'].value = "";
+        document.getElementById('ntworking').disabled = false;
+    document.getElementById('working').disabled = false;
         serialNumb()
     }
 }

@@ -67,6 +67,7 @@
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Type</label>
 <select  class="form-control" name="item_type">
+<option value="">SELECT</option>
   <option value="RF">Refrigerator ( RF )</option>
   <option value="TV">Television ( TV )</option>
   <option value="AC">Air Conditioner ( AC )</option>

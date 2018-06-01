@@ -9,13 +9,10 @@ username.focus()
 return false;
 }
 
-document.forms['small_appliances']['cstmr_name'].disabled = false;
 var cstmr_name = document.forms['small_appliances']['cstmr_name'];
-alert(cstmr_name.value)
 if(cstmr_name.value == ""){
 alert('PLEASE ADD THE CUSTOMER TO DATABASE FIRST.');
 cstmr_name.focus()
-document.forms['small_appliances']['cstmr_name'].disabled = true;
 return false;
 }
 
@@ -62,14 +59,21 @@ if(type.value == 0){
     return true
 
 }
+else{
+    var serial = document.forms['small_appliances']['serial_num2'];
+        if(serial.value == ""){
+        alert('PLEASE SELECT SERIAL NUMBER.');
+        return false;
+        }
+    document.forms['small_appliances']['date'].disabled = false;
+    document.forms['small_appliances']['cstmr_name'].disabled = false;
+    document.forms['small_appliances']['item_type'].disabled = false;
+    document.forms['small_appliances']['model_name'].disabled = false;
+    document.forms['small_appliances']['cost'].disabled = false;
+    return true;
+}
 
-var serial = document.forms['small_appliances']['serial'];
-if(serial.style == "")
-    if(serial.value == ""){
-    alert('PLEASE SELECT SERIAL NUMBER.');
-    serial.focus()
-    return false;
-    }
+
 
 
 
@@ -86,13 +90,6 @@ cost.focus()
 return false;
 }
 
-var remarks = document.forms['small_appliances']['remarks'];
-
-if(remarks.value == ""){
-alert('PLEASE DESCRIBE THE PRODUCT CONDITION.');
-remarks.focus()
-return false;
-}
 
 document.forms['small_appliances']['cstmr_name'].disabled = false;
 document.forms['small_appliances']['cntact_num'].disabled = false;

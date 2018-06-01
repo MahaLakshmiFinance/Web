@@ -11,15 +11,22 @@ $dbobj = new DBConnect;
 
 $dbobj->connect();
 
-    $result = $dbobj->search('mlf_old_materials_purchase',"`serial_number`, `item_model`",'serial_number','"'.$serial.'"');
+    $result = $dbobj->search('mlf_accessories_purchase',"`serial_number`, `item_name`, `item_type`, `purchased_cost`",'serial_number','"'.$serial.'"');
 
-    $string ='<script>document.forms["small_appliances"]["model_name"].value=`';
-
-    while($row = $result->fetch_assoc()){
+    $string ='<script>';
+    $row = $result->fetch_assoc();
+    if($row){
         if($row['serial_number']==$serial){
-            $string = $string.$row['item_model'];
+            $string = $string.'document.forms["small_appliances"]["model_name"].value="'.$row['item_name'].'";';
+            $string = $string.'document.forms["small_appliances"]["item_type"].value="'.$row['item_type'].'";';
+            $string = $string.'document.forms["small_appliances"]["cost"].value="'.($row['purchased_cost']+(0.2*$row['purchased_cost'])).'";';
         }
     }
-    $string = $string.'`</script>';
+    else{
+        $string = $string.'document.forms["small_appliances"]["model_name"].value="";';
+            $string = $string.'document.forms["small_appliances"]["item_type"].value="";';
+            $string = $string.'document.forms["small_appliances"]["cost"].value="";';
+    }
+    $string = $string.'</script>';
     echo $string;
 ?>
