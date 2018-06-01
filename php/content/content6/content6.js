@@ -75,7 +75,6 @@ function get_existing_serial(){
     document.getElementById('quantity').style="display:none"
     document.forms["small_appliances"]["model_name"].disabled=true;
     document.forms["small_appliances"]["item_type"].disabled=true;
-    document.forms['small_appliances']['cost'].disabled = true;
     $.ajax({
         type: "GET",
         url: "php/content/content6/get_existing_serial.php",

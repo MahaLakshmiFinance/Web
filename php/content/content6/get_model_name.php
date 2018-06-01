@@ -19,7 +19,7 @@ $dbobj->connect();
         if($row['serial_number']==$serial){
             $string = $string.'document.forms["small_appliances"]["model_name"].value="'.$row['item_name'].'";';
             $string = $string.'document.forms["small_appliances"]["item_type"].value="'.$row['item_type'].'";';
-            $string = $string.'document.forms["small_appliances"]["cost"].value="'.$row['purchased_cost'].'";';
+            $string = $string.'document.forms["small_appliances"]["cost"].value="'.($row['purchased_cost']+(0.2*$row['purchased_cost'])).'";';
         }
     }
     else{
