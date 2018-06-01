@@ -9,7 +9,8 @@
     
     $dbobj->connect();
     
-        $result = $dbobj->searchByOrder('mlf_old_materials_purchase',"`serial_number`",'serial_number');
+        $result = $dbobj->searchByOrder('mlf_accessories_purchase',"`serial_number`",'serial_number');
+        $serial = "00000";
         while($row = $result->fetch_assoc()){
             $serial = $row['serial_number'];
         }

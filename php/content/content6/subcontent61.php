@@ -23,7 +23,7 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">User ID</label><br>
+<label for="inputFirstName">Customer ID</label><br>
 
 <input type="text"onfocusout="user()" class="form-control" name="username" id="inputFirstName" placeholder="Aadhar / Mobile Number">                  
 </div>
@@ -42,16 +42,11 @@
 </div> 
 </div>
 <div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
+<div class="col-lg-6 col-md-6 form-group" id="quantity">                  
 <label for="inputEmail">Quantity</label>
 <input type="Number" class="form-control" name="quantity" placeholder="100">                
 </div> 
-<div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputEmail">Serial Number Starts</label>
-<input type="Number" disabled class="form-control" id="in_serial" name="serial_num1" placeholder="Serial number">
-<script>serialNumb()</script>                 
-</div> 
-<div class="col-lg-6 col-md-6 form-group" style="display:none">                  
+<div class="col-lg-6 col-md-6 form-group">              
 <label for="inputEmail">Serial Number</label>
 <input type="Number" class="form-control" id="in_serial" name="serial_num1" placeholder="Serial number">
 <select id="serial" name="serial_num2" style="display:none" class="form-control" onchange="serial_change()"></select>
@@ -66,12 +61,12 @@
 <label for="inputUsername">Type</label>
 <select  class="form-control" name="item_type">
   <option value=""></option>
-  <option value="TLWMC">Top Load Washing Machine Covers</option>
-  <option value="FLWMC">Front Load Washing Machine Covers</option>
-  <option value="TLWMS">Top Load Washing Machine Stands</option>
-  <option value="FLWMS">Front Load Washing Maching Stands</option>
-  <option value="RSS">Refrigerator Stands Small</option>
-  <option value="RSB">Refrigerator Stands Big</option>
+  <option value="TLWMC">Top Load Washing Machine Covers ( TLWMC )</option>
+  <option value="FLWMC">Front Load Washing Machine Covers ( FLWMC )</option>
+  <option value="TLWMS">Top Load Washing Machine Stands ( TLWMS )</option>
+  <option value="FLWMS">Front Load Washing Maching Stands ( FLWMS )</option>
+  <option value="RSS">Refrigerator Stands Small ( RSS )</option>
+  <option value="RSB">Refrigerator Stands Big ( RSB )</option>
 </select>          
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -82,7 +77,7 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Date</label>
+<label for="inputNewPassword">Date ( YYYY-MM-DD )</label>
 <input type="text" disabled name="date"id="date"class="form-control" placeholder="">
 <script>document.getElementById('date').value = getTheDate()</script>
 </div>

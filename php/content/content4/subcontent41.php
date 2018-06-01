@@ -23,7 +23,7 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">User ID</label><br>
+<label for="inputFirstName">Customer ID</label><br>
 
 <input type="text"onfocusout="user()" class="form-control" name="username" id="inputFirstName" placeholder="Aadhar / Mobile Number">                  
 </div>
@@ -67,10 +67,10 @@
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputUsername">Type</label>
 <select  class="form-control" name="item_type">
-  <option value="1">Refrigerator</option>
-  <option value="2">Television</option>
-  <option value="3">Air Conditioner</option>
-  <option value="4">Washing Machine</option>
+  <option value="RF">Refrigerator ( RF )</option>
+  <option value="TV">Television ( TV )</option>
+  <option value="AC">Air Conditioner ( AC )</option>
+  <option value="WM">Washing Machine ( WM )</option>
 </select>          
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
@@ -81,7 +81,7 @@
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputNewPassword">Date</label>
+<label for="inputNewPassword">Date ( YYYY-MM-DD )</label>
 <input type="text" disabled name="date"id="date"class="form-control" placeholder="">
 <script>document.getElementById('date').value = getTheDate()</script>
 </div>

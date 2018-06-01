@@ -57,7 +57,7 @@ function serialNumb(){
                 val = year+""+sum
             }
             else{
-                val=year+""+'001'
+                val=year+""+'00001'
             }
             document.getElementById('in_serial').value = val;
             document.getElementById('in_serial').disabled = true;

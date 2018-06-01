@@ -9,7 +9,7 @@ $dbobj = new DBConnect;
 
 $dbobj->connect();
 
-    $result = $dbobj->fetch('mlf_old_materials_purchase',"`serial_number`, `is_sold`");
+    $result = $dbobj->fetch('mlf_accessories_purchase',"`serial_number`, `is_sold`");
 
     $string ='<script>document.getElementById("serial").innerHTML=`';
     $string = $string.'<option value=""> </option>';

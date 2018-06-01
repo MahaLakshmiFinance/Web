@@ -11,6 +11,7 @@ return false;
 
 document.forms['small_appliances']['cstmr_name'].disabled = false;
 var cstmr_name = document.forms['small_appliances']['cstmr_name'];
+alert(cstmr_name.value)
 if(cstmr_name.value == ""){
 alert('PLEASE ADD THE CUSTOMER TO DATABASE FIRST.');
 cstmr_name.focus()
@@ -54,7 +55,7 @@ if(type.value == 0){
     }
 
     document.forms['small_appliances']['cntact_num'].disabled = false;
-    document.forms['small_appliances']['serial'].disabled = false;
+    document.forms['small_appliances']['serial_num1'].disabled = false;
     document.forms['small_appliances']['date'].disabled = false;
 
 

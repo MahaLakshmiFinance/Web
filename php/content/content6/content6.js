@@ -57,7 +57,7 @@ function serialNumb(){
                 val = year+""+sum
             }
             else{
-                val=year+""+'001'
+                val=year+""+'00001'
             }
             document.getElementById('in_serial').value = val;
             document.getElementById('in_serial').disabled = true;
@@ -72,6 +72,7 @@ function get_existing_serial(){
     document.getElementById('serial').style="";
     document.getElementById('in_serial').value = "";
     document.getElementById('in_serial').style="display:none"
+    document.getElementById('quantity').style="display:none"
     document.forms['small_appliances']['model_name'].disabled = true;
     $.ajax({
         type: "GET",
@@ -107,6 +108,7 @@ function revert_to_purchase(){
         document.getElementById('in_serial').style=""
         document.forms['small_appliances']['model_name'].disabled = false;
         document.forms['small_appliances']['model_name'].value = "";
+        document.getElementById('quantity').style=""
         serialNumb()
     }
 }
