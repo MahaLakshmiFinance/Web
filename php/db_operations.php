@@ -152,6 +152,24 @@
     
         }
 
+        function sqlQury($sqlQry){
+
+            echo "<script>console.log('".$sqlQry."')</script>";
+            
+            $result = $this->conn->query($sqlQry);
+    
+            if($result->num_rows > 0){
+               echo "<script>console.log('Query Successful.')</script>";
+            }
+            else {
+                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+            }
+    
+            return $result;
+    
+        }
+
+
         function __destruct(){
             $this->conn->close();
             echo "<script>console.log('Connection Closed.')</script>";

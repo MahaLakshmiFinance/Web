@@ -5,7 +5,7 @@ function nav(x){
 function user(){
     $.ajax({
           type: "GET",
-          url: "php/content/content2/get_user.php",
+          url: "php/content/content10/get_user.php",
           data: "username="+document.forms['article_finance']['username'].value,
           error: function(msg){
               console.log(msg);
