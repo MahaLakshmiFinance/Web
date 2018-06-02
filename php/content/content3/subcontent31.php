@@ -1,25 +1,26 @@
-<div class="templatemo-content-container">
+<script src="php/content/content3/content3.js"></script>
+
+<div id="temp"></div>
+
+<div class="templatemo-content-container" id="subcontent21">
     <div class="templatemo-content-widget white-bg">
-        <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+        <form action="index.html" name="article_finance" class="templatemo-login-form" method="post" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Customer ID</label><br>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
-                </div>
-                
-                <div class="col-lg-6 col-md-6 form-group">                                   
+                    <input type="text" name="username" class="form-control" id="inputFirstName" onfocusout="user()" placeholder="Aadhar / Phone Number">                  
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Customer Name</label>
-                    <input disabled type="text" class="form-control" id="inputFirstName" placeholder=" Name">                  
+                    <input disabled type="text" name="cstmr_name" class="form-control" id="inputFirstName" placeholder="Customer Name">                  
                 </div>
 
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputLastName">Contact Number</label>
-                    <input disabled type="tel" class="form-control" id="inputLastName" placeholder="Contact Number">                  
+                    <input disabled type="tel" name="cntact_num" class="form-control" id="inputLastName" placeholder="+91">                  
                 </div> 
             </div>
             
@@ -27,62 +28,71 @@
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputNewPassword">Issued Amount</label>
-                    <input type="number" class="form-control" id="inputNewPassword" placeholder="Amount in Rupees">
-                </div>
-
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputUsername">Issued Date</label>
-                    <input type="date" class="form-control" id="inputUsername" placeholder="ID">                  
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Interest Amount</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
+                    <label for="inputConfirmNewPassword">Reference Number</label>
+                    <input disabled type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
                 </div>
                 
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputEmail">Interest Due Date</label>
-                    <input type="date" class="form-control" id="inputEmail" placeholder="Article Name">                  
+                    <label for="inputNewPassword">Issued Date ( YYYY-MM-DD )</label>
+                    <input type="text" disabled name="date"id="date"class="form-control" placeholder="">
+                    <script>document.getElementById('date').value = getTheDate()</script>
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputNewPassword">Interest received Date</label>
-                    <input type="date" class="form-control" id="inputNewPassword" placeholder="Amount in Rupees">
+                    <label for="inputUsername">Issued Amount </label>
+                    <input type="Number" class="form-control" id="inputUsername" placeholder="In Rupees Funded">                  
                 </div>
-            
+         
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Received Amount</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
+                    <label for="inputNewPassword">Documentation Charges</label>
+                    <input type="Number" class="form-control" id="inputNewPassword" placeholder="processing fee">
                 </div> 
+            </div> 
+
+            <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Rate Of Interest</label>
+                    <input type="Number" class="form-control" id="inputNewPassword" placeholder="1.5">
+                </div>
+
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Total Amount</label>
+                    <input disabled type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
+                </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputNewPassword">In / Out</label>
-                    <input type="number" class="form-control" id="inputNewPassword" placeholder="Interest received">
+                    <label for="inputFirstName">Interest Scheme</label><br>
+                    <div class="margin-right-15 templatemo-inline-block">
+                        <input type="radio" name="emi_type" id="r1" value="1" checked>
+                        <label for="r1" class="font-weight-400"><span></span>Months</label>
+                    </div>
+
+                    <div class="margin-right-15 templatemo-inline-block">
+                        <input type="radio" name="emi_type" id="r2" value="2">
+                        <label for="r2" class="font-weight-400"><span></span>Amount</label>
+                    </div>
                 </div>
-            
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">In / Out</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest Given">
-                </div> 
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Remark</label>
-                    <input type="text" class="form-control" id="inputConfirmNewPassword" placeholder="">
-                </div> 
+                    <label for="inputNewPassword">Total EMI'S</label>
+                    <input type="Number" class="form-control" id="inputNewPassword" placeholder="Number of Installments">
+                </div>
+                
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputEmail"> Installment Amount</label>
+                    <input type="Number" class="form-control" id="inputEmail" placeholder="Every Month Installment">                  
+                </div>                 
             </div>
 
             <div class="form-group text-right">
                 <button type="submit" class="templatemo-blue-button">Submit</button>
-            </div>                           
-        </form>
+            </div>
+        </form>     
     </div>
 </div>

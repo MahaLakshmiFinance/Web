@@ -36,69 +36,96 @@
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Type</label>
-                    <input type="text" class="form-control" id="inputNewPassword" placeholder="Type">
+                    <select  class="form-control" name="item_type">
+                        <option value="">SELECT</option>
+                        <option value="RF">Refrigerator ( RF )</option>
+                        <option value="TV">Television ( TV )</option>
+                        <option value="AC">Air Conditioner ( AC )</option>
+                        <option value="WM">Washing Machine ( WM )</option>
+                    </select>
                 </div>          
             
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputUsername">Model</label>
-                    <input type="Number" class="form-control" id="inputUsername" placeholder="Article Name">                  
+                    <label for="inputUsername">Article_Model</label>
+                    <input type="Number" class="form-control" id="model" placeholder="Article Name">                  
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Cost</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
-                </div>
-
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Date</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
-                </div>
+                    <label for="inputConfirmNewPassword">Article Cost</label>
+                    <input type="Number" class="form-control" id="a_cost" placeholder="In Rupees">
+               </div>
             </div>
 
             <hr>
 
             <div class="row form-group">
-            <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Reference Number</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Bill Number">
-                </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputUsername">Given Amount </label>
-                    <input type="Number" class="form-control" id="inputUsername" placeholder="In Rupees Funded">                  
+                    <label for="inputConfirmNewPassword">Reference Number</label>
+                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                </div>
+
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Date ( YYYY-MM-DD )</label>
+                    <input type="text" disabled name="date"id="date"class="form-control" placeholder="">
+                    <script>document.getElementById('date').value = getTheDate()</script>
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputUsername">Given Amount </label>
+                    <input type="Number" class="form-control" id="inputUsername" placeholder="In Rupees Funded">                  
+                </div>
+         
+                <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Documentation Charges</label>
                     <input type="Number" class="form-control" id="inputNewPassword" placeholder="processing fee">
                 </div> 
+            </div> 
 
+            <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Rate Of Interest</label>
                     <input type="Number" class="form-control" id="inputNewPassword" placeholder="1.5">
                 </div>
-            </div> 
+
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Total Amount</label>
+                    <input disabled type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputFirstName">EMI Scheme</label><br>
+                    <div class="margin-right-15 templatemo-inline-block">
+                        <input type="radio" name="emi_type" id="r1" value="1" checked>
+                        <label for="r1" class="font-weight-400"><span></span>Months</label>
+                    </div>
+
+                    <div class="margin-right-15 templatemo-inline-block">
+                        <input type="radio" name="emi_type" id="r2" value="2">
+                        <label for="r2" class="font-weight-400"><span></span>Amount</label>
+                    </div>
+                </div>
+            </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Total EMI'S</label>
                     <input type="Number" class="form-control" id="inputNewPassword" placeholder="Number of Installments">
                 </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Total Amount</label>
-                    <input disabled type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
-                </div>
-
+                
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputEmail"> Installment Amount</label>
                     <input type="Number" class="form-control" id="inputEmail" placeholder="Every Month Installment">                  
                 </div>                 
+            </div>
+
+            <div class="form-group text-right">
+                <button type="submit" class="templatemo-blue-button">Submit</button>
             </div>
         </form>     
     </div>

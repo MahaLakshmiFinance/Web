@@ -16,3 +16,13 @@ function user(){
    });
 
 }
+
+function getTheDate(){
+
+    var d = new Date()
+    var year = d.getFullYear()
+    var month = d.getMonth()+1
+    var day = d.getDate()
+    var date = year+"-"+month+"-"+day
+    return date
+}

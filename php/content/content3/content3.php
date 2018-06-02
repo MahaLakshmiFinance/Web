@@ -15,7 +15,6 @@
       <nav class="templatemo-top-nav col-lg-12 col-md-12">
         <ul class="text-uppercase">
           <li><a href="#cash_finance" onclick="nav(31)"><font style="color:  black">FINANCE</font></a></li>
-          <li><a href="#cash_transaction" onclick="nav(32)"><font style="color: black">TRANSACTIONS</font></a></li>
         </ul>  
         <div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div>
       </nav> 

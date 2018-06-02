@@ -5,8 +5,8 @@ function nav(x){
 function user(){
     $.ajax({
           type: "GET",
-          url: "php/content/content4/get_user.php",
-          data: "username="+document.forms['']['username'].value,
+          url: "php/content/content3/get_user.php",
+          data: "username="+document.forms['cash_finance']['username'].value,
           error: function(msg){
               console.log(msg);
           },
@@ -15,4 +15,14 @@ function user(){
        }
    });
 
+}
+
+function getTheDate(){
+
+    var d = new Date()
+    var year = d.getFullYear()
+    var month = d.getMonth()+1
+    var day = d.getDate()
+    var date = year+"-"+month+"-"+day
+    return date
 }
