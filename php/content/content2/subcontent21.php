@@ -28,7 +28,7 @@
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputEmail">Serial Number</label>
+                    <label for="inputEmail">Article ID</label>
                     <input type="text" class="form-control" id="inputEmail" placeholder="ID">                  
                 </div> 
             </div>
@@ -50,28 +50,39 @@
                     <label for="inputConfirmNewPassword">Cost</label>
                     <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
                 </div>
+
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Date</label>
+                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="In Rupees">
+                </div>
             </div>
 
             <hr>
 
             <div class="row form-group">
+            <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Reference Number</label>
+                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Bill Number">
+                </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputUsername">Given Amount </label>
                     <input type="Number" class="form-control" id="inputUsername" placeholder="In Rupees Funded">                  
-                </div>
-
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Total Amount</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputEmail"> Installment Amount</label>
-                    <input type="Number" class="form-control" id="inputEmail" placeholder="Every Month Installment">                  
+                    <label for="inputNewPassword">Documentation Charges</label>
+                    <input type="Number" class="form-control" id="inputNewPassword" placeholder="processing fee">
                 </div> 
 
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Rate Of Interest</label>
+                    <input type="Number" class="form-control" id="inputNewPassword" placeholder="1.5">
+                </div>
+            </div> 
+
+            <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Total EMI'S</label>
                     <input type="Number" class="form-control" id="inputNewPassword" placeholder="Number of Installments">
@@ -80,14 +91,14 @@
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputNewPassword">Documentation Charges</label>
-                    <input type="Number" class="form-control" id="inputNewPassword" placeholder="processing fee">
+                    <label for="inputConfirmNewPassword">Total Amount</label>
+                    <input disabled type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
                 </div>
 
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Reference Number</label>
-                    <input type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Bill Number">
-                </div> 
+                    <label for="inputEmail"> Installment Amount</label>
+                    <input type="Number" class="form-control" id="inputEmail" placeholder="Every Month Installment">                  
+                </div>                 
             </div>
         </form>     
     </div>

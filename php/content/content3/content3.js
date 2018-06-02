@@ -6,7 +6,7 @@ function user(){
     $.ajax({
           type: "GET",
           url: "php/content/content4/get_user.php",
-          data: "username="+document.forms['exchange']['username'].value,
+          data: "username="+document.forms['']['username'].value,
           error: function(msg){
               console.log(msg);
           },

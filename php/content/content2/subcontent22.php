@@ -1,22 +1,26 @@
+<script src="php/content/content2/content2.js"></script>
+
+<div id="temp"></div>
+
 <div class="templatemo-content-container">
   <div class="templatemo-content-widget white-bg">
     <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
       <div class="row form-group">
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputFirstName">Customer ID</label><br>
-          <input type="text" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+          <input type="text" name="username" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
         </div>
       </div>
 
       <div class="row form-group">
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputFirstName">Customer Name</label>
-          <input disabled type="text" class="form-control" id="inputFirstName" placeholder="Name">                  
+          <input disabled type="text" name="cstmr_name" class="form-control" id="inputFirstName" placeholder="Name">                  
         </div>
 
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputLastName">Contact Number</label>
-          <input disabled type="tel" class="form-control" id="inputLastName" placeholder="+91">
+          <input disabled type="tel" name="cntact_num" class="form-control" id="inputLastName" placeholder="+91">
         </div> 
       </div>
 
