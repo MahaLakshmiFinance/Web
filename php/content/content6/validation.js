@@ -18,7 +18,7 @@ return false;
 
 if(type.value == 0){
     var quantity = document.forms['small_appliances']['quantity'];
-    if(quantity.value == "" || quantity.value == 0){
+    if(quantity.value == "" || quantity.value <= 0){
         alert('QUANTITY SHOULD BE NON-NEGAVTIVE AND GREATER THAN ZERO.');
         quantity.focus()
         return false;
