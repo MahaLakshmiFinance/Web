@@ -1,4 +1,4 @@
 <?php
-    $pass = md5('1234');
+    $pass = md5('mlf@123');
     echo $pass;
 ?>
