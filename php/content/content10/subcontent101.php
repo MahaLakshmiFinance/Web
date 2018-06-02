@@ -1,18 +1,17 @@
-<script src="php/content/content2/content2.js"></script>
+<script src="php/content/content10/content10.js"></script>
 
 <div id="temp"></div>
 
 <div class="templatemo-content-container">
   <div class="templatemo-content-widget white-bg">
-    <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+    <form action="index.html" name="transaction" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
       <div class="row form-group">
-        <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputFirstName">Customer ID</label><br>
-          <input type="text" name="username" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
-        </div>
-      
-
       <div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputFirstName">Customer ID</label><br>
+
+<input type="text"onfocusout="user()" class="form-control" name="username" id="inputFirstName" placeholder="Aadhar / Mobile Number">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Type of Finance</label><br>
 <div class="margin-right-15 templatemo-inline-block">
 <input type="radio" name="username_type" id="r1" value="1" checked>
@@ -24,23 +23,57 @@
 </div>                
 </div>
 </div>
-      <div class="row form-group">
-        <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputFirstName">Customer Name</label>
-          <input disabled type="text" name="cstmr_name" class="form-control" id="inputFirstName" placeholder="Name">                  
-        </div>
-
-        <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputLastName">Contact Number</label>
-          <input disabled type="tel" name="cntact_num" class="form-control" id="inputLastName" placeholder="+91">
-        </div>
-        <div class="row form-group">
-      </div>
+<div class="row form-group">
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputFirstName">Customer Name</label>
+<input disabled type="text"class="form-control" name="cstmr_name" placeholder="Name">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="inputLastName">Contact Number</label>
+<input disabled type="tel" name="cntact_num"class="form-control" id="inputLastName" placeholder="+91">                  
+</div> 
+        
       <div class="col-lg-12 col-md-6 form-group">                  
-          <label for="inputUsername">Finace</label>
+          <label for="inputUsername">Finance Reference</label>
           <select class="form-control"></select>                
         </div>
         </div>
+      <hr>
+      <div class="row form-group">
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputEmail">Article ID</label>
+                    <input disabled type="text" class="form-control" id="inputEmail" placeholder="ID">                  
+                </div> 
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Type</label>
+                    <select disabled  class="form-control" name="item_type">
+                        <option value="">SELECT</option>
+                        <option value="RF">Refrigerator ( RF )</option>
+                        <option value="TV">Television ( TV )</option>
+                        <option value="AC">Air Conditioner ( AC )</option>
+                        <option value="WM">Washing Machine ( WM )</option>
+                    </select>
+                </div>          
+            
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputUsername">Article_Model</label>
+                    <input disabled type="Number" class="form-control" id="model" placeholder="Article Name">                  
+                </div>
+            
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Article Cost</label>
+                    <input  disabled type="Number" class="form-control" id="a_cost" placeholder="In Rupees">
+               </div>
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Issued Amount</label>
+                    <input  disabled type="Number" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                </div>
+
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Issued Date ( YYYY-MM-DD )</label>
+                    <input type="text" disabled name="issue_date"id="issue_date"class="form-control" placeholder="YYYY-MM-DD">
+                </div>
+      </div>
       <hr>
       <div class="row form-group">
       <div class="col-lg-12 col-md-6 form-group">
@@ -64,6 +97,7 @@ tr:nth-child(even) {
 
 <table>
   <tr>
+    <th>Due Number</th>
     <th>Due Date</th>
     <th>Due Amount</th>
     <th>Penality Days</th>
@@ -73,6 +107,7 @@ tr:nth-child(even) {
     <th>Status</th>
   </tr>
   <tr>
+  <td>201800001</td>
     <td>YYYY-MM-DD</td>
     <td>1000</td>
     <td>0</td>
