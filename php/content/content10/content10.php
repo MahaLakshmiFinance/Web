@@ -1,5 +1,6 @@
 <?php
   session_start();
+  if(isset($_SESSION['username']))
   echo "<script>
   setTimeout(function(){
     document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
