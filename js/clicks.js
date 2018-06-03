@@ -1,5 +1,5 @@
 function sidemenu(x){
-	for(var i=0;i<=9;i++){
+	for(var i=0;i<=10;i++){
 		if(document.getElementById("link"+i)!=null)
 			document.getElementById("link"+i).setAttribute("class","")
 	}
