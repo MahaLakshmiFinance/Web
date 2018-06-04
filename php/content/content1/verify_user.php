@@ -92,7 +92,26 @@
                 document.forms['".$form_name."']['refer_name'].value = '".$row['refer_name']."';
            
            </script>" ;
-          }
+          }else{
+        
+            echo "<script>
+             
+                 document.forms['".$form_name."']['username'].value = '';
+                 document.forms['".$form_name."']['fname'].value = '';
+                 document.forms['".$form_name."']['lname'].value = '';
+                 document.forms['".$form_name."']['cntact_num'].value = '';
+                 document.forms['".$form_name."']['alt_cntact_num'].value = '';
+                 document.forms['".$form_name."']['dno'].value = '';
+                 document.forms['".$form_name."']['street'].value = '';
+                 document.forms['".$form_name."']['locality'].value = '';
+                 document.forms['".$form_name."']['location'].value = '';
+                 document.forms['".$form_name."']['district'].value = '';
+                 document.forms['".$form_name."']['pincode'].value = '';
+                 document.forms['".$form_name."']['refer_id'].value = '';
+                 document.forms['".$form_name."']['refer_name'].value = '';
+            
+            </script>" ;
+           }
         
     }
 
