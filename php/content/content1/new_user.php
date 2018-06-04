@@ -61,7 +61,7 @@
 
     $dbobj->insert('mlf_users_info',"(`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`, `added_by`)",$values);
     
-    $alert = '"'.'SUCESSFULLY ADDED THE CUSTOMER <br>PLEASE VERIFY USING VIEW TAB'.'"';
+    $alert = '"'.'SUCESSFULLY ADDED THE CUSTOMER. PLEASE VERIFY USING VIEW TAB'.'"';
     $_SESSION['req_script']="<script>
     setTimeout(function(){
         document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'

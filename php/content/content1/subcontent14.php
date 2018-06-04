@@ -5,9 +5,8 @@ function verify_usr(){
          $.ajax({
                type: "GET",
                url: "php/content/content1/verify_user.php",
-               data: "subcontent_num=4&&id="+document.getElementById("id").value,
+               data: "subcontent_num=4&id="+document.getElementById("id").value,
                error: function(msg){
-                   alert('error')
                    console.log(msg);
                },
                success: function(msg){

@@ -74,11 +74,11 @@
         
           $result = $dbobj->search('mlf_users_info',$columnNames,$findByColumnName,$fndByValue);
 
-        
-          while($row = $result->fetch_assoc()){
+          $row = $result->fetch_assoc();
+          while($row){
         
            echo "<script>
-            setTimeout(function(){
+            
                 document.forms['".$form_name."']['username'].value = '".$row['username']."';
                 document.forms['".$form_name."']['fname'].value = '".$row['first_name']."';
                 document.forms['".$form_name."']['lname'].value = '".$row['last_name']."';
@@ -92,9 +92,8 @@
                 document.forms['".$form_name."']['pincode'].value = '".$row['pincode']."';
                 document.forms['".$form_name."']['refer_id'].value = '".$row['refer_username']."';
                 document.forms['".$form_name."']['refer_name'].value = '".$row['refer_name']."';
-           },20);
+           
            </script>" ;
-           break;
           }
         
     }
