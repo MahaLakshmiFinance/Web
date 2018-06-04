@@ -1,18 +1,16 @@
 <?php
     session_start();
 
-    $username = $_GET['id'];
+    $username = $_REQUEST['id'];
     $_SESSION['id'] = $username;
     $subcontent = 2;
-    if(isset($_GET['subcontent_num'])){
-    $subcontent = $_GET['subcontent_num'];
+    if(isset($_REQUEST['subcontent_num'])){
+    $subcontent = $_REQUEST['subcontent_num'];
     }
 
     include_once '../../db_operations.php';
 
     $dbobj = new DBConnect;
-
-    $dbobj->setDBName('mlf');
 
     $dbobj->connect();
 
@@ -36,7 +34,7 @@
         if(isset($_SESSION['id_available'])){
             if($_SESSION['id_available']==True){
                 echo '<script>
-                    document.getElementById("verify_user").style="display:none";
+                    //document.getElementById("verify_user").style="display:none";
                     document.forms["'.$form_name.'"].style=""
                 </script>';
                 $_SESSION['id_available'] = False;
@@ -75,7 +73,7 @@
           $result = $dbobj->search('mlf_users_info',$columnNames,$findByColumnName,$fndByValue);
 
           $row = $result->fetch_assoc();
-          while($row){
+          if($row){
         
            echo "<script>
             

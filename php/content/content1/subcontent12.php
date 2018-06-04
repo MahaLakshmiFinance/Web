@@ -5,7 +5,7 @@ function verify_usr(){
          $.ajax({
                type: "GET",
                url: "php/content/content1/verify_user.php",
-               data: "subcontent_num=2&&id="+document.getElementById("id").value,
+               data: "subcontent_num=2&id="+document.forms["edit_user"]["username"].value,
                error: function(msg){
                    alert('error')
                    console.log(msg);
@@ -21,28 +21,13 @@ function verify_usr(){
 <div class="templatemo-content-container">
     <div id="temp"></div>
     <div class="templatemo-content-widget white-bg">
-        <div class="templatemo-login-form" id="verify_user"enctype="multipart/form-data">
-        <div class="row form-group">
-        <div class="col-lg-6 col-md-6 form-group">                  
-        <label for="inputFirstName">User ID</label><br>
-        <input type="text" class="form-control" id="id" placeholder="Aadhar / Phone Number">                  
-        </div>
-        </div>
-        <div class="row form-group" id="error" style="display: none">
-        <div class="col-lg-6 col-md-6 form-group" style="font-size: 12px;color:red;">                  
-        USER NOT FOUND!!!           
-        </div>
-        </div>
-        <div class="form-group text-right">
-        <button onclick="verify_usr()" class="templatemo-blue-button">Check</button>
-        </div> 
-        </div>
-        <form action="php/content/content1/update_user.php"onsubmit="return user_form_modified('edit_user')" name="edit_user" style="display:none;"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+        
+        <form action="php/content/content1/update_user.php"onsubmit="return user_form_modified('edit_user')" name="edit_user"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">User ID</label><br>
-<input type="text" name="username" class="form-control" id="inputFirstName" placeholder="Aadhar / Phone Number">                  
+<input type="text" name="username" class="form-control" id="inputFirstName"  onfocusout="verify_usr()"placeholder="Aadhar / Phone Number">                  
 </div>
 </div>
 

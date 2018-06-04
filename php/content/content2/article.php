@@ -88,18 +88,6 @@ $day = $today[8].$today[9];
         $values = '("'.$username.'", "'.$_SESSION['username'].'", "'.$article_id.'", "'.$article_type.'", "'.$article_model.'", "'.$article_cost.'", "'.$date.'", "'.$ref_num.'", "'.$amount.'", "'.$prc_fee.'", "'.$rt_of_int.'", "'.$total_emis.'", "'.$inst_amount.'", "'.$total_amount.'") ';
         $dbobj->insert('mlf_article_finance',$columnNames,$values);
         
-        for($count=0;$count<$total_emis;$count+=1){
-            $month=((int)$month) + 1;
-        if($month==13){
-    $month = 1;
-    $year = (int)$year+1;
-        }
-    $x =  mktime(23, 0, 0, $month,$day, $year);
-$duedate = date("Y/m/d",$x);
-            $columnNames = "(`customer_id`, `authorised_by`, `reference_number`, `bill_number`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `amount_paid`, `last_transaction`, `status`)";
-            $values = '("'.$username.'", "'.$_SESSION['username'].'", "'.$ref_num.'", "'.$year.$serials_list[$count].'", "'.$duedate.'", "'.$inst_amount.'", "0", "0", "0", "'.$date.'", "1")';
-            $dbobj->insert('mlf_transactions',$columnNames,$values);
-        }
         $alert = '"'.'PURCHASE COMPLETED.'.'"';
         $_SESSION['req_script']="<script>
         setTimeout(function(){

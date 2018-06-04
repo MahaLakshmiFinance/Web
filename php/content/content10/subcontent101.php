@@ -85,6 +85,15 @@
                     <label for="inputNewPassword">Issued Date ( YYYY-MM-DD )</label>
                     <input type="text" disabled name="issue_date" class="form-control" placeholder="YYYY-MM-DD">
                 </div>
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Total EMIs</label>
+                    <input  disabled type="Number" class="form-control" name="emis" placeholder="Article Bill No.">
+                </div>
+
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Installment Amount</label>
+                    <input type="text" disabled name="installment" class="form-control" placeholder="YYYY-MM-DD">
+                </div>
       </div>
       <hr>
       <div class="row form-group">
