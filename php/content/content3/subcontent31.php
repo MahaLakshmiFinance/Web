@@ -31,7 +31,8 @@
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Reference Number</label>
-                    <input type="number" name="article_refno" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                    <input type="number" disabled name="article_refno" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                    <script> getRefNumb()</script>
                 </div>
 
                 <div class="col-lg-6 col-md-6 form-group">                  

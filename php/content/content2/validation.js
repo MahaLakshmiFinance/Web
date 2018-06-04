@@ -66,6 +66,12 @@ function form_verify(){
         return false;
     }
 
+    if(amount.value>article_cost.value){
+        alert('COST OF ARTICLE IS LESS THAN FINANCE ANMOUNT.')
+        amount.focus()
+        return false
+    }
+
     var doc_charges = document.forms['article_finance']['doc_charges'];
     if(doc_charges.value == ""){
         foundEmpty(doc_charges)

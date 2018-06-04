@@ -68,6 +68,8 @@ function form_verify(){
     document.forms['cash_finance']['total_amount'].disabled=false;
     document.forms['cash_finance']['tot_emis'].disabled=false;
     document.forms['cash_finance']['inst_amnt'].disabled=false;
+    document.forms['cash_finance']['article_refno'].disabled=false;
+    
     document.getElementById('temp2').style="";
     
 }

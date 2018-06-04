@@ -1,6 +1,42 @@
 function nav(x){
     $('#subcontent').load('php/content/content3/subcontent'+x+'.php');
 }
+function getRefNumb(){
+    $.ajax({
+        type: "GET",
+        url: "php/content/content3/get_ref_num.php",
+        error: function(msg){
+            console.log(msg);
+        },
+        success: function(msg){
+            $('#temp').html(msg);
+            var d = new Date()
+            var year = d.getFullYear()
+            var val = document.getElementById('def').value
+            var yearfrmserial = val[0]+""+val[1]+""+val[2]+""+val[3];
+            if(yearfrmserial==year){
+                var sum = ""
+                for(var i=4;i<val.length;i++){
+                    sum+=""+val[i]+""
+                }
+                if(sum[0]==0){
+                    sum = "1"+sum
+                }
+                val = ""+(parseInt(sum)+1)
+                sum = ""
+                for(var i=1;i<val.length;i++){
+                    sum += val[i]+""
+                }
+                val = year+""+sum
+            }
+            else{
+                val=year+""+'00001'
+            }
+            document.forms['cash_finance']['article_refno'].value = val;
+            //get_existing_serial
+        }
+ });
+}
 
 function getSerialNumb(){
     $.ajax({
@@ -12,7 +48,7 @@ function getSerialNumb(){
         success: function(msg){
             $('#temp').html(msg);
             var d = new Date()
-    var year = d.getFullYear()
+            var year = d.getFullYear()
             var val = document.getElementById('abc').value
             var yearfrmserial = val[0]+""+val[1]+""+val[2]+""+val[3];
             if(yearfrmserial==year){
@@ -34,7 +70,7 @@ function getSerialNumb(){
                 val=year+""+'00001'
             }
             document.forms['cash_finance']['serial_num'].value = val;
-            
+            //get_existing_serial
         }
  });
 }

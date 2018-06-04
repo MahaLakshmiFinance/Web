@@ -32,10 +32,10 @@
             $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
             
             if($this->conn->connect_error){
-                echo "<script>console.log('Connection Failed.')</script>";
+            //     echo "<script>console.log('Connection Failed.')</script>";
             }
             else{
-                echo "<script>console.log('Connection Successful.')</script>";
+            //     echo "<script>console.log('Connection Successful.')</script>";
             }
         }
 
@@ -44,13 +44,13 @@
 
             $sqlQry = "INSERT INTO ".$tableName." ".$columnNames." VALUES ".$values.";";
 
-            echo "<script>console.log('".$sqlQry."')</script>";
+                //echo "<script>console.log('".$sqlQry."')</script>";
 
             if($this->conn->query($sqlQry) === True){
-                echo "<script>console.log('Inserted Successfully.')</script>";
+                //echo "<script>console.log('Inserted Successfully.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+               //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
         }
 
@@ -65,13 +65,13 @@
             }
             
 
-            echo "<script>console.log('".$sqlQry."')</script>";
+            //echo "<script>console.log('".$sqlQry."')</script>";
             
             if($this->conn->query($sqlQry) === True){
-                echo "<script>console.log('Updated Successfully.')</script>";
+                //echo "<script>console.log('Updated Successfully.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+                //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
 
         }
@@ -81,13 +81,13 @@
 
             $sqlQry = "DELETE FROM ".$tableName." WHERE ".$findByColumnName."=".$findByValue.";";
 
-            echo "<script>console.log('".$sqlQry."')</script>";
+            ////echo "<script>console.log('".$sqlQry."')</script>";
             
             if($this->conn->query($sqlQry) === True){
-                echo "<script>console.log('Deleted Successfully.')</script>";
+                //echo "<script>console.log('Deleted Successfully.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+                //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
 
         }
@@ -98,15 +98,15 @@
 
             $sqlQry = "SELECT ".$columnNames." FROM ".$tableName.";";
             
-            echo "<script>console.log('".$sqlQry."')</script>";
+            //echo "<script>console.log('".$sqlQry."')</script>";
 
             $result = $this->conn->query($sqlQry);
 
             if($result->num_rows > 0){
-                echo "<script>console.log('Fetched Data Successfully.')</script>";
+                //echo "<script>console.log('Fetched Data Successfully.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+                //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
 
             return $result;
@@ -118,15 +118,15 @@
     
             $sqlQry = "SELECT ".$columnNames." FROM ".$tableName." WHERE ".$findByColumnName."=".$fndByValue.";";
 
-            echo "<script>console.log('".$sqlQry."')</script>";
+            //echo "<script>console.log('".$sqlQry."')</script>";
             
             $result = $this->conn->query($sqlQry);
     
             if($result->num_rows > 0){
-               echo "<script>console.log('Searched Data Successfully.')</script>";
+               //echo "<script>console.log('Searched Data Successfully.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+                //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
     
             return $result;
@@ -137,15 +137,15 @@
     
             $sqlQry = "SELECT ".$columnNames." FROM ".$tableName." ORDER BY ".$orderByColumnName.";";
 
-            echo "<script>console.log('".$sqlQry."')</script>";
+            //echo "<script>console.log('".$sqlQry."')</script>";
             
             $result = $this->conn->query($sqlQry);
     
             if($result->num_rows > 0){
-               echo "<script>console.log('Searched Data Successfully.')</script>";
+               //echo "<script>console.log('Searched Data Successfully.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+                //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
     
             return $result;
@@ -154,15 +154,15 @@
 
         function sqlQury($sqlQry){
 
-            echo "<script>console.log('".$sqlQry."')</script>";
+            //echo "<script>console.log('".$sqlQry."')</script>";
             
             $result = $this->conn->query($sqlQry);
     
             if($result->num_rows > 0){
-               echo "<script>console.log('Query Successful.')</script>";
+               //echo "<script>console.log('Query Successful.')</script>";
             }
             else {
-                echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
+                //echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
             }
     
             return $result;
@@ -172,7 +172,7 @@
 
         function __destruct(){
             $this->conn->close();
-            echo "<script>console.log('Connection Closed.')</script>";
+            //echo "<script>console.log('Connection Closed.')</script>";
         }
 
     }

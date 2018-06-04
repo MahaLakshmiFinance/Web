@@ -39,20 +39,20 @@
             die();
     }
 
-    $result = $dbobj->search('mlf_users_info',"`username`, `first_name`",'username','"'.$refer_id.'"');
-    $row = $result->fetch_assoc();
-    if(!$row){
-        $alert = '"'.'PLEASE REGISTER REFERENCE ID FIRST.'.'"';
-        $_SESSION['req_script']="<script>
-        setTimeout(function(){
-            document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
-        },80);
-        </script>";
-        header('Location: ../../../mlf_home.php');
-        die();
-    }else{
-        $refer_name = $row['first_name'];
-    }
+    // $result = $dbobj->search('mlf_users_info',"`username`, `first_name`",'username','"'.$refer_id.'"');
+    // $row = $result->fetch_assoc();
+    // if(!$row){
+    //     $alert = '"'.'PLEASE REGISTER REFERENCE ID FIRST.'.'"';
+    //     $_SESSION['req_script']="<script>
+    //     setTimeout(function(){
+    //         document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
+    //     },80);
+    //     </script>";
+    //     header('Location: ../../../mlf_home.php');
+    //     die();
+    // }else{
+    //     $refer_name = $row['first_name'];
+    // }
 
     $dbobj->insert('mlf_users','(username)','("'.$username.'")');
     $dbobj->insert('mlf_users_roles','(username, role_id)','("'.$username.'", '.$role_id.')');

@@ -63,7 +63,7 @@
             array_push($serials_list,$prev);
             //echo $prev."<br>";
         }
-        $result = $dbobj->search('mlf_article_finance','referenece_number','referenece_number',$ref_num);
+        $result = $dbobj->search('mlf_article_finance','reference_number','reference_number',$ref_num);
 
         $row = $result->fetch_assoc();
 

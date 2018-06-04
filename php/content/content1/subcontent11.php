@@ -95,7 +95,23 @@ function findname(){
 </div> 
 <div class="col-lg-4 col-md-4 form-group">                  
 <label for="inputNewPassword">District</label>
-<input name="district" type="text" class="form-control"  placeholder="District">
+<select name="district" class="form-control" >
+<option value="West Godavari">West Godavari</option>
+<option value="East Godavari">East Godavari</option>
+    <option value="Anantapur">Anantapur</option>
+    <option value="Chittoor">Chittoor</option>
+    <option value="Guntur">Guntur</option>
+    <option value="YSR Kadapa">YSR Kadapa</option>
+    <option value="Krishna">Krishna</option>
+    <option value="Kurnool">Kurnool</option>
+    <option value="Nellore">Nellore</option>
+    <option value="Prakasam">Prakasam</option>
+    <option value="Srikakulam">Srikakulam</option>
+    <option value="Visakhapatnam">Visakhapatnam</option>
+    <option value="Vizianagaram">Vizianagaram</option>
+    
+
+<select>
 </div>
 <div class="col-lg-4 form-group">                  
 <label for="inputConfirmNewPassword">Pincode</label>

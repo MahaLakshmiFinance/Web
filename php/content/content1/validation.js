@@ -87,11 +87,7 @@ function user_form(form_name){
 
 
     var street = document.forms[form_name]["street"]
-    if(street.value == ""){
-        foundEmpty(street)
-        return false
-    }
-    else{
+    if(street.value != ""){
         if(street.value.match(/^[A-Za-z0-9. ]+$/) == null){
             incorrectField(street)
             return false
@@ -100,11 +96,7 @@ function user_form(form_name){
 
     
     var locality = document.forms[form_name]["locality"]
-    if(locality.value == ""){
-        foundEmpty(locality)
-        return false
-    }
-    else{
+    if(locality.value != ""){
         if(locality.value.match(/^[A-Za-z\s]+$/) == null){
             incorrectField(locality)
             return false
@@ -149,24 +141,17 @@ function user_form(form_name){
     }
     
     var refer_id = document.forms[form_name]["refer_id"]
-    if(refer_id.value == ""){
-        foundEmpty(refer_id)
-        return false
-    }
-    else if(refer_id.value.match(/^[0-9]+$/) == null){
-        incorrectField(refer_id)
-        return false
-    }
-    
-    var refer_name = document.forms[form_name]["refer_name"]
-    if(refer_name.value == ""){
-        foundEmpty(refer_name)
-        return false
-    }
-    else{
-        if(refer_name.value.match(/^[A-Za-z\s]+$/) == null){
-            incorrectField(refer_name)
+    if(refer_id.value != ""){
+        var refer_name = document.forms[form_name]["refer_name"]
+        if(refer_name.value == ""){
+            foundEmpty(refer_name)
             return false
+        }
+        else{
+            if(refer_name.value.match(/^[A-Za-z\s]+$/) == null){
+                incorrectField(refer_name)
+                return false
+            }
         }
     }
 }
@@ -237,32 +222,6 @@ function user_form_modified(form_name){
         }
     }
 
-
-    var street = document.forms[form_name]["street"]
-    if(street.value == ""){
-        foundEmpty(street)
-        return false
-    }
-    else{
-        if(street.value.match(/^[A-Za-z0-9. ]+$/) == null){
-            incorrectField(street)
-            return false
-        }
-    }
-
-    
-    var locality = document.forms[form_name]["locality"]
-    if(locality.value == ""){
-        foundEmpty(locality)
-        return false
-    }
-    else{
-        if(locality.value.match(/^[A-Za-z\s]+$/) == null){
-            incorrectField(locality)
-            return false
-        }
-    }
-
     
     var location = document.forms[form_name]["location"]
     if(location.value == ""){
@@ -301,21 +260,18 @@ function user_form_modified(form_name){
     }
     
     var refer_id = document.forms[form_name]["refer_id"]
-    if(refer_id.value == ""){
-        foundEmpty(refer_id)
-        return false
-    }
-    
-    var refer_name = document.forms[form_name]["refer_name"]
-    if(refer_name.value == ""){
-        foundEmpty(refer_name)
-        return false
-    }
-    else{
-        if(refer_name.value.match(/^[A-Za-z\s]+$/) == null){
-            incorrectField(refer_name)
+    if(refer_id.value != ""){
+        var refer_name = document.forms[form_name]["refer_name"]
+        if(refer_name.value == ""){
+            foundEmpty(refer_name)
             return false
         }
+        else{
+            if(refer_name.value.match(/^[A-Za-z\s]+$/) == null){
+                incorrectField(refer_name)
+                return false
+            }
+        }
     }
+    
 }
-
