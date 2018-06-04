@@ -5,10 +5,10 @@
     document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
   },20);
   </script>";
-  if($_SESSION['role']>2) 
+  if($_SESSION['role']==1) 
   echo '<script>
   setTimeout(function(){
-    document.getElementById("delete").style="display:none;"
+    document.getElementById("delete").style=""
   },100);
   </script>';
 ?>
@@ -22,7 +22,7 @@
 <ul class="text-uppercase">
 <li><a href="#new" onclick="nav(11)"><font style="color:  black">NEW</font></a></li>
 <li><a href="#edit" onclick="nav(12)"><font style="color: black" >EDIT</font></a></li>
-<li id="delete"><a href="#delete" onclick="nav(13)"><font style="color: black">DELETE</font></a></li>
+<li id="delete" style="display:none"><a href="#delete" onclick="nav(13)"><font style="color: black">DELETE</font></a></li>
 <li><a href="#view" onclick="nav(14)"><font style="color: black">VIEW</font></a></li>
 
 </ul> 

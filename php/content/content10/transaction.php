@@ -44,6 +44,7 @@
     $dbobj->update('mlf_transactions',"`penality_amount`",$penality_req,'bill_number','"'.$due_num.'"');
     }
     $dbobj->update('mlf_transactions',"`amount_paid`",$amt,'bill_number','"'.$due_num.'"');
+    $dbobj->update('mlf_transactions',"`authorised_by`",$_SESSION['username'],'bill_number','"'.$due_num.'"');
     if(((int)$due+$penality_req) < $amt){
         $dbobj->update('mlf_transactions',"`status`","0",'bill_number','"'.$due_num.'"');
     }

@@ -49,7 +49,7 @@
         </div>
         </div>
       <hr>
-      <div class="row form-group">
+      <div class="row form-group" id="article1" style="display:none">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputEmail">Article ID</label>
                     <input disabled type="text" name="id" class="form-control" id="inputEmail" placeholder="ID">                  
@@ -74,6 +74,8 @@
                     <label for="inputConfirmNewPassword">Article Cost</label>
                     <input  disabled type="Number" class="form-control" name="cost" placeholder="In Rupees">
                </div>
+              </div>
+              <div  class="row form-group" >
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Issued Amount</label>
                     <input  disabled type="Number" class="form-control" name="issued_amount" placeholder="Article Bill No.">

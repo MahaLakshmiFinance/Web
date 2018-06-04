@@ -28,6 +28,14 @@ function getTheDate(){
 
 function getFinanceRefer(){
     var fin_type = document.forms['transaction']['finance_type'].value;
+    if(fin_type!=1){
+        document.getElementById('article1').style="display:none"
+    }
+    else{
+        if(fin_type==1){
+            document.getElementById('article1').style=""
+        }
+    }
     $.ajax({
         type: "GET",
         url: "php/content/content10/get_finance_details.php",

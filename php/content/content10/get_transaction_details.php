@@ -10,7 +10,7 @@
     
     $dbobj->connect();
 
-        if($finance_type == 1){
+    if($finance_type == 1){
     
         $result = $dbobj->search('mlf_article_finance',"`customer_id`, `authorised_by`, `article_id`, `article_type`, `article_model`, `article_cost`, `date`, `reference_number`, `approved_amount`, `documentation_charges`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`",'reference_number','"'.$refer_num.'"');
         
@@ -26,7 +26,19 @@
 
         $res = $res."</script>";
         echo $res;
-        }else{}
+        }else{
+            $result = $dbobj->search('mlf_cash_finance',"`customer_id`, `authorised_by`, `date`, `reference_number`, `approved_amount`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`",'reference_number','"'.$refer_num.'"');
+        
+        $row = $result->fetch_assoc();
+
+
+        $res = '<script>document.forms["transaction"]["issued_amount"].value="'.$row["approved_amount"].'";';
+        $res = $res.'document.forms["transaction"]["issue_date"].value="'.$row["date"].'";';
+
+        $res = $res."</script>";
+        echo $res;
+
+        }
 
         $result = $dbobj->search('mlf_transactions',"`customer_id`, `authorised_by`, `reference_number`, `bill_number`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `amount_paid`, `last_transaction`, `status`",'reference_number','"'.$refer_num.'"');
         
