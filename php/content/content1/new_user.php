@@ -31,11 +31,16 @@
         if($row = $result->fetch_assoc()){
             $alert = '"'.'USER ALREADY EXIXTS.'.'"';
             $_SESSION['req_script']="<script>
+        $(document).ready(function(){
             setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
-            },80);
-            </script>";
-            header('Location: ../../../mlf_home.php');
+                document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
+        echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
+
             die();
     }
 
@@ -45,8 +50,8 @@
     //     $alert = '"'.'PLEASE REGISTER REFERENCE ID FIRST.'.'"';
     //     $_SESSION['req_script']="<script>
     //     setTimeout(function(){
-    //         document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
-    //     },80);
+    //         document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},200);'
+    //     },180);
     //     </script>";
     //     header('Location: ../../../mlf_home.php');
     //     die();
@@ -63,11 +68,17 @@
     
     $alert = '"'.'SUCESSFULLY ADDED THE CUSTOMER. PLEASE VERIFY USING VIEW TAB'.'"';
     $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
+        $(document).ready(function(){
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
+
+    echo "<script>
+        window.top.location = '../../../mlf_home.php';
     </script>";
-    
-    header('Location: ../../../mlf_home.php');
     die();
 ?>

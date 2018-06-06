@@ -4,11 +4,6 @@ if (!isset($_SESSION['logged_in'])) {
   header('Location: index.php');
   die();
 }
-
-if(isset($_SESSION['req_script'])){
-	echo $_SESSION['req_script'];
-	$_SESSION['req_script']="";
-}
 if(isset($_SESSION['role'])){
 	$role = $_SESSION['role'];
 	// if($role<=2){
@@ -141,3 +136,11 @@ $(function(){
 </div>
 </body>
 </html>
+
+
+<?php 
+if(isset($_SESSION['req_script'])){
+	echo $_SESSION['req_script'];
+	$_SESSION['req_script']="";
+}
+?>

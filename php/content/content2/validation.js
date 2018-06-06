@@ -66,7 +66,7 @@ function form_verify(){
         return false;
     }
 
-    if(amount.value>article_cost.value){
+    if(parseInt(amount.value) > parseInt(article_cost.value)){
         alert('COST OF ARTICLE IS LESS THAN FINANCE ANMOUNT.')
         amount.focus()
         return false

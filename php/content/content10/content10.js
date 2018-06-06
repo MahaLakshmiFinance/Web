@@ -62,3 +62,17 @@ function getTransactionDetails(){
      }
     });
 }
+
+function getInstallmentDetails(){
+    $.ajax({
+        type: "GET",
+        url: "php/content/content10/getInstallmentDetails.php",
+        data: "refer_num="+document.forms['transaction']['refer_num'].value+"&finance_type="+document.forms['transaction']['finance_type'].value+"&customer_id="+document.forms['transaction']['username'].value,
+        error: function(msg){
+            console.log(msg);
+        },
+        success: function(msg){
+            $('#temp').html(msg);
+     }
+    });
+}

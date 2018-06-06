@@ -154,8 +154,8 @@ tfoot {
 <div class="row form-group">
       
 <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputUsername">Due Number</label>
-          <select name="due_num" class="form-control">  <select>                
+          <label for="inputUsername">Due Date</label>
+          <select name="due_num" class="form-control" onfocusout="getInstallmentDetails()">  <select>                
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Date</label>

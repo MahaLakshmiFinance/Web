@@ -19,22 +19,30 @@
             $dbobj->update('mlf_users','password','"'.md5($new_pwd).'"','username','"'.$_SESSION['username'].'"');
             $alert = '"'.'PASSWORD CHANGED SUCESSFULLY.'.'"';
             $_SESSION['req_script']="<script>
+        $(document).ready(function(){
             setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(8);setTimeout(function(){alert(".$alert.");},20);'
-            },80);
-            </script>";
+                document.getElementById('additional').innerHTML = 'sidemenu(8);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
         }
         else{
             $alert = '"'.'PASSWORD CHANGE FAILED.'.'"';
             $_SESSION['req_script']="<script>
+        $(document).ready(function(){
             setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(8);setTimeout(function(){alert(".$alert.");},20);'
-            },80);
-            </script>";
+                document.getElementById('additional').innerHTML = 'sidemenu(8);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
         }
     }
 
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
     die();
     
 ?>

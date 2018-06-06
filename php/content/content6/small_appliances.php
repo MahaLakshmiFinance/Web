@@ -50,13 +50,16 @@
                 $prev-=1;
                 $alert = '"'.'SERIAL NUMBER LIMIT EXCEEED.'.'"';
                 $_SESSION['req_script']="<script>
-            setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
-            },80);
-            console.log('".$alert."');
-            </script>";
+                $(document).ready(function(){
+                    setTimeout(function(){
+                        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){\
+                            alert(".$alert.");},200);';
+                    },180);
+                    console.log(".$alert.");
+                });
+                </script>";
 
-                header('Location: ../../../mlf_home.php');
+                echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
                 die();
             }
             array_push($serials_list,$prev);
@@ -69,13 +72,16 @@
         if($row){
             $alert = '"'.'PRODUCT ALREADY PURCHASED.'.'"';
             $_SESSION['req_script']="<script>
+        $(document).ready(function(){
             setTimeout(function(){
-                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
-            },80);
-            console.log('".$alert."');
-            </script>";
+                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
 
-            header('Location: ../../../mlf_home.php');
+            echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
         }
     
@@ -87,13 +93,16 @@
         }
         $alert = '"'.'PURCHASE COMPLETED.'.'"';
         $_SESSION['req_script']="<script>
-        setTimeout(function(){
-            document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
-        },80);
-        console.log('".$alert."');
+        $(document).ready(function(){
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
         </script>";
         
-        header('Location: ../../../mlf_home.php');
+        echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
         die();
     }
     else{
@@ -105,24 +114,32 @@
 
         if(!$row){
             $alert = '"'.'SERIAL NUMBER DOES NOT EXIST.'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+            $_SESSION['req_script']="<script>
+            $(document).ready(function(){
+                setTimeout(function(){
+                    document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){\
+                        alert(".$alert.");},200);';
+                },180);
+                console.log(".$alert.");
+            });
+            </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
         }
         else if($row['is_sold']==1){
             $alert = '"'.'PRODUCT WAS ALREADY SOLD.'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+            $_SESSION['req_script']="<script>
+            $(document).ready(function(){
+                setTimeout(function(){
+                    document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){\
+                        alert(".$alert.");},200);';
+                },180);
+                console.log(".$alert.");
+            });
+            </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
         }
 
@@ -135,13 +152,17 @@
         $dbobj->update('mlf_accessories_purchase','is_sold','1','serial_number',$serial_num);
 
         $alert = '"'.'SUCESSFULLY SOLD THE PRODUCT'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+        $_SESSION['req_script']="<script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(6);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
     die();
 
     }

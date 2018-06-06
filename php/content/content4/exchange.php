@@ -30,13 +30,17 @@
 
         if($row){
             $alert = '"'.'PRODUCT ALREADY PURCHASED.'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+            $_SESSION['req_script']="<script>
+            $(document).ready(function(){
+                setTimeout(function(){
+                    document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){\
+                        alert(".$alert.");},200);';
+                },180);
+                console.log(".$alert.");
+            });
+            </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
         }
     
@@ -47,12 +51,16 @@
         $dbobj->insert('mlf_old_materials_purchase',$columnNames,$values);
         $alert = '"'.'PURCHASE COMPLETED.'.'"';
         $_SESSION['req_script']="<script>
-        setTimeout(function(){
-            document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-        },80);
+        $(document).ready(function(){
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
         </script>";
         
-        header('Location: ../../../mlf_home.php');
+        echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
                 die();
     }
     else{
@@ -62,24 +70,32 @@
 
         if(!$row){
             $alert = '"'.'SERIAL NUMBER DOES NOT EXIST.'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+            $_SESSION['req_script']="<script>
+            $(document).ready(function(){
+                setTimeout(function(){
+                    document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){\
+                        alert(".$alert.");},200);';
+                },180);
+                console.log(".$alert.");
+            });
+            </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
         }
         else if($row['is_sold']==1){
             $alert = '"'.'PRODUCT WAS ALREADY SOLD.'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+            $_SESSION['req_script']="<script>
+            $(document).ready(function(){
+                setTimeout(function(){
+                    document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){\
+                        alert(".$alert.");},200);';
+                },180);
+                console.log(".$alert.");
+            });
+            </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
         }
 
@@ -92,13 +108,17 @@
         $dbobj->update('mlf_old_materials_purchase','is_sold','1','serial_number',$serial_num);
 
         $alert = '"'.'SUCESSFULLY SOLD THE PRODUCT'.'"';
-    $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+   $_SESSION['req_script']="<script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(4);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
     die();
 
     }

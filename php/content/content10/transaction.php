@@ -20,11 +20,11 @@
         $alert = '"'.'DUE IS ALREADY CLOSED.'.'"';
         $_SESSION['req_script']="<script>
         setTimeout(function(){
-            document.getElementById('additional').innerHTML = 'sidemenu(10);setTimeout(function(){alert(".$alert.");},20);'
+            document.getElementById('additional').innerHTML = 'sidemenu(10);setTimeout(function(){alert(".$alert.");},200);'
         },80);
         </script>";
         
-        header('Location: ../../../mlf_home.php');
+        echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
                 die();
     }
     $your_date = strtotime($row["due_date"]);
@@ -49,13 +49,17 @@
         $dbobj->update('mlf_transactions',"`status`","0",'bill_number','"'.$due_num.'"');
     }
     $alert = '"'.'TRANSACTION COMPLETE.'.'"';
-        $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(10);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
+    $_SESSION['req_script']="<script>
+    $(document).ready(function(){
+        setTimeout(function(){
+            document.getElementById('additional').innerHTML = 'sidemenu(10);setTimeout(function(){\
+                alert(".$alert.");},200);';
+        },180);
+        console.log(".$alert.");
+    });
     </script>";
     
-    header('Location: ../../../mlf_home.php');
+    echo "<script>         window.top.location = '../../../mlf_home.php';     </script>";
             die();
     
 

@@ -39,11 +39,18 @@
 
     $alert = '"'.'SUCESSFULLY UPDATED'.'"';
     $_SESSION['req_script']="<script>
-    setTimeout(function(){
-        document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){alert(".$alert.");},20);'
-    },80);
-    </script>";
+        $(document).ready(function(){
+            setTimeout(function(){
+                document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){\
+                    alert(".$alert.");},200);';
+            },180);
+            console.log(".$alert.");
+        });
+        </script>";
 
-    header('Location: ../../../mlf_home.php');
+        echo "<script>
+        window.top.location = '../../../mlf_home.php';
+    </script>";
+    die();
     
 ?>

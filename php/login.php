@@ -33,10 +33,14 @@
             while($row2 = $result2->fetch_assoc()){
                 $_SESSION['role'] = $row2['role_id'];
             }
-            header('Location: ../mlf_home.php');
+            echo "<script>
+        window.top.location ='../mlf_home.php';
+    </script>";
             die();
         }
     }
-    header('Location: ../index.php');
+    echo "<script>
+        window.top.location = '../index.php';
+    </script>";
     die();
 ?>
