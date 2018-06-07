@@ -9,10 +9,10 @@
     
     $dbobj->connect();
     
-        $result = $dbobj->searchByOrder('mlf_transactions',"`bill_number`",'bill_number');
+        $result = $dbobj->searchByOrder('mlf_transactions',"`transaction_id`",'transaction_id');
         $serial = "00000";
         while($row = $result->fetch_assoc()){
-            $serial = $row['bill_number'];
+            $serial = $row['transaction_id'];
         }
         echo "<input id='abc' value=".$serial." style='display:none'>";
 ?>
