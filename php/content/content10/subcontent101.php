@@ -176,7 +176,7 @@ tfoot {
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <div class="templatemo-block margin-bottom-5">
-            <input type="checkbox" name="emailOptions" id="ispenlity" value="1" onchange="document.getElementById('penality_group').style.display = document.getElementById('penality_group').style.display === 'none' ? '' : 'none';"> 
+            <input type="checkbox" name="emailOptions" id="ispenlity" value="1" onchange="addpen()"> 
             <label for="ispenlity" class="font-weight-400"><span></span>Add Penality</label> 
           </div>
         </div>

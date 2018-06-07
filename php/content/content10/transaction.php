@@ -3,9 +3,14 @@
     $customer_id = $_POST['username'];
     $transaction_id = $_POST['transaction_id'];
     $due_date = $_POST['due_date'];
+    $due_amount = $_POST[''];
     $amount_paid = $_POST['amount'];
     $date = $_POST['today_date'];
+    $penality_days = $_POST[''];
     $penality = $_POST['penality'];
+    $penality_paid = $_POST[''];
+    $total_due_paid = $_POST[''];
+
 
     session_start();
     

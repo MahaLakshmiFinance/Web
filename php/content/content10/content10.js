@@ -155,6 +155,13 @@ function getInstallmentDetails(){
     });
 }
 
+function addpen(){
+    document.getElementById('penality_group').style.display = document.getElementById('penality_group').style.display === 'none' ? '' : 'none';
+    if(document.getElementById('penality_group').style.display === 'none'){
+        document.forms['transaction']['penality'].value = 0
+    }
+}
+
 function ispenality(){
 
     var penality = penality;
