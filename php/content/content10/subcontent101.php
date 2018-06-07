@@ -174,18 +174,37 @@ tfoot {
           <label for="inputUsername">Amount Paid</label>
           <input type="Number"value="0" name="amount" class="form-control" placeholder="Amount Received">                  
         </div>
+        <div class="col-lg-6 col-md-6 form-group">                  
+          <div class="templatemo-block margin-bottom-5">
+            <input type="checkbox" name="emailOptions" id="ispenlity" value="1" onchange="document.getElementById('penality_group').style.display = document.getElementById('penality_group').style.display === 'none' ? '' : 'none';"> 
+            <label for="ispenlity" class="font-weight-400"><span></span>Add Penality</label> 
+          </div>
+        </div>
+        </div>
+        <div class="row form-group" id="penality_group" style="display:none">
+
+
+        <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputNewPassword">Penality Rate</label>
+                    <select class="form-control" name="penality_rate" onfocusout="ispenality()">
+                    <option value="">SELECT</option>
+                    <option value="50">50</option>
+                    <option value="75">75</option>
+                    <option value="105">105</option>
+              </select>
+          </div>
+
     
         <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputEmail">Gross Penality Amount</label>
+          <label for="inputEmail">Penality Amount to be Paid</label>
           <input type="Number" disabled value="0" name="d_penality"class="form-control"placeholder="Penality Received">                  
         </div>   
     
         <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputEmail">Net Penality Amount</label>
+          <label for="inputEmail">Penality Amount Paid</label>
           <input type="Number" value="0" name="penality"class="form-control"placeholder="Penality Received">                  
         </div> 
       </div>
-
       <div class="row form-group"  style="display:none">
       <div class="col-lg-6 col-md-6 form-group">                  
           <div class="templatemo-block margin-bottom-5">

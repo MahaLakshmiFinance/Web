@@ -102,6 +102,8 @@ function getTransactionDetails(){
     });
 }
 
+var days = 0;
+
 function getInstallmentDetails(){
     $.ajax({
         type: "GET",
@@ -147,17 +149,29 @@ function getInstallmentDetails(){
 
         var inst = parseInt(val) / parseInt(document.forms['transaction']['due_num'].value)
 
-        var estimated = diffDays*(inst*(20/100))
-        estimated -= parseInt(paid);
-        if(!estimated)
-            estimated = 0;
-
-        document.forms['transaction']['d_penality'].disabled = false
-        
-        document.forms['transaction']['d_penality'].value = estimated
-
-        document.forms['transaction']['d_penality'].disabled = true
+        days = diffDays;
 
      }
     });
+}
+
+function ispenality(){
+
+    var penality = penality;
+
+    var paid = parseInt(document.forms['transaction']['due_amnt_total'].value)
+
+    var inst = parseInt(document.forms['transaction']['installment'].value)
+
+    var penality_rate = parseInt(document.forms['transaction']['penality_rate'].value)
+
+    var penality = (inst*(penality_rate/365))*days
+
+    document.forms['transaction']['d_penality'].disabled = false
+    
+    document.forms['transaction']['d_penality'].value = penality
+    
+    document.forms['transaction']['d_penality'].disabled = true
+
+
 }
