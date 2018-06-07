@@ -180,5 +180,11 @@ function ispenality(){
     
     document.forms['transaction']['d_penality'].disabled = true
 
+    document.forms['transaction']['penality_days'].disabled = false
+    
+    document.forms['transaction']['penality_days'].value = days
+    
+    document.forms['transaction']['penality_days'].disabled = true
+
 
 }

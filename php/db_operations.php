@@ -7,10 +7,7 @@
         var $conn = null;
 
         function __construct(){
-            $this->serverName = "172.168.2.115";
-            //$this->serverName = "192.168.0.102";
-            //$this->serverName = "192.168.43.211";
-            
+            $this->serverName = "172.168.2.115";            
             $this->username = "admin";
             $this->password = "12345";
             $this->dbName = "mlf";
@@ -29,10 +26,18 @@
         }
 
         function connect(){
-            $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
-            
-            if($this->conn->connect_error){
-                echo "<script>console.log('Connection Failed with 172.168.2.115.')</script>";
+            $this->serverName = $_SERVER['HTTP_HOST'];
+
+            if($this->serverName == "172.168.2.115"){
+                $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
+                if($this->conn->connect_error){
+                    echo "<script>console.log('Connection Failed with 172.168.2.115.')</script>";
+                }
+                else{
+                    echo "<script>console.log('Connection Successful with 172.168.2.115.')</script>";
+                }
+            }
+            else if($this->serverName == "redants.info"){
                 $this->serverName = "localhost";
                 $this->username = "redants";
                 $this->password = "Sasi@123";
@@ -40,6 +45,12 @@
                 $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
                 if($this->conn->connect_error){
                     echo "<script>console.log('Connection Failed with redants.info.')</script>";
+                }
+                else{
+                    echo "<script>console.log('Connection Successful with redants.info.')</script>";
+                }
+            }
+            else if($this->serverName == "mahalakshmifinance.000webhostapp.com"){
                     $this->serverName = "localhost";
                     $this->username = "id6062084_mlf";
                     $this->password = "12345";
@@ -50,17 +61,25 @@
                     }
                     else{
                         echo "<script>console.log('Connection Successful with 000webhost.com.')</script>";
-
-                        echo "Problem with connecting to Database.";
                     }
-                }
-                else{
-                    echo "<script>console.log('Connection Successful with redants.info.')</script>";
-                }
+            }
+            else if($this->serverName == "localhost"){
+                $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
+                    if($this->conn->connect_error){
+                        echo "<script>console.log('Connection Failed with localhost.')</script>";
+                    }
+                    else{
+                        echo "<script>console.log('Connection Successful with localhost.')</script>";
+                    }
             }
             else{
-				echo "<script>console.log('Connection Successful with 172.168.2.115.')</script>";
+                echo "<script>alert('Connection ERROR.')</script>";
+                session_start();
+                session_unset();
+                session_destroy();
+                die();
             }
+               
         }
 
         function insert($tableName,$columnNames,$values){
@@ -68,7 +87,7 @@
 
             $sqlQry = "INSERT INTO ".$tableName." ".$columnNames." VALUES ".$values.";";
 
-                echo "<script>console.log('".$sqlQry."')</script>";
+            echo "<script>console.log('".$sqlQry."')</script>";
 
             if($this->conn->query($sqlQry) === True){
                 echo "<script>console.log('Inserted Successfully.')</script>";

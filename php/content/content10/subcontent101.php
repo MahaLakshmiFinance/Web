@@ -149,12 +149,13 @@ tfoot {
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Amount Received So Far</label>
-          <input name="due_amnt_total" class="form-control" value="0"disabled>          
+          <input name="due_amnt_total" class="form-control" value="0" disabled>          
         </div>     
       
 <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Due Date</label>
-          <select name="due_num" id="due_date" class="form-control" onfocusout="getInstallmentDetails()">  <select>                
+          <select name="due_num" id="due_date" class="form-control" onfocusout="getInstallmentDetails()"> <select>    
+          <input style="display:none" type="text" id="due_dat" class="form-control" name="due_date">
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Date of Pay</label>
@@ -176,7 +177,7 @@ tfoot {
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <div class="templatemo-block margin-bottom-5">
-            <input type="checkbox" name="emailOptions" id="ispenlity" value="1" onchange="addpen()"> 
+            <input type="checkbox" name="ispen" id="ispenlity" value="1" onchange="addpen()"> 
             <label for="ispenlity" class="font-weight-400"><span></span>Add Penality</label> 
           </div>
         </div>
@@ -193,7 +194,10 @@ tfoot {
                     <option value="105">105</option>
               </select>
           </div>
-
+          <div class="col-lg-6 col-md-6 form-group">                  
+          <label for="inputEmail">Penalised Days</label>
+          <input type="Number" disabled value="0" name="penality_days"class="form-control"placeholder="Penality Received">                  
+        </div>
     
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputEmail">Penality Amount to be Paid</label>
