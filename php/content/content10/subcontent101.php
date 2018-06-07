@@ -148,34 +148,37 @@ tfoot {
           <script> document.forms['transaction']['transaction_id'].value = gettransactionid()</script>
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputNewPassword">Date</label>
-          <input disabled type="text" class="form-control" name="today_date">
-          <script> document.forms['transaction']['today_date'].value = getTheDate()</script>
-        </div>
-        
-
+          <label for="inputUsername">Amount Received So Far</label>
+          <input name="due_amnt_total" class="form-control" value="0"disabled>          
+        </div>     
       
 <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Due Date</label>
-          <select name="due_num" class="form-control" onfocusout="getInstallmentDetails()">  <select>                
+          <select name="due_num" id="due_date" class="form-control" onfocusout="getInstallmentDetails()">  <select>                
+        </div>
+        <div class="col-lg-6 col-md-6 form-group">                  
+          <label for="inputNewPassword">Date of Pay</label>
+          <input disabled type="text" class="form-control" name="today_date">
+          <script> document.forms['transaction']['today_date'].value = getTheDate()</script>
         </div>
         </div>
+
         <div class="row form-group">
 
+
         <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputUsername">Gross Due Amount</label>
+          <label for="inputUsername">Amount to be Paid</label>
           <input type="Number" disabled value="0" name="d_amount" class="form-control" placeholder="Amount Received">                  
         </div>  
+        <div class="col-lg-6 col-md-6 form-group">                  
+          <label for="inputUsername">Amount Paid</label>
+          <input type="Number"value="0" name="amount" class="form-control" placeholder="Amount Received">                  
+        </div>
     
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputEmail">Gross Penality Amount</label>
           <input type="Number" disabled value="0" name="d_penality"class="form-control"placeholder="Penality Received">                  
-        </div> 
-
-        <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputUsername">Net Due Amount</label>
-          <input type="Number"value="0" name="amount" class="form-control" placeholder="Amount Received">                  
-        </div>  
+        </div>   
     
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputEmail">Net Penality Amount</label>

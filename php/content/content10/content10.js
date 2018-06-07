@@ -106,12 +106,58 @@ function getInstallmentDetails(){
     $.ajax({
         type: "GET",
         url: "php/content/content10/getInstallmentDetails.php",
-        data: "refer_num="+document.forms['transaction']['refer_num'].value+"&finance_type="+document.forms['transaction']['finance_type'].value+"&customer_id="+document.forms['transaction']['username'].value,
+        data: "emi_num="+document.forms['transaction']['due_num'].value+"&refer_num="+document.forms['transaction']['refer_num'].value+"&finance_type="+document.forms['transaction']['finance_type'].value+"&customer_id="+document.forms['transaction']['username'].value,
         error: function(msg){
             console.log(msg);
         },
         success: function(msg){
             $('#temp').html(msg);
+
+        var val = document.getElementById('ab12').value
+
+        var paid = document.forms['transaction']['due_amnt_total'].value
+
+        document.forms['transaction']['d_amount'].disabled = false
+
+        document.forms['transaction']['d_amount'].value = parseInt(val) - parseInt(paid)
+
+        document.forms['transaction']['d_amount'].disabled = true
+
+        document.forms['transaction']['issue_date'].disabled = false
+
+        var due_date = document.forms['transaction']['issue_date'].value
+
+        document.forms['transaction']['issue_date'].disabled = true
+
+        var date1 = new Date(due_date);
+
+        date1 = new Date(date1.getFullYear(),date1.getMonth()+1,date1.getDate());
+
+        var d = new Date()
+        var year = d.getFullYear()
+        var month = d.getMonth()
+        var day = d.getDate()
+        var date2 = new Date(year,month,day);
+
+        var timeDiff = date2.getTime() - date1.getTime()
+        var diffDays = timeDiff / (1000 * 3600 * 24)
+
+        if(diffDays<=0)
+            diffDays = 0
+
+        var inst = parseInt(val) / parseInt(document.forms['transaction']['due_num'].value)
+
+        var estimated = diffDays*(inst*(20/100))
+        estimated -= parseInt(paid);
+        if(!estimated)
+            estimated = 0;
+
+        document.forms['transaction']['d_penality'].disabled = false
+        
+        document.forms['transaction']['d_penality'].value = estimated
+
+        document.forms['transaction']['d_penality'].disabled = true
+
      }
     });
 }

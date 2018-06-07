@@ -60,7 +60,8 @@
         }
     $x =  mktime(23, 0, 0, $month,$day, $year);
 $duedate = date("Y/m/d",$x);
-            $res = $res.'<option value=\"'.$duedate.'\">'.$duedate.'</option>';
+        $test = (int)$count +1;
+            $res = $res.'<option value=\"'.$test.'\">'.$duedate.'</option>';
         }
 
     $res = $res.'"</script>';
@@ -78,6 +79,7 @@ $duedate = date("Y/m/d",$x);
        <th>Penality Amount Paid</th>\
        <th>Transaction Date</th>\
      </tr>';
+     $paid = 0;
       while($row = $result->fetch_assoc()){
             $res = $res.'<tr><td>'.$row["transaction_id"].'</td>';
             $res = $res.'<td>'.$row["due_date"].'</td>';
@@ -85,6 +87,7 @@ $duedate = date("Y/m/d",$x);
             $res = $res.'<td>'.$row["penality_days"].'</td>';
             $res = $res.'<td>'.$row["penality_amount"].'</td>';
             $res = $res.'<td>'.$row["due_amount_paid"].'</td>';
+            $paid = $paid + (int) $row["due_amount_paid"];
             $res = $res.'<td>'.$row["penality_amount_paid"].'</td>';
             $res = $res.'<td>'.$row["transaction_date"].'</td></tr>';
          }
@@ -94,7 +97,7 @@ $duedate = date("Y/m/d",$x);
            <th id=\"total\" colspan=\"2\">Overall Details</th>\
            <td  colspan=\"6\" ></td>\
          </tr>\
-        </tfoot>";</script>';
+        </tfoot>";document.forms["transaction"]["due_amnt_total"].value = '.$paid.'</script>';
     echo $res;
         
 
