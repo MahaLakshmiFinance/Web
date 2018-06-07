@@ -16,6 +16,45 @@ function user(){
    });
 
 }
+
+function gettransactionid(){
+    var d = new Date()
+    var year = d.getFullYear()
+    $.ajax({
+        type: "GET",
+        url: "php/content/content10/get_trasaction_id.php",
+        error: function(msg){
+            console.log(msg);
+        },
+        success: function(msg){
+            $('#temp').html(msg);
+            var val = document.getElementById('abc').value
+            var yearfrmserial = val[0]+""+val[1]+""+val[2]+""+val[3];
+            
+            if(yearfrmserial==year){
+                var sum = ""
+                for(var i=4;i<val.length;i++){
+                    sum+=""+val[i]+""
+                }
+                if(sum[0]==0){
+                    sum = "1"+sum
+                }
+                val = ""+(parseInt(sum)+1)
+                sum = ""
+                for(var i=1;i<val.length;i++){
+                    sum += val[i]+""
+                }
+                val = year+""+sum
+            }
+            else{
+                val=year+""+'000001'
+            }
+            document.forms['transaction']['transaction_id'].value = val;
+            
+     }
+    });
+
+}
 function getTheDate(){
 
     var d = new Date()

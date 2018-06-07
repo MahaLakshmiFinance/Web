@@ -48,11 +48,10 @@
         echo $res;
 
         }
-        
-$year = $date_issue[0].$date_issue[1].$date_issue[2].$date_issue[3];
-$month = $date_issue[5].$date_issue[6];
-$day = $date_issue[8].$date_issue[9];
-$res = '<script>document.forms["transaction"]["due_num"].innerHTML = "<option value=\"\"></option>';
+        $year = $date_issue[0].$date_issue[1].$date_issue[2].$date_issue[3];
+        $month = $date_issue[5].$date_issue[6];
+        $day = $date_issue[8].$date_issue[9];
+        $res = '<script>document.forms["transaction"]["due_num"].innerHTML = "<option value=\"\"></option>';
         for($count=0;$count<$total_emis;$count+=1){
             $month=((int)$month) + 1;
         if($month==13){
@@ -61,21 +60,41 @@ $res = '<script>document.forms["transaction"]["due_num"].innerHTML = "<option va
         }
     $x =  mktime(23, 0, 0, $month,$day, $year);
 $duedate = date("Y/m/d",$x);
-            // $columnNames = "(`customer_id`, `authorised_by`, `reference_number`, `bill_number`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `amount_paid`, `last_transaction`, `status`)";
-            // $values = '("'.$username.'", "'.$_SESSION['username'].'", "'.$ref_num.'", "'.$year.$serials_list[$count].'", "'.$duedate.'", "'.$inst_amount.'", "0", "0", "0", "'.$date.'", "1")';
-            // $dbobj->insert('mlf_transactions',$columnNames,$values);
             $res = $res.'<option value=\"'.$duedate.'\">'.$duedate.'</option>';
         }
 
-    // $result = $dbobj->search('mlf_transactions',"`customer_id`,`reference_number`, `bill_number`, `status`",'reference_number','"'.$refer_num.'"');
-        
-    //     $res = '<script>document.forms["transaction"]["due_num"].innerHTML = "<option value=\"\"></option>';
-    //     while($row = $result->fetch_assoc()){
-    //         if($row['status']==1)
-    //        $res = $res.'<option value=\"'.$row["bill_number"].'\">'.$row["bill_number"].'</option>';
-    //     }
-
     $res = $res.'"</script>';
+    echo $res;
+
+    $result = $dbobj->search('mlf_transactions',"`reference_number`, `transaction_id`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `due_amount_paid`, `penality_amount_paid`, `transaction_date`",'reference_number','"'.$refer_num.'"');
+        
+       $res = '<script>document.getElementById("table_transactions").innerHTML = "<tr>\
+       <th>Transaction Id</th>\
+       <th>Due Date</th>\
+       <th>Due Amount</th>\
+       <th>Penality Days</th>\
+       <th>Penality Amount</th>\
+       <th>Due Amount Paid</th>\
+       <th>Penality Amount Paid</th>\
+       <th>Transaction Date</th>\
+     </tr>';
+      while($row = $result->fetch_assoc()){
+            $res = $res.'<tr><td>'.$row["transaction_id"].'</td>';
+            $res = $res.'<td>'.$row["due_date"].'</td>';
+            $res = $res.'<td>'.$row["due_amount"].'</td>';
+            $res = $res.'<td>'.$row["penality_days"].'</td>';
+            $res = $res.'<td>'.$row["penality_amount"].'</td>';
+            $res = $res.'<td>'.$row["due_amount_paid"].'</td>';
+            $res = $res.'<td>'.$row["penality_amount_paid"].'</td>';
+            $res = $res.'<td>'.$row["transaction_date"].'</td></tr>';
+         }
+
+         $res = $res.'<tfoot>\
+         <tr>\
+           <th id=\"total\" colspan=\"2\">Overall Details</th>\
+           <td  colspan=\"6\" ></td>\
+         </tr>\
+        </tfoot>";</script>';
     echo $res;
         
 

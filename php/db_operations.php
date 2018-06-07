@@ -10,7 +10,7 @@
             $this->serverName = "172.168.2.115";
             //$this->serverName = "192.168.0.102";
             //$this->serverName = "192.168.43.211";
-            $this->serverName = "localhost";
+            
             $this->username = "admin";
             $this->password = "12345";
             $this->dbName = "mlf";
@@ -32,10 +32,34 @@
             $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
             
             if($this->conn->connect_error){
-				echo "<script>console.log('Connection Failed.')</script>";
+                echo "<script>console.log('Connection Failed with 172.168.2.115.')</script>";
+                $this->serverName = "localhost";
+                $this->username = "redants";
+                $this->password = "Sasi@123";
+                $this->dbName = "redants";
+                $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
+                if($this->conn->connect_error){
+                    echo "<script>console.log('Connection Failed with redants.info.')</script>";
+                    $this->serverName = "localhost";
+                    $this->username = "id6062084_mlf";
+                    $this->password = "12345";
+                    $this->dbName = "id6062084_mlf";
+                    $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
+                    if($this->conn->connect_error){
+                        echo "<script>console.log('Connection Failed with 000webhost.com.')</script>";
+                    }
+                    else{
+                        echo "<script>console.log('Connection Successful with 000webhost.com.')</script>";
+
+                        echo "Problem with connecting to Database.";
+                    }
+                }
+                else{
+                    echo "<script>console.log('Connection Successful with redants.info.')</script>";
+                }
             }
             else{
-				echo "<script>console.log('Connection Successful.')</script>";
+				echo "<script>console.log('Connection Successful with 172.168.2.115.')</script>";
             }
         }
 
@@ -121,9 +145,10 @@
             echo "<script>console.log('".$sqlQry."')</script>";
             
             $result = $this->conn->query($sqlQry);
-    
-            if($result->num_rows > 0){
-               echo "<script>console.log('Searched Data Successfully.')</script>";
+
+            if($result){
+                if($result->num_rows > 0)
+                echo "<script>console.log('Searched Data Successfully.')</script>";
             }
             else {
                 echo "<script>console.log('Error: " . $sqlQry . mysqli_error($this->conn)."')</script>";
