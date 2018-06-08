@@ -76,7 +76,7 @@ function getTotal(){
     if(prc_fee=="")
      prc_fee = 0
     var int = amt*rate
-    var total = parseInt(int) + parseInt(amt) + parseInt(prc_fee)
+    var total = parseInt(int) + parseInt(amt)
     document.forms['article_finance']['total_amount'].value = total
 }
 

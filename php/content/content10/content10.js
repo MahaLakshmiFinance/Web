@@ -164,16 +164,16 @@ function addpen(){
 }
 
 function ispenality(){
-
-    var penality = penality;
+    days = 20
+    var penality = days;
 
     var paid = parseInt(document.forms['transaction']['due_amnt_total'].value)
 
     var inst = parseInt(document.forms['transaction']['installment'].value)
 
-    var penality_rate = parseInt(document.forms['transaction']['penality_rate'].value)
+    var penality_rate = parseInt(document.forms['transaction']['penality_rate'].value)/100
 
-    var penality = (inst*(penality_rate/365))*days
+    var penality = ((inst*penality_rate)/365)*days
 
     penality = Math.round(penality)
 

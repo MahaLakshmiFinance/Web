@@ -209,14 +209,14 @@ tfoot {
           <input type="Number" value="0" name="penality"class="form-control"placeholder="Penality Received">                  
         </div> 
       </div>
-      <div class="row form-group"  style="display:none">
+      <div class="row form-group"  >
       <div class="col-lg-6 col-md-6 form-group">                  
           <div class="templatemo-block margin-bottom-5">
             <input type="checkbox" name="status" id="status" value="CLOSED"> 
             <label for="status" class="font-weight-400"><span></span>Due Complete</label> 
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 form-group" style="display:none"id="final_set">                  
+        <div class="col-lg-6 col-md-6 form-group" id="final_set">                  
           <div class="templatemo-block margin-bottom-5">
             <input type="checkbox" name="emailOptions" id="final" value="1"> 
             <label for="final" class="font-weight-400"><span></span>Final Settlement</label> 
