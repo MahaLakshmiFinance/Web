@@ -4,47 +4,6 @@ if (!isset($_SESSION['logged_in'])) {
   header('Location: index.php');
   die();
 }
-if(isset($_SESSION['role'])){
-	$role = $_SESSION['role'];
-	// if($role<=2){
-	// 	echo "<script>
-	// 	setTimeout(function(){
-	// 		document.getElementById('link1').innerHTML='Users'
-	// 	},200);
-	// 	</script>";
-	// }
-	// if($role == 3){
-	// 	echo "<script>
-	// 	setTimeout(function(){
-	// 		for(var i=1;i<=9;i++){
-	// 			var x = document.getElementById('link'+i)
-	// 			if(x)
-	// 				x.style='display:none;'
-	// 		}
-	// 		document.getElementById('link1').style=''
-	// 		document.getElementById('link2').style=''
-	// 		document.getElementById('link3').style=''
-	// 		document.getElementById('link4').style=''
-	// 		document.getElementById('link6').style=''
-	// 		document.getElementById('link8').style=''
-	// 		document.getElementById('link9').style=''
-	// 	},200);
-	// 	</script>";
-	// }
-	// if($role == 4){
-	// 	echo "<script>
-	// 	setTimeout(function(){
-	// 		for(var i=1;i<=9;i++){
-	// 			var x = document.getElementById('link'+i)
-	// 			if(x)
-	// 				x.style='display:none;'
-	// 		}
-	// 		document.getElementById('link8').style=''
-	// 		document.getElementById('link9').style=''
-	// 	},200);
-	// 	</script>";
-	// }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,18 +53,6 @@ $(function(){
 		});
 
 </script>
-<!--
-<li><a href="#profile" id="link0" onclick="sidemenu(0);" class="active">Profile</a></li>
-<li><a href="#users" id="link1" onclick="sidemenu(1)">Customer</a></li>
-<li><a href="#article_finance" id="link2" onclick="sidemenu(2)" >Article Finance</a></li>
-<li><a href="#cash_finance" id="link3" onclick="sidemenu(3)" >Cash Finance</a></li>
-<li><a href="#buy_back_items" id="link4" onclick="sidemenu(4)" >Buy Back Items</a></li>
-<li><a href="#employee_expenses" id="link5" onclick="sidemenu(5)" >Employee Expenses</a></li>
-<li><a href="#accessories" id="link6" onclick="sidemenu(6)" >Accessories</a></li>
-<li><a href="#summary" id="link7"  onclick="sidemenu(7)" >Summary</a></li>
-<li><a href="#change_password" id="link8"  onclick="sidemenu(8)" >Change Password</a></li>
-<li><a href="php/signout.php" id="link9"  onclick="sidemenu(9)" >Sign Out</a></li>
--->
 </ul>  
 </nav>
 </div>

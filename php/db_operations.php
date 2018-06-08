@@ -64,6 +64,7 @@
                     }
             }
             else if($this->serverName == "localhost"){
+                $this->serverName = "172.168.2.115";
                 $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);
                     if($this->conn->connect_error){
                         echo "<script>console.log('Connection Failed with localhost.')</script>";

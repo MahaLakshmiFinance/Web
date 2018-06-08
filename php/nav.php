@@ -12,7 +12,9 @@
 
      $dbobj->connect();
 
-    $result = $dbobj->search('mlf_roles_services',"role_id, service_id",'role_id','"'.$_SESSION['role'].'"');
+     $query = "SELECT `role_id`, `service_id` FROM `mlf_roles_services` WHERE role_id=".$_SESSION['role']." ORDER BY service_id";
+
+    $result = $dbobj->sqlQury($query);
 
     while($row = $result->fetch_assoc()){
 
