@@ -55,11 +55,11 @@
         for($count=0;$count<$total_emis;$count+=1){
             $month=((int)$month) + 1;
         if($month==13){
-    $month = 1;
-    $year = (int)$year+1;
+            $month = 1;
+            $year = (int)$year+1;
         }
-    $x =  mktime(23, 0, 0, $month,$day, $year);
-$duedate = date("Y/m/d",$x);
+        $x =  mktime(23, 0, 0, $month,$day, $year);
+        $duedate = date("Y/m/d",$x);
         $test = (int)$count +1;
             $res = $res.'<option value=\"'.$test.'\">'.$duedate.'</option>';
         }

@@ -121,7 +121,8 @@ function getInstallmentDetails(){
 
         document.forms['transaction']['d_amount'].disabled = false
 
-        document.forms['transaction']['d_amount'].value = parseInt(val) - parseInt(paid)
+        if((parseInt(val) - parseInt(paid) ) > 0)
+            document.forms['transaction']['d_amount'].value = parseInt(val) - parseInt(paid)
 
         document.forms['transaction']['d_amount'].disabled = true
 
@@ -173,6 +174,8 @@ function ispenality(){
     var penality_rate = parseInt(document.forms['transaction']['penality_rate'].value)
 
     var penality = (inst*(penality_rate/365))*days
+
+    penality = Math.round(penality)
 
     document.forms['transaction']['d_penality'].disabled = false
     

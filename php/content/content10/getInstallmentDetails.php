@@ -46,35 +46,6 @@
         echo $res;
         }
         
-$year = $date_issue[0].$date_issue[1].$date_issue[2].$date_issue[3];
-$month = $date_issue[5].$date_issue[6];
-$day = $date_issue[8].$date_issue[9];
-// $res = '<script>document.forms["transaction"]["due_num"].innerHTML = "<option value=\"\"></option>';
-//         for($count=0;$count<$total_emis;$count+=1){
-//             $month=((int)$month) + 1;
-//         if($month==13){
-//     $month = 1;
-//     $year = (int)$year+1;
-//         }
-//     $x =  mktime(23, 0, 0, $month,$day, $year);
-// $duedate = date("Y/m/d",$x);
-//             // $columnNames = "(`customer_id`, `authorised_by`, `reference_number`, `bill_number`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `amount_paid`, `last_transaction`, `status`)";
-//             // $values = '("'.$username.'", "'.$_SESSION['username'].'", "'.$ref_num.'", "'.$year.$serials_list[$count].'", "'.$duedate.'", "'.$inst_amount.'", "0", "0", "0", "'.$date.'", "1")';
-//             // $dbobj->insert('mlf_transactions',$columnNames,$values);
-//             $res = $res.'<option value=\"'.$duedate.'\">'.$duedate.'</option>';
-//         }
-
-//     // $result = $dbobj->search('mlf_transactions',"`customer_id`,`reference_number`, `bill_number`, `status`",'reference_number','"'.$refer_num.'"');
-        
-//     //     $res = '<script>document.forms["transaction"]["due_num"].innerHTML = "<option value=\"\"></option>';
-//     //     while($row = $result->fetch_assoc()){
-//     //         if($row['status']==1)
-//     //        $res = $res.'<option value=\"'.$row["bill_number"].'\">'.$row["bill_number"].'</option>';
-//     //     }
-
-//     $res = $res.'"</script>';
-//     echo $res;
-        
 
 
 ?>
