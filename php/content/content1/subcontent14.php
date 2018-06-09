@@ -1,31 +1,22 @@
 <script src="php/content/content1/validation.js">
 </script>
-<script>
-function verify_usr(){
-         $.ajax({
-               type: "GET",
-               url: "php/content/content1/verify_user.php",
-               data: "subcontent_num=4&id="+document.forms["view_user"]["username"].value,
-               error: function(msg){
-                   console.log(msg);
-               },
-               success: function(msg){
-                   document.getElementById('temp').innerHTML = "";
-                    $("#temp").html(msg);
-               }
-            });
-}
-
-</script>
 <div class="templatemo-content-container">
     <div id="temp"></div>
     <div class="templatemo-content-widget white-bg">
     <form action="php/content/content1/view_user.php"onsubmit="return user_form_modified('view_user')" name="view_user" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
-
+    <div class="row form-group" style="font-style:bold;display:none" id="error">
+				<div class="" style="opacity:5.0;text-align:center;color:red;font-size:20px;">
+					ERROR VERIFYING USERNAME GIVEN.
+				</div>
+			</div>
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
-<label for="inputFirstName">Unique ID</label><br>
-<input type="text" name="username" class="form-control" id="inputFirstName" onfocusout="verify_usr()"placeholder="Aadhar / Phone Number">                  
+<label for="inputFirstName">Username</label><br>
+<input type="text" name="username" class="form-control" id="inputFirstName" onfocusout="verify_usr()"placeholder="Aadhar / Phone Number">
+</div>
+<div class="col-lg-6 col-md-6 form-group">                  
+<label for="suggestions">Search</label><br>
+<input type="text" name="user_names" onkeypress="searchname()" onfocusout="find_usr()" class="form-control" id="suggestions"placeholder="Aadhar / Phone Number">             
 </div>
 </div>
 
@@ -95,4 +86,18 @@ function verify_usr(){
 </form>
 </div>
 </div>
+</div>
+<div id="temp2">
+  <script>
+    availableTags = [
+      "No Suggestions Yet"
+    ];
+    $(document).ready(function(){
+    $(function(){
+      $( '#suggestions' ).autocomplete({
+          source: availableTags
+        });
+    });
+  });
+  </script>
 </div>

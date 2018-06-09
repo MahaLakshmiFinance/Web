@@ -78,6 +78,7 @@ function getTotal(){
     var int = amt*rate
     var total = parseInt(int) + parseInt(amt)
     document.forms['article_finance']['total_amount'].value = total
+    getInsta()
 }
 
 function setInstScheme(){

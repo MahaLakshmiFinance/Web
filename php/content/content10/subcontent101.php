@@ -148,6 +148,10 @@ tfoot {
           <script> document.forms['transaction']['transaction_id'].value = gettransactionid()</script>
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
+          <label for="inputNewPassword">Receipt Id</label>
+          <input type="number" class="form-control" placeholder="123456" name="receipt_id">
+        </div>
+        <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Amount Received So Far</label>
           <input name="due_amnt_total" class="form-control" value="0" disabled>          
         </div>     
@@ -155,12 +159,15 @@ tfoot {
 <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Due Date</label>
           <select name="due_num" id="due_date" class="form-control" onfocusout="getInstallmentDetails()"> <select>    
-          <input style="display:none" type="text" id="due_dat" class="form-control" name="due_date">
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Date of Pay</label>
           <input disabled type="text" class="form-control" name="today_date">
           <script> document.forms['transaction']['today_date'].value = getTheDate()</script>
+        </div>
+        <div class="col-lg-6 col-md-6 form-group">                  
+          <label for="inputEmail">Penalised Days</label>
+          <input type="Number" disabled value="0" name="penality_days"class="form-control"placeholder="Penality Received">                  
         </div>
         </div>
 
@@ -194,10 +201,6 @@ tfoot {
                     <option value="105">105</option>
               </select>
           </div>
-          <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputEmail">Penalised Days</label>
-          <input type="Number" disabled value="0" name="penality_days"class="form-control"placeholder="Penality Received">                  
-        </div>
     
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputEmail">Penality Amount to be Paid</label>
@@ -209,8 +212,8 @@ tfoot {
           <input type="Number" value="0" name="penality"class="form-control"placeholder="Penality Received">                  
         </div> 
       </div>
-      <div class="row form-group"  >
-      <div class="col-lg-6 col-md-6 form-group">                  
+      <div class="row form-group"  style="display:none">
+      <div class="col-lg-6 col-md-6 form-group" >                  
           <div class="templatemo-block margin-bottom-5">
             <input type="checkbox" name="status" id="status" value="CLOSED"> 
             <label for="status" class="font-weight-400"><span></span>Due Complete</label> 

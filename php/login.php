@@ -39,6 +39,15 @@
             die();
         }
     }
+    $_SESSION['req_script']="<script>
+    $(document).ready(function(){
+        setTimeout(function(){
+            setTimeout(function(){
+                document.getElementById('alert').style='opacity:0.5;font-style:bold'},200);
+            },180);
+    });
+    </script>";
+    
     echo "<script>
         window.top.location = '../index.php';
     </script>";

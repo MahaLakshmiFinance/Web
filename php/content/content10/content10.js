@@ -122,19 +122,18 @@ function getInstallmentDetails(){
         document.forms['transaction']['d_amount'].disabled = false
 
         if((parseInt(val) - parseInt(paid) ) > 0)
-            document.forms['transaction']['d_amount'].value = parseInt(val) - parseInt(paid)
+        document.forms['transaction']['d_amount'].value = parseInt(val) - parseInt(paid)
 
         document.forms['transaction']['d_amount'].disabled = true
 
-        document.forms['transaction']['issue_date'].disabled = false
+        var issued_date = $( "select#due_date option:checked" ).text();//document.forms['transaction']['due_date'].value
 
-        var due_date = document.forms['transaction']['issue_date'].value
+        var date1 = new Date(issued_date);
 
-        document.forms['transaction']['issue_date'].disabled = true
-
-        var date1 = new Date(due_date);
-
-        date1 = new Date(date1.getFullYear(),date1.getMonth()+1,date1.getDate());
+        //date1 = new Date(date1.getFullYear(),date1.getMonth()+1,date1.getDate());
+        console.log(date1.getDate())
+        console.log(date1.getMonth())
+        console.log(date1.getFullYear())
 
         var d = new Date()
         var year = d.getFullYear()
@@ -142,13 +141,25 @@ function getInstallmentDetails(){
         var day = d.getDate()
         var date2 = new Date(year,month,day);
 
+        var due_date = $( "select#due_date option:checked" ).text();
+
+        //console.log(due_date)
+
+        //date2 = new Date(due_date);
+        console.log(date2.getDate())
+        console.log(date2.getMonth())
+        console.log(date2.getFullYear())
+
         var timeDiff = date2.getTime() - date1.getTime()
         var diffDays = timeDiff / (1000 * 3600 * 24)
 
-        if(diffDays<=0)
-            diffDays = 0
-
         var inst = parseInt(val) / parseInt(document.forms['transaction']['due_num'].value)
+
+        document.forms['transaction']['penality_days'].disabled = false
+    
+        document.forms['transaction']['penality_days'].value = diffDays
+    
+        document.forms['transaction']['penality_days'].disabled = true
 
         days = diffDays;
 
@@ -158,13 +169,12 @@ function getInstallmentDetails(){
 
 function addpen(){
     document.getElementById('penality_group').style.display = document.getElementById('penality_group').style.display === 'none' ? '' : 'none';
-    if(document.getElementById('penality_group').style.display === 'none'){
-        document.forms['transaction']['penality'].value = 0
-    }
+    // if(document.getElementById('penality_group').style.display === 'none'){
+    //     document.forms['transaction']['penality'].value = 0
+    // }
 }
 
 function ispenality(){
-    days = 20
     var penality = days;
 
     var paid = parseInt(document.forms['transaction']['due_amnt_total'].value)
@@ -182,12 +192,6 @@ function ispenality(){
     document.forms['transaction']['d_penality'].value = penality
     
     document.forms['transaction']['d_penality'].disabled = true
-
-    document.forms['transaction']['penality_days'].disabled = false
-    
-    document.forms['transaction']['penality_days'].value = days
-    
-    document.forms['transaction']['penality_days'].disabled = true
 
 
 }
