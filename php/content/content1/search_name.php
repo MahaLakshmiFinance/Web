@@ -15,7 +15,7 @@
         availableTags = [";
     
     while($row = $result->fetch_assoc()){
-        $text = $text.'"'.$row['username'].' [ '.$row["first_name"].' '.$row["last_name"].' ] [ '.$row["contact_num"].' ] [ '.$row["alternate_num"].' ]",';
+        $text = $text.'"'.$row['username'].' - '.$row["first_name"].' '.$row["last_name"].' - '.$row["contact_num"].' - '.$row["alternate_num"].' ",';
     }
     $text = $text."];});$(document).ready(function(){
         $(function(){

@@ -1,6 +1,13 @@
 <?php 
   session_start();
 
+  if(!isset($_SESSION['role'])){
+    session_unset();
+    session_destroy();
+    echo "<script>         window.top.location = 'index.php';     </script>";
+            die();
+  }
+
   if($_SESSION['role']==1){
     echo  "<script>setTimeout(function(){ document.getElementById('final_set').style = '';},200); </script>";
   }
@@ -162,7 +169,8 @@ tfoot {
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Date of Pay</label>
-          <input disabled type="text" class="form-control" name="today_date">
+          <input disabled type="text" class="form-control" name="today_date" placeholder="YYYY-MM-DD" required 
+pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))">
           <script> document.forms['transaction']['today_date'].value = getTheDate()</script>
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  

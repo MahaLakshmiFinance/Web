@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2018 at 05:57 PM
+-- Generation Time: Jun 12, 2018 at 02:18 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -255,6 +255,32 @@ INSERT INTO `mlf_cash_finance` (`customer_id`, `authorised_by`, `date`, `referen
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mlf_emp_info`
+--
+
+CREATE TABLE `mlf_emp_info` (
+  `username` varchar(50) NOT NULL,
+  `salary` int(11) NOT NULL,
+  `location` varchar(50) NOT NULL,
+  `joining_date` date NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `left_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mlf_emp_services`
+--
+
+CREATE TABLE `mlf_emp_services` (
+  `username` varchar(50) NOT NULL,
+  `service_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mlf_old_materials_purchase`
 --
 
@@ -425,7 +451,10 @@ INSERT INTO `mlf_transactions` (`customer_id`, `authorised_by`, `reference_numbe
 ('9949582550', 'emp', 201800001, 2018000002, '2018-08-04', 4010, 0, 0, 200, 1000, 1400, '2018-06-08'),
 ('9949582550', 'emp', 365, 2018000003, '2018-07-08', 1135, 0, 0, 1000, 0, 1000, '2018-06-08'),
 ('9949582550', 'emp', 365, 2018000004, '2018-08-08', 1270, 0, 0, 1200, 0, 2200, '2018-06-08'),
-('9949582550', 'emp', 201800002, 2018000005, '2018-07-08', 1500, 0, 0, 1000, 0, 1000, '2018-06-08');
+('9949582550', 'emp', 201800002, 2018000005, '2018-07-08', 1500, 0, 0, 1000, 0, 1000, '2018-06-08'),
+('', 'emp', 0, 2018000006, '0000-00-00', 0, 0, 0, 0, 0, 0, '2018-06-12'),
+('', 'emp', 0, 2018000007, '0000-00-00', 0, 0, 0, 0, 0, 0, '2018-06-12'),
+('456745+64', 'emp', 0, 2018000008, '0000-00-00', 0, 0, 0, 0, 0, 0, '2018-06-12');
 
 -- --------------------------------------------------------
 
@@ -449,7 +478,7 @@ INSERT INTO `mlf_users` (`username`, `password`) VALUES
 ('9949582550', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('admin', '81dc9bdb52d04dc20036dbd8313ed055'),
 ('cstmer', '81dc9bdb52d04dc20036dbd8313ed055'),
-('emp', 'e80b5017098950fc58aad83c8c14978e');
+('emp', '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
 
