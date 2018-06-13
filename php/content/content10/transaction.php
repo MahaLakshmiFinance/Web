@@ -8,6 +8,7 @@ session_start();
     $amount_paid = $_POST['amount'];
     $date = $_POST['today_date'];
     $total_due_paid = $_POST['due_amnt_total'];
+    $receipt_id = $_POST['receipt_id'];
     $penality_days = 0;
     $penality = 0;
     $penality_paid = 0;
@@ -25,8 +26,8 @@ session_start();
     
     $dbobj->connect();
 
-    $columnNames = "(`customer_id`, `authorised_by`, `reference_number`, `transaction_id`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `due_amount_paid`, `penality_amount_paid`, `total_due_amount_paid`, `transaction_date`)";
-    $VALUES = '("'.$customer_id.'","'.$_SESSION['username'].'","'.$ref_num.'","'.$transaction_id.'","'.$due_date.'","'.$due_amount.'","'.$penality_days.'","'.$penality.'","'.$amount_paid.'","'.$penality_paid.'","'.$total_due_paid.'","'.$date.'")';
+    $columnNames = "(`customer_id`, `authorised_by`, `reference_number`, `transaction_id`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `due_amount_paid`, `penality_amount_paid`, `total_due_amount_paid`, `transaction_date`, `receipt_id`)";
+    $VALUES = '("'.$customer_id.'","'.$_SESSION['username'].'","'.$ref_num.'","'.$transaction_id.'","'.$due_date.'","'.$due_amount.'","'.$penality_days.'","'.$penality.'","'.$amount_paid.'","'.$penality_paid.'","'.$total_due_paid.'","'.$date.'", "'.$receipt_id.'")';
 
     $dbobj->insert('mlf_transactions',$columnNames,$VALUES);
 

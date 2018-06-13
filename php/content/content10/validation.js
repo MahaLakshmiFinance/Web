@@ -25,7 +25,6 @@ function check(){
 
     if(finance_type.value == ""){
         alert("PLEASE SELECT FINANCE TYPE.")
-        finance_type.focus()
         return false
     }
 
@@ -44,6 +43,44 @@ function check(){
         receipt_id.focus()
         return false
     }
+    var due_num = document.forms['transaction']['due_num'];
+
+    if(due_num.value == ""){
+        alert("PLEASE SELECT THE DUE DATE.")
+        due_num.focus()
+        return false
+    }
+    var amount = document.forms['transaction']['amount'];
+
+    if(amount.value == ""){
+        alert("PLEASE ENTER AMOUNT THE PAID.")
+        amount.focus()
+        return false
+    }
+
+    var ispen = document.forms['transaction']['ispen'];
+
+    if(ispen.checked){
+
+        var penality_rate = document.forms['transaction']['penality_rate'];
+
+        if(penality_rate.value == ""){
+            alert("PLEASE SELECT PENALITY RATE.")
+            penality_rate.focus()
+            return false
+        }
+
+        var penality = document.forms['transaction']['penality'];
+
+        if(penality.value == ""){
+            alert("PLEASE ENTER PENAILTY AMOUNT PAID.")
+            penality.focus()
+            return false
+        }
+        
+    }
+
+    
 
 
     document.forms['transaction']['transaction_id'].value = gettransactionid()
