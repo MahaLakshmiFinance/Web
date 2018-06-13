@@ -6,6 +6,15 @@
   },20);
   </script>";
 ?>
+<?php
+
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+?>
 
 <div class="templatemo-content col-1 light-gray-bg"><div class="templatemo-top-nav-container-1">
 <div class="row">

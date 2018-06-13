@@ -1,3 +1,12 @@
+<?php
+session_start();
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+?>
 <script src="php/content/content3/content3.js"></script>
 
 <script src="php/content/content3/validation.js"></script>
@@ -59,7 +68,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Total Amount</label>
+                    <label for="inputConfirmNewPassword">Interest Amount</label>
                     <input disabled type="Number" name="total_amount" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
                 </div>
             </div>

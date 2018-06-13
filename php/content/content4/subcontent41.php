@@ -1,3 +1,12 @@
+<?php
+session_start();
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+?>
 <script src="php/content/content4/validation.js"></script>
 <script src="php/content/content4/content4.js"></script>
 <div id="temp"></div>

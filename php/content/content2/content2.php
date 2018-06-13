@@ -5,6 +5,12 @@
     document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
   },20);
   </script>";
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
 ?>
 
 <script src="php/content/content2/content2.js"></script>

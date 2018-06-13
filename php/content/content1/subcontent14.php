@@ -1,3 +1,12 @@
+<?php
+session_start();
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+?>
 <script src="php/content/content1/validation.js">
 </script>
 <div class="templatemo-content-container">

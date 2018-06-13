@@ -7,6 +7,14 @@
   },20);
   </script>";
 ?>
+<?php
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+?>
 
 <script src="php/content/content10/content10.js"></script>
 

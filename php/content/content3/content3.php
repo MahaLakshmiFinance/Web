@@ -6,7 +6,14 @@
   },20);
   </script>";
 ?>
-
+<?php
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+?>
 <script src="php/content/content3/content3.js"></script>
 
 <div class="templatemo-content col-1 light-gray-bg">
