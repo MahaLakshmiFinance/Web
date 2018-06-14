@@ -1,6 +1,6 @@
 function sidemenu(x){
-	for(var i=0;i<=10;i++){
-		if(document.getElementById("link"+i)!=null)
+	for(var i=0;i<=25;i++){
+		if(document.getElementById("link"+i))
 			document.getElementById("link"+i).setAttribute("class","")
 	}
 	if(document.getElementById("link"+x)){

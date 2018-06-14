@@ -154,6 +154,19 @@ function user_form(form_name){
             }
         }
     }
+
+    var rle_type = document.forms[form_name]('rle_type');
+
+    if(rle_type.style == ""){
+
+        var role_id = document.forms[form_name]['role_id'];
+
+        if(role_id.value = ""){
+            alert("SELECT ROLE TYPE.")
+            return false
+        }
+
+    }
 }
 
 function user_form_modified(form_name){

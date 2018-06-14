@@ -72,39 +72,6 @@ session_start();
                     <input disabled type="Number" name="total_amount" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
                 </div>
             </div>
-
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputFirstName">EMI Scheme</label><br>
-                    <div class="margin-right-15 templatemo-inline-block">
-                        <input type="radio" name="emi_type" id="r1" onchange = "setInstScheme()" value="1">
-                        <label for="r1" class="font-weight-400"><span></span>Months</label>
-                    </div>
-
-                    <div class="margin-right-15 templatemo-inline-block">
-                        <input type="radio" name="emi_type" onchange = "setInstScheme()" id="r2" value="2">
-                        <label for="r2" class="font-weight-400"><span></span>Amount</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputNewPassword">Total EMI'S</label>
-                    <input type="Number"  oninput="getInsta()" name="tot_emis" disabled class="form-control" id="inputNewPassword" placeholder="Number of Installments">
-                </div>
-                
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputEmail"> Installment Amount</label>
-                    <input type="Number" oninput="getEmi()" name="inst_amnt" disabled class="form-control" id="inputEmail" placeholder="Every Month Installment">                  
-                </div> 
-                <div class="col-lg-6 col-md-6 form-group" id="temp2" style="display:none">                  
-                    <label for="inputEmail">Due Number</label>
-                    <input type="Number" name="serial_num"class="form-control" id="inputEmail" placeholder="Every Month Installment"> 
-                    <script>getSerialNumb()</script>             
-                </div>                
-            </div>
-
             <div class="form-group text-right">
                 <button type="submit" name="submit" class="templatemo-blue-button">Submit</button>
             </div>

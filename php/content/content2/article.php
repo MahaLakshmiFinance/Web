@@ -14,6 +14,7 @@
     $total_amount = $_POST['total_amount'];
     $total_emis = $_POST['tot_emis'];
     $inst_amount = $_POST['inst_amnt'];
+    $ref_no = $_POST['ref_no'];
 
     include_once '../../db_operations.php';
 
@@ -90,8 +91,8 @@ $year = $today[0].$today[1].$today[2].$today[3];
 $month = $today[5].$today[6];
 $day = $today[8].$today[9];
 
-        $columnNames = "(`customer_id`, `authorised_by`, `article_id`, `article_type`, `article_model`, `article_cost`, `date`, `reference_number`, `approved_amount`, `documentation_charges`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`)";
-        $values = '("'.$username.'", "'.$_SESSION['username'].'", "'.$article_id.'", "'.$article_type.'", "'.$article_model.'", "'.$article_cost.'", "'.$date.'", "'.$ref_num.'", "'.$amount.'", "'.$prc_fee.'", "'.$rt_of_int.'", "'.$total_emis.'", "'.$inst_amount.'", "'.$total_amount.'") ';
+        $columnNames = "(`customer_id`, `authorised_by`, `article_id`, `article_type`, `article_model`, `article_cost`, `date`, `article_bill_number`, `reference_number`, `approved_amount`, `documentation_charges`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`,)";
+        $values = '("'.$username.'", "'.$_SESSION['username'].'", "'.$article_id.'", "'.$article_type.'", "'.$article_model.'", "'.$article_cost.'", "'.$date.'", "'.$ref_num.'", "'.$ref_no.'", "'.$amount.'", "'.$prc_fee.'", "'.$rt_of_int.'", "'.$total_emis.'", "'.$inst_amount.'", "'.$total_amount.'") ';
         $dbobj->insert('mlf_article_finance',$columnNames,$values);
         
         $alert = '"'.'PURCHASE COMPLETED.'.'"';
