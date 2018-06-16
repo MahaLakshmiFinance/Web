@@ -154,6 +154,21 @@ function user_form(form_name){
             }
         }
     }
+
+    var rle_type = document.getElementById('rle_type');
+
+    if(rle_type.style == ""){
+
+        var role_id1 = document.getElementById('r3');
+        var role_id2 = document.getElementById('r4');
+
+        if(role_id1.checked == false && role_id2.checked == false ){
+          // role_id = document.getElementById('r3');
+            alert('PLEASE SELECT THE ROLE TYPE')
+            return false
+        }
+
+    }
 }
 
 function user_form_modified(form_name){

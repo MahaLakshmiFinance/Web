@@ -44,20 +44,16 @@ function findname(){
 </div>
 <input name="username" type="text"  class="form-control"placeholder="Aadhar / Phone Number">                  
 </div>
-<div class="col-lg-6 col-md-6 form-group" style="display:none;">                  
+<div class="col-lg-6 col-md-6 form-group" id="rle_type" style="display:none;">                  
 <label for="inputFirstName">Role ID</label><br>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="role_id" id="r3" value="3" >
+<input type="radio" name="role_id" id="r3" value="2" >
 <label for="r3" class="font-weight-400"><span></span>Employee</label>
-</div>
-<div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="role_id" id="r4" value="4">
-<label for="r4" class="font-weight-400"><span></span>Customer</label>
 </div><br>
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="role_id" id="r5" value="5" checked>
-<label for="r5" class="font-weight-400"><span></span>Other</label>
-</div>
+<input type="radio" name="role_id" id="r4" value="3">
+<label for="r4" class="font-weight-400"><span></span>Customer</label>
+</div><br>
 </div>
 </div>
 
@@ -143,3 +139,9 @@ function findname(){
 </form>
 </div>
 </div>
+
+<?php
+    if($_SESSION['role']==1){
+        echo '<script> document.getElementById("rle_type").style="";</script>';
+    }
+?>

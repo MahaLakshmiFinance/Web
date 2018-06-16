@@ -109,7 +109,7 @@ function getTotal(){
      rate = 0
     rate/=100
     var int = amt*rate
-    var total = parseInt(int) + parseInt(amt)
+    var total = parseInt(int)/12
     document.forms['cash_finance']['total_amount'].value = total
 }
 

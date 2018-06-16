@@ -38,6 +38,10 @@ session_start();
             <hr>
 
             <div class="row form-group">
+            <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Article Bill Number</label>
+                    <input type="number" name="ref_no" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputEmail">Article ID</label>
                     <input type="text" name="article_id" class="form-control" id="inputEmail" placeholder="ID">                  
@@ -73,7 +77,7 @@ session_start();
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputConfirmNewPassword">Reference Number</label>
+                    <label for="inputConfirmNewPassword">Finance Reference Number</label>
                     <input type="number" name="article_refno" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
                 </div>
 

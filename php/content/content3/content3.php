@@ -14,7 +14,6 @@
                 die();
       }
 ?>
-<script src="php/content/content3/content3.js"></script>
 
 <div class="templatemo-content col-1 light-gray-bg">
   <div class="templatemo-top-nav-container-1">

@@ -51,7 +51,7 @@
 </div> 
         
       <div class="col-lg-12 col-md-6 form-group">                  
-          <label for="inputUsername">Finance Reference</label>
+          <label for="inputUsername">Reference</label>
           <select class="form-control" name="refer_num" onfocusout="getTransactionDetails()"></select>                
         </div>
         </div>
@@ -83,6 +83,10 @@
                </div>
               </div>
               <div  class="row form-group" >
+              <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputConfirmNewPassword">Finance Reference</label>
+                    <input  disabled type="Number" class="form-control" name="finace_ref" placeholder="Article Bill No.">
+                </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Issued Amount</label>
                     <input  disabled type="Number" class="form-control" name="issued_amount" placeholder="Article Bill No.">

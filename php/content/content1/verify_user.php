@@ -81,7 +81,12 @@
                 document.forms['".$form_name."']['fname'].value = '".$row['first_name']."';
                 document.forms['".$form_name."']['lname'].value = '".$row['last_name']."';
                 document.forms['".$form_name."']['cntact_num'].value = '".$row['contact_num']."';
-                document.forms['".$form_name."']['alt_cntact_num'].value = '".$row['alternate_num']."';
+                ";
+                if($row['alternate_num']!=0)
+                    echo "
+                        document.forms['".$form_name."']['alt_cntact_num'].value = '".$row['alternate_num']."';
+                    ";
+                echo "
                 document.forms['".$form_name."']['dno'].value = '".$row['d_no']."';
                 document.forms['".$form_name."']['street'].value = '".$row['street']."';
                 document.forms['".$form_name."']['locality'].value = '".$row['locality']."';
