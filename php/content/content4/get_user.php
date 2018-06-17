@@ -21,6 +21,6 @@
             $lname = "";
             $contact_number = "";
         }
-        echo '<script>document.forms["exchange"]["cstmr_name"].value = "'.$fname.''.$lname.'";
+        echo '<script>document.forms["exchange"]["cstmr_name"].value = "'.$fname.' '.$lname.'";
         document.forms["exchange"]["cntact_num"].value = "'.$contact_number.'";</script>';
 ?>

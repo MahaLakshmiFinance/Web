@@ -68,8 +68,8 @@
         });
         </script>";
 
-    // echo "<script>
-    //     window.top.location = '../../../mlf_home.php';
-    // </script>";
+    echo "<script>
+        window.top.location = '../../../mlf_home.php';
+    </script>";
     die();
 ?>
