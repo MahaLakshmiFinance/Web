@@ -155,6 +155,7 @@ function user_form(form_name){
         }
     }
 
+<<<<<<< HEAD
     var rle_type = document.forms[form_name]('rle_type');
 
     if(rle_type.style == ""){
@@ -163,6 +164,18 @@ function user_form(form_name){
 
         if(role_id.value = ""){
             alert("SELECT ROLE TYPE.")
+=======
+    var rle_type = document.getElementById('rle_type');
+
+    if(rle_type.style == ""){
+
+        var role_id1 = document.getElementById('r3');
+        var role_id2 = document.getElementById('r4');
+
+        if(role_id1.checked == false && role_id2.checked == false ){
+          // role_id = document.getElementById('r3');
+            alert('PLEASE SELECT THE ROLE TYPE')
+>>>>>>> abb91b8a388f714e0c08725538ec663aeca53327
             return false
         }
 

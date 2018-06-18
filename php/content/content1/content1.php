@@ -5,12 +5,12 @@
     document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
   },20);
   </script>";
-  if($_SESSION['role']==1) 
-  echo '<script>
-  setTimeout(function(){
-    document.getElementById("delete").style=""
-  },100);
-  </script>';
+  // if($_SESSION['role']==1) 
+  // echo '<script>
+  // setTimeout(function(){
+  //   document.getElementById("delete").style=""
+  // },100);
+  // </script>';
 ?>
 
 <script src="php/content/content1/content1clicks.js"></script>

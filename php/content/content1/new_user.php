@@ -51,6 +51,12 @@
 
     $dbobj->insert('mlf_users_info',"(`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`, `added_by`)",$values);
     
+    if($role_id==2){
+        $dbobj->insert('mlf_emp_services','(username,service_id)','("'.$username.'",0)');
+        $dbobj->insert('mlf_emp_services','(username,service_id)','("'.$username.'",19)');
+        $dbobj->insert('mlf_emp_services','(username,service_id)','("'.$username.'",20)');
+    }
+
     $alert = '"'.'SUCESSFULLY ADDED THE CUSTOMER. PLEASE VERIFY USING VIEW TAB'.'"';
     $_SESSION['req_script']="<script>
         $(document).ready(function(){

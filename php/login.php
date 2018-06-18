@@ -30,6 +30,11 @@
             while($row2 = $result2->fetch_assoc()){
                 $_SESSION['role'] = $row2['role_id'];
             }
+            if($_SESSION['role']==2){
+                $result2 = $dbobj->search('mlf_emp_info',"username, location",'username','"'.$username.'"');
+                $row2 =  $result2->fetch_assoc();
+                $_SESSION['location'] = $row2['location'];
+            }
             echo "<script>
         window.top.location ='../mlf_home.php';
     </script>";

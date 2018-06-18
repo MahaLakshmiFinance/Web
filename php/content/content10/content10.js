@@ -89,17 +89,19 @@ function getFinanceRefer(){
 }
 
 function getTransactionDetails(){
-    $.ajax({
-        type: "GET",
-        url: "php/content/content10/get_transaction_details.php",
-        data: "refer_num="+document.forms['transaction']['refer_num'].value+"&finance_type="+document.forms['transaction']['finance_type'].value,
-        error: function(msg){
-            console.log(msg);
-        },
-        success: function(msg){
-            $('#temp').html(msg);
-     }
-    });
+    if(document.forms['transaction']['refer_num'].value){
+        $.ajax({
+            type: "GET",
+            url: "php/content/content10/get_transaction_details.php",
+            data: "refer_num="+document.forms['transaction']['refer_num'].value+"&finance_type="+document.forms['transaction']['finance_type'].value,
+            error: function(msg){
+                console.log(msg);
+            },
+            success: function(msg){
+                $('#temp').html(msg);
+        }
+        });
+    }
 }
 
 var days = 0;

@@ -13,7 +13,6 @@
     $pincode = $_POST['pincode'];
     $refer_id = $_POST['refer_id'];
     $refer_name = $_POST['refer_name'];
-    $role_id = $_POST['role_id'];
 
     include_once '../../db_operations.php';
 

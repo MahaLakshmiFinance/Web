@@ -28,20 +28,17 @@
         $res = $res."</script>";
         echo $res;
         }
-        else{
-            $result = $dbobj->search('mlf_cash_finance',"`customer_id`, `authorised_by`, `date`, `reference_number`, `approved_amount`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`",'reference_number','"'.$refer_num.'"');
+        if($finance_type == 2){
+            $result = $dbobj->search('mlf_cash_finance',"`customer_id`, `authorised_by`, `date`, `reference_number`,`interest_amount`, `approved_amount`, `rate_of_interest`",'reference_number','"'.$refer_num.'"');
         
         $row = $result->fetch_assoc();
-        $inst_due = (int)$row['installment_amount'] ;
+        $inst_due = (int)$row['interest_amount'] ;
         $inst_due *= (int)$emi_num;
         echo '<input style="display:none" value="'.$inst_due.'" id="ab12">';
 
         $res = '<script>document.forms["transaction"]["issued_amount"].value="'.$row["approved_amount"].'";';
         $res = $res.'document.forms["transaction"]["issue_date"].value="'.$row["date"].'";';
-        $res = $res.'document.forms["transaction"]["emis"].value="'.$row["total_emis"].'";';
-        $res = $res.'document.forms["transaction"]["installment"].value="'.$row["installment_amount"].'";';
         $date_issue = $row["date"];
-        $total_emis = (int)$row["total_emis"];
         $res = $res."</script>";
         echo $res;
         }

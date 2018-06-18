@@ -13,9 +13,9 @@ session_start();
 
 <div id="temp"></div>
 
-<div class="templatemo-content-container" id="subcontent21">
+<div class="templatemo-content-container">
     <div class="templatemo-content-widget white-bg">
-        <form action="php/content/content3/cash.php" name="cash_finance" onsubmit="return form_verify()" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+        <form action="php/content/content3/cash.php" name="cash_finance" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Customer ID</label><br>
@@ -58,7 +58,9 @@ session_start();
                 </div>
          
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    </div> 
+                    <label for="inputConfirmNewPassword">Finance Reference Number</label>
+                    <input type="number" name="refno" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                </div>
             </div> 
 
             <div class="row form-group">
