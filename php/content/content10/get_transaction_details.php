@@ -64,6 +64,12 @@
         $res = $res.'document.forms["transaction"]["installment"].value="'.$row["interest_amount"].'";';
         $date_issue = $row["date"];
 
+        $date = date('Y/m/d');
+
+        //cashdue(date('Y/m/d'));
+        $res = $res."</script>";
+        echo $res;
+
         }
         $result = $dbobj->search('mlf_transactions',"`reference_number`, `transaction_id`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `due_amount_paid`, `penality_amount_paid`, `transaction_date`",'reference_number','"'.$refer_num.'"');
         
@@ -78,8 +84,15 @@
        <th>Transaction Date</th>\
      </tr>';
      $paid = 0;
+     $a = 0;
       while($row = $result->fetch_assoc()){
             $res = $res.'<tr><td>'.$row["transaction_id"].'</td>';
+            if($finance_type==2){
+                if(strtotime($date)<strtotime($row['due_date'])){
+                    $date = $row['due_date'];
+                    $a = 1;
+                }
+            }
             $res = $res.'<td>'.$row["due_date"].'</td>';
             $res = $res.'<td>'.$row["due_amount"].'</td>';
             $res = $res.'<td>'.$row["penality_days"].'</td>';
@@ -90,6 +103,20 @@
             $res = $res.'<td>'.$row["transaction_date"].'</td></tr>';
          }
 
+         if($finance_type==2){
+
+            if($a==1){
+            
+            $year = $date[0].$date[1].$date[2].$date[3];
+            $month = $date[5].$date[6];
+            $month = ((int)$month)+1;
+            if($month==13)
+                $month = 1;
+            $day = $date[8].$date[9];
+            $date = date($year.'/'.$month.'/'.$day);
+            }
+         }
+
          $res = $res.'<tfoot>\
          <tr>\
            <th id=\"total\" colspan=\"2\">Overall Details</th>\
@@ -98,13 +125,14 @@
         </tfoot>";document.forms["transaction"]["due_amnt_total"].value = '.$paid.'</script>';
     echo $res;
 
-    function cashdue($date_issue){
+    if($finance_type==2){
+        cashdue();
+        
+     }
+
+    function cashdue(){
         global $date_issue;
-
-        $res = $res."</script>";
-        echo $res;
-
-        $date = date("Y/m/d");
+        global $date;
 
         $date1 = $date_issue;
         $date2 = $date;
@@ -117,6 +145,9 @@ $year2 = date('Y', $ts2);
 
 $month1 = date('m', $ts1);
 $month2 = date('m', $ts2);
+
+if($month1==$month2 && $year1 == $year2)
+        $month2 = (int)$month2+1;
 
 $diff =(int) (($year2 - $year1) * 12) + ($month2 - $month1);
 
