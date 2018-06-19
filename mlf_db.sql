@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2018 at 03:59 PM
+-- Generation Time: Jun 19, 2018 at 01:38 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -183,6 +183,7 @@ INSERT INTO `mlf_accessories_sold` (`serial_number`, `transaction_by`, `sold_to`
 CREATE TABLE `mlf_article_finance` (
   `customer_id` varchar(50) NOT NULL,
   `authorised_by` varchar(50) NOT NULL,
+  `authorised_at` varchar(25) NOT NULL,
   `article_bill_number` int(11) NOT NULL,
   `article_id` varchar(50) NOT NULL,
   `article_type` varchar(50) NOT NULL,
@@ -203,8 +204,8 @@ CREATE TABLE `mlf_article_finance` (
 -- Dumping data for table `mlf_article_finance`
 --
 
-INSERT INTO `mlf_article_finance` (`customer_id`, `authorised_by`, `article_bill_number`, `article_id`, `article_type`, `article_model`, `article_cost`, `date`, `reference_number`, `approved_amount`, `documentation_charges`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`, `status`) VALUES
-('9949582550', 'admin', 580, '15445', 'AC', 'Samsung 45MN9', 25000, '2018-06-15', 125, 25000, 500, 12, 12, 2334, 28000, 1);
+INSERT INTO `mlf_article_finance` (`customer_id`, `authorised_by`, `authorised_at`, `article_bill_number`, `article_id`, `article_type`, `article_model`, `article_cost`, `date`, `reference_number`, `approved_amount`, `documentation_charges`, `rate_of_interest`, `total_emis`, `installment_amount`, `total_amount`, `status`) VALUES
+('9949582550', 'admin', 'PAL', 580, '15445', 'AC', 'Samsung 45MN9', 25000, '2018-06-15', 125, 25000, 500, 12, 12, 2334, 28000, 1);
 
 -- --------------------------------------------------------
 
@@ -215,27 +216,29 @@ INSERT INTO `mlf_article_finance` (`customer_id`, `authorised_by`, `article_bill
 CREATE TABLE `mlf_cash_finance` (
   `customer_id` varchar(50) NOT NULL,
   `authorised_by` varchar(50) NOT NULL,
+  `authorised_at` varchar(25) NOT NULL,
   `date` date NOT NULL,
   `reference_number` bigint(20) NOT NULL,
   `bill_number` bigint(20) NOT NULL,
   `approved_amount` int(11) NOT NULL,
   `rate_of_interest` double NOT NULL,
   `interest_amount` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `cleared_balance` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mlf_cash_finance`
 --
 
-INSERT INTO `mlf_cash_finance` (`customer_id`, `authorised_by`, `date`, `reference_number`, `bill_number`, `approved_amount`, `rate_of_interest`, `interest_amount`, `status`) VALUES
-('9949582550', 'emp', '2018-06-04', 1, 0, 50000, 24, 62000, 1),
-('9949582550', 'admin', '2018-06-15', 454, 201800003, 1656, 5654, 7803, 1),
-('admin', 'emp', '2018-06-04', 1213, 0, 1222, 11, 1356, 1),
-('9949582550', 'emp', '2018-06-04', 201800001, 0, 25000, 25, 31250, 1),
-('9949582550', 'emp', '2018-06-08', 201800002, 0, 50000, 3, 51500, 1),
-('9949582550', 'admin', '2018-06-15', 201800003, 454, 1656, 5654, 7803, 1),
-('9949582550', 'admin', '2018-06-15', 201800004, 166, 2500, 24, 50, 1);
+INSERT INTO `mlf_cash_finance` (`customer_id`, `authorised_by`, `authorised_at`, `date`, `reference_number`, `bill_number`, `approved_amount`, `rate_of_interest`, `interest_amount`, `status`, `cleared_balance`) VALUES
+('9949582550', 'emp', 'PAL', '2018-06-04', 1, 0, 50000, 24, 62000, 1, 0),
+('9949582550', 'admin', 'PAL', '2018-06-15', 454, 201800003, 1656, 5654, 7803, 1, 0),
+('admin', 'emp', 'PAL', '2018-06-04', 1213, 0, 1222, 11, 1356, 1, 0),
+('9949582550', 'emp', 'PAL', '2018-06-04', 201800001, 0, 25000, 25, 31250, 1, 0),
+('9949582550', 'emp', 'PAL', '2018-06-08', 201800002, 0, 50000, 3, 51500, 1, 0),
+('9949582550', 'admin', 'PAL', '2018-06-15', 201800003, 454, 1656, 5654, 7803, 1, 0),
+('9949582550', 'admin', 'PAL', '2018-06-15', 201800004, 166, 2500, 24, 50, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -464,6 +467,7 @@ CREATE TABLE `mlf_users` (
 --
 
 INSERT INTO `mlf_users` (`username`, `password`) VALUES
+('', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('7659893339', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('9492400797', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('9949582551', '53b08ebde5e144fb1d8a3ee61f7016c8'),
@@ -500,6 +504,7 @@ CREATE TABLE `mlf_users_info` (
 --
 
 INSERT INTO `mlf_users_info` (`username`, `first_name`, `last_name`, `contact_num`, `alternate_num`, `d_no`, `street`, `locality`, `town_or_city`, `district`, `pincode`, `refer_username`, `refer_name`, `added_by`, `location`) VALUES
+('', '', '', 0, 0, '', '', '', '', '', 0, '', '', 'cstmer', ''),
 ('7659893339', 'Subhash', 'Kommina', 7659893339, 0, '258-36', '', '', 'NDD', 'West Godavari', 534222, '9492400797', 'KIRAN KUMAR', 'emp', ''),
 ('9492400797', 'KIRAN', 'KUMAR', 9492400797, 0, '10-145-2/b', '', '', 'Tadepalligudem', 'West Godavari', 534101, '', '', 'emp', ''),
 ('9949582551', 'GOPINADH', 'V', 9949582550, 0, '10-145-2/b', '', '', 'Tadepalligudem', 'West Godavari', 534101, '', '', 'admin', ''),
@@ -523,6 +528,7 @@ CREATE TABLE `mlf_users_roles` (
 --
 
 INSERT INTO `mlf_users_roles` (`username`, `role_id`) VALUES
+('', 3),
 ('7659893339', 5),
 ('7780169003', 5),
 ('9492400797', 5),
