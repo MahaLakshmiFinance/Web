@@ -73,8 +73,8 @@ function get_existing_serial(){
     document.getElementById('in_serial').value = "";
     document.getElementById('in_serial').style="display:none"
     document.forms['exchange']['model_name'].disabled = true;
-    document.getElementById('ntworking').disabled = true;
-    document.getElementById('working').disabled = true;
+    //document.getElementById('ntworking').disabled = true;
+    //document.getElementById('working').disabled = true;
     document.forms['exchange']['item_type'].value = "";
     document.forms['exchange']['item_type'].disabled = true;
     $.ajax({

@@ -89,7 +89,6 @@
       while($row = $result->fetch_assoc()){
             $res = $res.'<tr><td>'.$row["transaction_id"].'</td>';
             $res = $res.'<td>'.$row["receipt_id"].'</td>';
-            $res = $res.'<td>'.$row["reference_number"].'</td>';
             if($finance_type==2){
                 if(strtotime($date)<strtotime($row['due_date'])){
                     $date = $row['due_date'];
