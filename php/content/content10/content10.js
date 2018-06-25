@@ -49,7 +49,9 @@ function gettransactionid(){
             else{
                 val=year+""+'000001'
             }
+            document.forms['transaction']['transaction_id'].disabled = false
             document.forms['transaction']['transaction_id'].value = val;
+            document.forms['transaction']['transaction_id'].disabled = true
             
      }
     });

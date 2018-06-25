@@ -21,7 +21,7 @@ session_start();
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">Username</label><br>
-<input type="text" name="username" class="form-control" id="inputFirstName" onfocusout="verify_usr()"placeholder="Aadhar / Phone Number">
+<input type="text" name="username" class="form-control" id="inputFirstName" onfocusout="verify_usr('view_user',4)"placeholder="Aadhar / Phone Number">
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="suggestions">Search</label><br>

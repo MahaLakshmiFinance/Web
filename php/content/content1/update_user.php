@@ -41,7 +41,7 @@
         $(document).ready(function(){
             setTimeout(function(){
                 document.getElementById('additional').innerHTML = 'sidemenu(1);setTimeout(function(){\
-                    alert(".$alert.");},200);';
+                    alert(".$alert.");nav(12);},200);';
             },180);
             console.log(".$alert.");
         });

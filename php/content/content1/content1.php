@@ -13,7 +13,7 @@
   // </script>';
 ?>
 
-<script src="php/content/content1/content1clicks.js"></script>
+<script sync src="php/content/content1/content1clicks.js"></script>
 
 <div class="templatemo-content col-1 light-gray-bg">
 <div class="templatemo-top-nav-container-1">

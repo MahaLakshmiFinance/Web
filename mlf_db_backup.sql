@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2018 at 01:38 PM
+-- Generation Time: Jun 22, 2018 at 01:14 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -243,6 +243,29 @@ INSERT INTO `mlf_cash_finance` (`customer_id`, `authorised_by`, `authorised_at`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mlf_emp_expenses`
+--
+
+CREATE TABLE `mlf_emp_expenses` (
+  `emp_id` varchar(50) NOT NULL,
+  `cstmr_id` varchar(50) NOT NULL,
+  `expense` int(11) NOT NULL,
+  `amt_collected` int(11) NOT NULL,
+  `remarks` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mlf_emp_expenses`
+--
+
+INSERT INTO `mlf_emp_expenses` (`emp_id`, `cstmr_id`, `expense`, `amt_collected`, `remarks`) VALUES
+('9640487323', '9949582551', 500, 2000, 'dfkjhdsfljhdsfvdsjf'),
+('9640487323', '9949582551', 1000, 2000, 'gfhgfcghfjg'),
+('9640487323', '9949582551', 200, 1000, 'kjdfhdscvjdf');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mlf_emp_info`
 --
 
@@ -254,6 +277,13 @@ CREATE TABLE `mlf_emp_info` (
   `is_active` tinyint(1) NOT NULL,
   `left_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mlf_emp_info`
+--
+
+INSERT INTO `mlf_emp_info` (`username`, `salary`, `location`, `joining_date`, `is_active`, `left_date`) VALUES
+('9640487323', 10000, 'TAD', '2018-06-20', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -279,7 +309,11 @@ INSERT INTO `mlf_emp_services` (`username`, `service_id`) VALUES
 ('emp', 6),
 ('emp', 8),
 ('emp', 19),
-('emp', 20);
+('emp', 20),
+('9640487323', 0),
+('9640487323', 19),
+('9640487323', 20),
+('9640487323', 1);
 
 -- --------------------------------------------------------
 
@@ -363,7 +397,7 @@ INSERT INTO `mlf_roles` (`roie_id`, `role_name`) VALUES
 
 CREATE TABLE `mlf_roles_services` (
   `role_id` int(11) NOT NULL,
-  `service_id` int(11) NOT NULL
+  `service_id` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -372,7 +406,6 @@ CREATE TABLE `mlf_roles_services` (
 
 INSERT INTO `mlf_roles_services` (`role_id`, `service_id`) VALUES
 (1, 0),
-(1, 1),
 (1, 2),
 (1, 3),
 (1, 4),
@@ -384,7 +417,8 @@ INSERT INTO `mlf_roles_services` (`role_id`, `service_id`) VALUES
 (1, 20),
 (3, 0),
 (3, 19),
-(3, 20);
+(3, 20),
+(1, 1.1);
 
 -- --------------------------------------------------------
 
@@ -393,7 +427,7 @@ INSERT INTO `mlf_roles_services` (`role_id`, `service_id`) VALUES
 --
 
 CREATE TABLE `mlf_services` (
-  `service_id` int(11) NOT NULL,
+  `service_id` double NOT NULL,
   `service_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -404,10 +438,11 @@ CREATE TABLE `mlf_services` (
 INSERT INTO `mlf_services` (`service_id`, `service_name`) VALUES
 (0, 'Profile'),
 (1, 'Customer'),
+(1.1, 'Users'),
 (2, 'Article Finance'),
 (3, 'Cash Finance'),
 (4, 'Buy Back Items'),
-(5, 'Employee Expenses'),
+(5, 'Employee'),
 (6, 'Accessories'),
 (7, 'Summary'),
 (10, 'Transactions'),
@@ -470,6 +505,7 @@ INSERT INTO `mlf_users` (`username`, `password`) VALUES
 ('', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('7659893339', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('9492400797', '53b08ebde5e144fb1d8a3ee61f7016c8'),
+('9640487323', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('9949582551', '53b08ebde5e144fb1d8a3ee61f7016c8'),
 ('admin', '81dc9bdb52d04dc20036dbd8313ed055'),
 ('cstmer', '81dc9bdb52d04dc20036dbd8313ed055'),
@@ -507,6 +543,7 @@ INSERT INTO `mlf_users_info` (`username`, `first_name`, `last_name`, `contact_nu
 ('', '', '', 0, 0, '', '', '', '', '', 0, '', '', 'cstmer', ''),
 ('7659893339', 'Subhash', 'Kommina', 7659893339, 0, '258-36', '', '', 'NDD', 'West Godavari', 534222, '9492400797', 'KIRAN KUMAR', 'emp', ''),
 ('9492400797', 'KIRAN', 'KUMAR', 9492400797, 0, '10-145-2/b', '', '', 'Tadepalligudem', 'West Godavari', 534101, '', '', 'emp', ''),
+('9640487323', 'yuva', 'kishore', 9640487323, 0, 'mig 26', '999street', 'housing board', 'Tadepalligudem', 'West Godavari', 534101, '', '', 'admin', ''),
 ('9949582551', 'GOPINADH', 'V', 9949582550, 0, '10-145-2/b', '', '', 'Tadepalligudem', 'West Godavari', 534101, '', '', 'admin', ''),
 ('admin', 'sasi', 'redants', 9999999990, 9988998899, '10-145-2/b', 'abx street', 'Tadepalligudem', 'Tadepalligudem', 'West Godavari', 534101, 'admin', 'Institute', '', ''),
 ('cstmer', 'RED ANTS', 'SASI', 9999999999, 9999999999, '10-145-2/b', 'abx street', 'Tadepalligudem', 'Tadepalligudem', 'West Godavari', 534101, 'admin', 'sasi', '', ''),
@@ -532,6 +569,7 @@ INSERT INTO `mlf_users_roles` (`username`, `role_id`) VALUES
 ('7659893339', 5),
 ('7780169003', 5),
 ('9492400797', 5),
+('9640487323', 2),
 ('9949582550', 5),
 ('9949582551', 3),
 ('admin', 1),

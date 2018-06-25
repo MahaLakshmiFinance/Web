@@ -2,11 +2,11 @@ function nav(x){
     $('#subcontent').load('php/content/content5/subcontent'+x+'.php');
 }
 
-function user(){
+function cstmr(){
     $.ajax({
           type: "GET",
-          url: "php/content/content5/get_user.php",
-          data: "username="+document.forms['expenses']['username'].value,
+          url: "php/content/content5/get_cstmr.php",
+          data: "username="+document.forms['expenses']['cstmr_id'].value,
           error: function(msg){
               console.log(msg);
           },
@@ -17,6 +17,31 @@ function user(){
 
 }
 
-function addpen(){
-    document.getElementById('penality_group').style.display = document.getElementById('penality_group').style.display === 'none' ? '' : 'none';
+function emp(){
+    $.ajax({
+          type: "GET",
+          url: "php/content/content5/get_emp.php",
+          data: "username="+document.forms['expenses']['emp_id'].value,
+          error: function(msg){
+              console.log(msg);
+          },
+          success: function(msg){
+              $('#temp').html(msg);
+       }
+   });
+
+}
+
+function emp_sal(){
+    $.ajax({
+          type: "GET",
+          url: "php/content/content5/get_emp_sal.php",
+          data: "username="+document.forms['expenses']['emp_id'].value,
+          error: function(msg){
+              console.log(msg);
+          },
+          success: function(msg){
+              $('#temp').html(msg);
+       }
+   });
 }

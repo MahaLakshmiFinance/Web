@@ -2,11 +2,11 @@ function nav(x){
     $('#subcontent').load('php/content/content1/subcontent'+x+'.php');
 }
 
-function verify_usr(){
+function verify_usr(frm_nme,cont){
     $.ajax({
           type: "GET",
           url: "php/content/content1/verify_user.php",
-          data: "subcontent_num=4&id="+document.forms["view_user"]["username"].value,
+          data: "subcontent_num="+cont+"&id="+document.forms[frm_nme]["username"].value,
           error: function(msg){
               console.log(msg);
           },
@@ -44,6 +44,6 @@ function find_usr(){
         val = val[0]
         var req = document.forms['view_user']['username']
         req.value = val
-        verify_usr()
+        verify_usr('view_user',4)
     }
 }

@@ -24,7 +24,7 @@
 
         while($row1 = $result1->fetch_assoc()){
     
-            echo "<li><a href='#".$row1['service_name']."' id='link".$row['service_id']."' onclick='sidemenu(".$row['service_id'].");'</a>".$row1['service_name']."</li>";
+            echo "<li><a href='#".$row1['service_name']."' id='link".(int)$row['service_id']."' onclick='sidemenu(".(int)$row['service_id'].");'</a>".$row1['service_name']."</li>";
         
             if($row['service_id']==0)
                 echo '<script>document.getElementById("link0").setAttribute("class","active")</script>';

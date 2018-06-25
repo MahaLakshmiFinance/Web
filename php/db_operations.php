@@ -52,7 +52,7 @@
             }
             else if($this->serverName == "mahalakshmifinance.000webhostapp.com"){
                     $this->serverName = "localhost";
-                    $this->username = "id6062084_mlf";
+                    $this->username = "id6062084_admin";
                     $this->password = "12345";
                     $this->dbName = "id6062084_mlf";
                     $this->conn = new mysqli($this->serverName, $this->username, $this->password, $this->dbName);

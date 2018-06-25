@@ -134,6 +134,7 @@ tfoot {
 <table id="table_transactions">
   <tr>
     <th>Transaction Id</th>
+    <th>Receipt Id</th>
     <th>Due Date</th>
     <th>Due Amount</th>
     <th>Penality Days</th>
@@ -144,7 +145,7 @@ tfoot {
   </tr>
   <tfoot>
     <tr>
-      <th id="total" colspan="2">Overall Details</th>
+      <th id="total" colspan="3">Overall Details</th>
       <td  colspan="6" ></td>
     </tr>
    </tfoot>
@@ -155,8 +156,8 @@ tfoot {
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Transaction Id</label>
-          <input disabled type="text" class="form-control" value="000000000" name="transaction_id">
-          <script> document.forms['transaction']['transaction_id'].value = gettransactionid()</script>
+          <input disabled type="text" class="form-control" placeholde="year_serial" name="transaction_id">
+          <script>gettransactionid()</script>
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Receipt Id</label>
@@ -170,7 +171,9 @@ tfoot {
 <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Due Date</label>
           <select name="due_num" id="due_date" class="form-control" onfocusout="getInstallmentDetails()"> <select>    
+          <input name="due_dat" id="due_dat" style="display:none">
         </div>
+        
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Date of Pay</label>
           <input disabled type="text" class="form-control" name="today_date" placeholder="YYYY-MM-DD" required 

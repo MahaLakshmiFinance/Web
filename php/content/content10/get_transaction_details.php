@@ -71,10 +71,11 @@
         echo $res;
 
         }
-        $result = $dbobj->search('mlf_transactions',"`reference_number`, `transaction_id`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `due_amount_paid`, `penality_amount_paid`, `transaction_date`",'reference_number','"'.$refer_num.'"');
+        $result = $dbobj->search('mlf_transactions',"`receipt_id`,`reference_number`, `transaction_id`, `due_date`, `due_amount`, `penality_days`, `penality_amount`, `due_amount_paid`, `penality_amount_paid`, `transaction_date`",'reference_number','"'.$refer_num.'"');
         
        $res = '<script>document.getElementById("table_transactions").innerHTML = "<tr>\
        <th>Transaction Id</th>\
+       <th>Receipt Id</th>\
        <th>Due Date</th>\
        <th>Due Amount</th>\
        <th>Penality Days</th>\
@@ -87,6 +88,8 @@
      $a = 0;
       while($row = $result->fetch_assoc()){
             $res = $res.'<tr><td>'.$row["transaction_id"].'</td>';
+            $res = $res.'<td>'.$row["receipt_id"].'</td>';
+            $res = $res.'<td>'.$row["reference_number"].'</td>';
             if($finance_type==2){
                 if(strtotime($date)<strtotime($row['due_date'])){
                     $date = $row['due_date'];
@@ -119,7 +122,7 @@
 
          $res = $res.'<tfoot>\
          <tr>\
-           <th id=\"total\" colspan=\"2\">Overall Details</th>\
+           <th id=\"total\" colspan=\"3\">Overall Details</th>\
            <td  colspan=\"6\" ></td>\
          </tr>\
         </tfoot>";document.forms["transaction"]["due_amnt_total"].value = '.$paid.'</script>';

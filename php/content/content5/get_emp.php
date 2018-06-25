@@ -21,6 +21,11 @@
             $lname = "";
             $contact_number = "";
         }
-        echo '<script>document.forms["expenses"]["cstmr_name"].value = "'.$fname.''.$lname.'";
-        document.forms["expenses"]["cntact_num"].value = "'.$contact_number.'";</script>';
+        $result = $dbobj->search('mlf_users_roles',"`username`,`role_id`",'username','"'.$username.'"');
+        $row = $result->fetch_assoc();
+        if($row['role_id']==2){
+            echo '<script>document.forms["expenses"]["emp_name"].value = "'.$fname.' '.$lname.'";
+            document.forms["expenses"]["emp_cntact_num"].value = "'.$contact_number.'";</script>';
+        }
+       
 ?>

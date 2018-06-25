@@ -1,68 +1,52 @@
 <script src="php/content/content5/content5.js"></script>
+<script>function form_verify(){
+
+var emp_id = document.forms['expenses']['emp_id'];
+if(emp_id.value == ""){
+alert('PLEASE ENTER EMPLOYEE ID.');
+emp_id.focus()
+return false;
+}
+
+var salary = document.forms['expenses']['usal']
+if(salary.value == ""){
+alert('PLEASE ENTER UPDATE SALARY.');
+salary.focus()
+return false;
+}
+
+}</script>
+<div id="temp"></div>
 
 <div class="templatemo-content-container">
     <div class="templatemo-content-widget white-bg">
-        <form action="index.html" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+        <form action="php/content/content5/salary.php" name="expenses" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Employee ID </label><br>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="Employee ID">                  
+                    <input type="text" name="emp_id" onfocusout="emp_sal()" class="form-control" id="inputFirstName" placeholder="Employee ID">                  
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Employee Name</label>
-                    <input disabled type="text" class="form-control" placeholder="Name">                  
+                    <input disabled type="text" name="emp_name" class="form-control" placeholder="Name">                  
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputLastName">Contact Number</label>
-                    <input disabled type="tel" class="form-control" placeholder="+91">                  
-                </div> 
-            </div>
-            <hr>
-            <div class="row form-group">
-                 <div class="col-lg-12 col-md-6 form-group">
-                    <style>
-                        table {
-                            font-family: arial, sans-serif;
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-                        td, th {
-                            border: 1px solid #dddddd;
-                            text-align: left;
-                            padding: 8px;
-                        }
-                        tr:nth-child(even) {
-                            background-color: #dddddd;
-                        }
-                        tfoot {
-                            background-color: #2f435c;
-                            color:white;
-                        }
-                    </style>
-                    <table id="table_transactions">
-                        <tr>
-                            <th>Date</th>
-                            <th>Salary</th>
-                            <th>Increment Amount</th>
-                            <th>Current Salary</th>
-                        </tr>
-                    </table>
+                    <input disabled type="tel" name="emp_cntact_num" class="form-control" placeholder="+91">                  
                 </div>
-                <hr>
                 <div class="col-lg-6 col-md-6 form-group">                  
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="incrememnt" id="incrememnt" value="1" onchange="addpen()"> 
-                        <label for="incrememnt" class="font-weight-400"><span></span>Incrememnt</label> 
-                    </div>
+                    <label for="inputLastName">Current Salary</label>
+                    <input disabled type="number" name="csal" class="form-control" placeholder="Rupees">                  
                 </div>
-                <div class="row form-group" id="penality_group" style="display:none">
-                    <div class="col-lg-6 col-md-6 form-group">                  
-                        <label for="inputEmail">Increment Amount</label>
-                        <input type="Number" disabled value="0" name="d_penality"class="form-control"placeholder="Penality Received">                  
-                    </div>
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputLastName">Update Salary</label>
+                    <input type="number" name="usal" class="form-control" placeholder="Rupees">                  
                 </div>
+            </div>
+            <div class="form-group text-right">
+                <button type="submit" class="templatemo-blue-button">Submit</button>
             </div>
         </form>
     </div>
