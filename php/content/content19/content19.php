@@ -13,7 +13,7 @@
 <div class="row">
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
-<li><a href="#change_password" onclick="nav(81)"><font style="color:  black">CHANGE PASSOWRD</font></a></li>
+<li><a href="#change_password" onclick="nav(81)"><font style="color:  black">CHANGE PASSWORD</font></a></li>
 
 </ul> 
 <div align="right"style='font-size:20px'>Hello, <b style='font-size:20px'id="hello"></b></div>

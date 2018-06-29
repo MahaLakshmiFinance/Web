@@ -6,6 +6,11 @@ session_start();
         echo "<script>         window.top.location = 'index.php';     </script>";
                 die();
       }
+else{
+	if($_SESSION['role']==1)
+		echo "<script>setTimeout(function(){document.forms['article_finance']['date'].disabled=false},1500);</script>";
+
+}
 ?>
 <script src="php/content/content2/content2.js"></script>
 
@@ -40,7 +45,7 @@ session_start();
             <div class="row form-group">
             <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Article Bill Number</label>
-                    <input type="number" name="ref_no" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                    <input type="text" name="ref_no" class="form-control" id="inputConfirmNewPassword" placeholder="WHYNOT Bill No.">
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputEmail">Article ID</label>
@@ -78,12 +83,12 @@ session_start();
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Finance Reference Number</label>
-                    <input type="number" name="article_refno" class="form-control" id="inputConfirmNewPassword" placeholder="Article Bill No.">
+                    <input type="number" name="article_refno" class="form-control" id="inputConfirmNewPassword" placeholder="Finance Number">
                 </div>
 
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Date ( YYYY-MM-DD )</label>
-                    <input type="text" disabled name="date" id="date" class="form-control" placeholder="">
+                    <input disabled type="text" name="date" id="date" class="form-control" placeholder="">
                     <script>document.getElementById('date').value = getTheDate()</script>
                 </div>
             </div>

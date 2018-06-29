@@ -10,4 +10,5 @@ function sidemenu(x){
 	else{
 		setTimeout(function(){sidemenu(x)},500);
 	}
+	return
 }

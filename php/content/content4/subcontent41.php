@@ -6,6 +6,11 @@ session_start();
         echo "<script>         window.top.location = 'index.php';     </script>";
                 die();
       }
+if($_SESSION['role']==1){
+	echo  "<script>setTimeout(function(){ document.forms['exchange']['date'].disabled = false;},1200); </script>";
+
+  }
+
 ?>
 <script src="php/content/content4/validation.js"></script>
 <script src="php/content/content4/content4.js"></script>

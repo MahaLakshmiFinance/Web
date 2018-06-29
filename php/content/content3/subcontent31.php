@@ -6,6 +6,12 @@ session_start();
         echo "<script>         window.top.location = 'index.php';     </script>";
                 die();
       }
+else{
+	if($_SESSION['role']==1)
+		echo "<script>setTimeout(function(){document.forms['cash_finance']['date'].disabled=false},1500);</script>";
+
+}
+
 ?>
 <script src="php/content/content3/content3.js"></script>
 
@@ -71,7 +77,7 @@ session_start();
 
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Interest Amount</label>
-                    <input disabled type="Number" name="total_amount" class="form-control" id="inputConfirmNewPassword" placeholder="Interest+principle">
+                    <input disabled type="Number" name="total_amount" class="form-control" id="inputConfirmNewPassword" placeholder="Interest">
                 </div>
             </div>
             <div class="form-group text-right">

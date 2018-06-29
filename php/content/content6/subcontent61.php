@@ -1,3 +1,19 @@
+<?php
+session_start();
+    if(!isset($_SESSION['role'])){
+        session_unset();
+        session_destroy();
+        echo "<script>         window.top.location = 'index.php';     </script>";
+                die();
+      }
+if($_SESSION['role']==1){
+	echo  "<script>setTimeout(function(){ document.forms['small_appliances']['date'].disabled = false;},1200); </script>";
+
+  }
+
+?>
+
+
 <script src="php/content/content6/validation.js"></script>
 <script src="php/content/content6/content6.js"></script>
 <div id="temp"></div>

@@ -39,7 +39,7 @@
         while($row = $result->fetch_assoc()){
             if($row['status']==1)
             if($_SESSION['role']==2){
-            if($row['authorised_at']==$_SESSION['location'])
+            	if($row['authorised_at']==$_SESSION['location'])
             $res = $res.'<option value=\''.$row['reference_number'].'\'>'.$row['reference_number'].'</option>';
             }
             else{

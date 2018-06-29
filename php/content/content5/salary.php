@@ -2,7 +2,6 @@
     session_start();
 
     $emp_id = $_POST['emp_id'];
-    $inc_amt = $_POST['increment_amt'];
     $usal = $_POST['usal'];
        
     include_once '../../db_operations.php';
@@ -16,16 +15,15 @@
     $row = $result->fetch_assoc();
 
     if($row){
-        $dbobj->update('mlf_emp_info','salary','"'.$sal.'"','username','"'.$emp_id.'"');
+        $dbobj->update('mlf_emp_info','salary','"'.$usal.'"','username','"'.$emp_id.'"');
     }
         
-    $alert = '"'.'SUCESSFULLY UPDATED THE EXPENSE DETAILS'.'"';
+    $alert = '"'.'SUCESSFULLY UPDATED THE SALARY DETAILS'.'"';
     $_SESSION['req_script']="<script>
         $(document).ready(function(){
             setTimeout(function(){
                 document.getElementById('additional').innerHTML = 'sidemenu(5);setTimeout(function(){\
-                    nav(53);alert(".$alert.");},200);';
-            },180);
+                    alert(".$alert.");},180);'});
             console.log(".$alert.");
         });
         </script>";

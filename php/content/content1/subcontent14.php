@@ -25,7 +25,7 @@ session_start();
 </div>
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="suggestions">Search</label><br>
-<input type="text" name="user_names" onkeypress="searchname()" onfocusout="find_usr()" class="form-control" id="suggestions"placeholder="Aadhar / Phone Number">             
+<input type="text" name="user_names" onkeypress="searchname()" onfocusout="find_usr()" class="form-control" id="suggestions"placeholder=" Name / Aadhar / Phone Number ">             
 </div>
 </div>
 

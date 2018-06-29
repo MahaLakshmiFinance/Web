@@ -10,6 +10,8 @@
 
   if($_SESSION['role']==1){
     echo  "<script>setTimeout(function(){ document.getElementById('final_set').style = '';},200); </script>";
+	echo  "<script>setTimeout(function(){ document.forms['transaction']['today_date'].disabled = false;},1200); </script>";
+
   }
 
 ?>
@@ -161,7 +163,7 @@ tfoot {
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputNewPassword">Receipt Id</label>
-          <input type="number" class="form-control" placeholder="123456" name="receipt_id">
+          <input type="number" class="form-control" placeholder="Receipt Number" name="receipt_id">
         </div>
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Amount Received So Far</label>

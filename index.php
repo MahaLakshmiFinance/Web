@@ -1,5 +1,6 @@
 <?php
 	session_start();
+session_unset();
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/templatemo-style.css" rel="stylesheet">
-<script src="js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+<script src="js/jquery-1.11.2.min.js">Cache.delete()</script>      <!-- jQuery -->
 <script src="js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
 <script src="https://www.google.com/jsapi"></script> <!-- Google Chart -->
 

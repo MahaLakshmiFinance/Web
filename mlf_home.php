@@ -70,7 +70,7 @@ $(function(){
 <nav class="templatemo-top-nav col-lg-12 col-md-12">
 <ul class="text-uppercase">
 <h1 style="color: #FFDF00" align="middle">Maha Lakshmi Finance</h1>
-<h5 style="color: #FFDF00" align="middle">PALAKOLLU | BHIMAVARAM | NARASAPURAM</h5>
+<h5 style="color: #FFDF00" align="middle">PALAKOLLU | TADERU | NARASAPURAM</h5>
 <h5 style="color: #FFDF00" align="middle">ANDHRA PRADESH , INDIA . </h5>
 </ul>  
 </nav> 
