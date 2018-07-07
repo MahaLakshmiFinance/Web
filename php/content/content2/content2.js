@@ -105,6 +105,7 @@ function getInsta(){
     if(emi =="")
     return
     document.forms['article_finance']['inst_amnt'].value = Math.ceil(total/emi)
+	changeInstallment()
 
 }
 function getEmi(){

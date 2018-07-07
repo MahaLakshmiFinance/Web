@@ -92,6 +92,36 @@ else{
                     <script>document.getElementById('date').value = getTheDate()</script>
                 </div>
             </div>
+<script>
+	function changeInstallment(){
+	document.forms["article_finance"]["inst_amnt"].disabled=false;
+
+	var abc = document.forms["article_finance"]["inst_amnt"].value
+
+	if(abc%10<5 && abc!=0){
+		console.log(abc)
+		var x = abc/10;
+		console.log(x)
+		x = parseInt(x)*10;
+		x +=5;
+abc = x;
+	}
+else{
+	var x = abc/100.00;
+	x = x+0.1;
+	x*=10;
+	x = parseInt(x)*10;
+	abc= x;
+	
+}
+document.forms["article_finance"]["inst_amnt"].value = abc
+document.forms["article_finance"]["inst_amnt"].disabled = true
+}
+
+</script>
+
+
+
 
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
@@ -108,7 +138,7 @@ else{
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Rate Of Interest</label>
-                    <input type="Number" name="rt_of_int" class="form-control" onchange="getTotal()" id="inputNewPassword" placeholder="1.5">
+                    <input type="Number" name="rt_of_int" class="form-control" onchange="getTotal()"step="0.01" id="inputNewPassword" placeholder="1.5">
                 </div>
 
                 <div class="col-lg-6 col-md-6 form-group">                  
@@ -131,7 +161,6 @@ else{
                     </div>
                 </div>
             </div>
-
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Total EMI'S</label>
@@ -144,7 +173,7 @@ else{
                 </div> 
                 <div class="col-lg-6 col-md-6 form-group" id="temp2" style="display:none">                  
                     <label for="inputEmail">Due Number</label>
-                    <input type="Number" name="serial_num"class="form-control" id="inputEmail" placeholder="Every Month Installment"> 
+                    <input type="Number" name="serial_num"class="form-control" onfocusout="changeInstallment()" id="inputEmail" placeholder="Every Month Installment"> 
                     <script>getSerialNumb()</script>             
                 </div>                
             </div>

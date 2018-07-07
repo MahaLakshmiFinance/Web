@@ -1,3 +1,10 @@
 [23-Jun-2018 13:18:16 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/acc5d3330cdw/public_html/mlf/php/content/content10/transaction.php on line 39
 [23-Jun-2018 13:19:23 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/acc5d3330cdw/public_html/mlf/php/content/content10/transaction.php on line 39
 [23-Jun-2018 13:25:30 UTC] PHP Notice:  Undefined index: due_date in /home/acc5d3330cdw/public_html/mlf/php/content/content10/transaction.php on line 6
+[06-Jul-2018 10:10:42 UTC] PHP Notice:  Trying to get property of non-object in /home/acc5d3330cdw/public_html/mlf/php/db_operations.php on line 206
+[06-Jul-2018 10:42:50 UTC] PHP Notice:  Trying to get property of non-object in /home/acc5d3330cdw/public_html/mlf/php/db_operations.php on line 206
+[06-Jul-2018 13:28:25 UTC] PHP Notice:  Trying to get property of non-object in /home/acc5d3330cdw/public_html/mlf/php/db_operations.php on line 206
+[06-Jul-2018 14:12:54 UTC] PHP Notice:  Undefined index: fin_type in /home/acc5d3330cdw/public_html/mlf/php/content/content10/get_finance_details.php on line 2
+[06-Jul-2018 14:12:54 UTC] PHP Notice:  Undefined index: username in /home/acc5d3330cdw/public_html/mlf/php/content/content10/get_finance_details.php on line 3
+[06-Jul-2018 14:22:44 UTC] PHP Notice:  Undefined index: refer_num in /home/acc5d3330cdw/public_html/mlf/php/content/content10/get_transaction_details.php on line 2
+[06-Jul-2018 14:22:44 UTC] PHP Notice:  Undefined index: finance_type in /home/acc5d3330cdw/public_html/mlf/php/content/content10/get_transaction_details.php on line 3

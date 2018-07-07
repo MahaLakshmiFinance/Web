@@ -118,8 +118,16 @@ function getInstallmentDetails(){
         },
         success: function(msg){
             $('#temp').html(msg);
+		var val = document.getElementById('ab12').value
+	days = val;
+	penalitydays()
+	}
+});
+}
 
-        var val = document.getElementById('ab12').value
+function penalitydays(){
+
+        var val = days
 
         var paid = document.forms['transaction']['due_amnt_total'].value
 
@@ -138,11 +146,12 @@ function getInstallmentDetails(){
         console.log(date1.getDate())
         console.log(date1.getMonth())
         console.log(date1.getFullYear())
-
-        var d = new Date()
-        var year = d.getFullYear()
-        var month = d.getMonth()
-        var day = d.getDate()
+	
+	
+        var d = document.forms['transaction']['today_date'].value.split("-")//new Date()
+        var year = d[0]//d.getFullYear()
+        var month = d[1]-1//d.getMonth()
+        var day = d[2]//d.getDate()
         var date2 = new Date(year,month,day);
 
         var due_date = $( "select#due_date option:checked" ).text();
@@ -167,8 +176,7 @@ function getInstallmentDetails(){
 
         days = diffDays;
 
-     }
-    });
+	document.forms["transaction"]["d_amount"].onchange()
 }
 
 function addpen(){
