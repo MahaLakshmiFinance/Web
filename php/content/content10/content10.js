@@ -108,6 +108,8 @@ function getTransactionDetails(){
 
 var days = 0;
 
+var val = 0;
+
 function getInstallmentDetails(){
     $.ajax({
         type: "GET",
@@ -118,16 +120,13 @@ function getInstallmentDetails(){
         },
         success: function(msg){
             $('#temp').html(msg);
-		var val = document.getElementById('ab12').value
-	days = val;
+val = document.getElementById('ab12').value
 	penalitydays()
 	}
 });
 }
 
 function penalitydays(){
-
-        var val = days
 
         var paid = document.forms['transaction']['due_amnt_total'].value
 

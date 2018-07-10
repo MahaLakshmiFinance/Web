@@ -84,8 +84,11 @@
        <th>Penality Amount Paid</th>\
        <th>Transaction Date</th>\
      </tr>';
+	$topay = 0;
      $paid = 0;
      $a = 0;
+	$penality = 0;
+	$topenality = 0;
       while($row = $result->fetch_assoc()){
             $res = $res.'<tr><td>'.$row["transaction_id"].'</td>';
             $res = $res.'<td>'.$row["receipt_id"].'</td>';
@@ -97,11 +100,14 @@
             }
             $res = $res.'<td>'.$row["due_date"].'</td>';
             $res = $res.'<td>'.$row["due_amount"].'</td>';
+		$topay = $topay + (int)$row["due_amount"];
             $res = $res.'<td>'.$row["penality_days"].'</td>';
             $res = $res.'<td>'.$row["penality_amount"].'</td>';
+		$topenality = $topenality + (int)$row["penality_amount"];
             $res = $res.'<td>'.$row["due_amount_paid"].'</td>';
             $paid = $paid + (int) $row["due_amount_paid"];
             $res = $res.'<td>'.$row["penality_amount_paid"].'</td>';
+		$penality = $penality + (int)$row["penality_amount_paid"];
             $res = $res.'<td>'.$row["transaction_date"].'</td></tr>';
          }
 
@@ -122,7 +128,12 @@
          $res = $res.'<tfoot>\
          <tr>\
            <th id=\"total\" colspan=\"3\">Overall Details</th>\
-           <td  colspan=\"6\" ></td>\
+<th>'.$topay.'</th>\
+<th>---</th>\
+<th>'.$topenality.'</th>\
+		<th>'.$paid.'</th>\
+<th>'.$penality.'</th>\
+           <td  colspan=\"1\" >---</td>\
          </tr>\
         </tfoot>";document.forms["transaction"]["due_amnt_total"].value = '.$paid.'</script>';
     echo $res;

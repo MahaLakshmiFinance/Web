@@ -16,8 +16,8 @@
 
 ?>
 
-<script src="php/content/content10/content10.js"></script>
-<script src="php/content/content10/validation.js"></script>
+<script src="php/content/content10/content10.js?t=1531227893031"></script>
+<script src="php/content/content10/validation.js?t=1531227893031"></script>
 
 <div id="temp"></div>
 
@@ -199,22 +199,22 @@ pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!0
 
 	var abc = document.forms["transaction"]["d_amount"].value
 
-	if(abc%10<5 && abc!=0){
+	if(abc%10<=5 && abc%10!=0){
 		console.log(abc)
 		var x = abc/10;
 		console.log(x)
 		x = parseInt(x)*10;
 		x +=5;
-abc = x;
+		abc = x;
 	}
-else{
+	else if(abc%10!=0){
 	var x = abc/100.00;
 	x = x+0.1;
 	x*=10;
 	x = parseInt(x)*10;
 	abc= x;
 	
-}
+	}
 document.forms["transaction"]["d_amount"].value = abc
 document.forms["transaction"]["d_amount"].disabled = true
 }

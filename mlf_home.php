@@ -4,6 +4,7 @@ if (!isset($_SESSION['logged_in'])) {
   header('Location: index.php');
   die();
 }
+clearstatcache();
 ?>
 <!DOCTYPE html>
 <html lang="en">

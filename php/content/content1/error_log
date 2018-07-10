@@ -1,2 +1,4 @@
 [06-Jul-2018 13:13:34 UTC] PHP Notice:  Undefined index: username in /home/acc5d3330cdw/public_html/mlf/php/content/content1/content1.php on line 5
 [06-Jul-2018 14:04:06 UTC] PHP Notice:  Undefined index: role_id in /home/acc5d3330cdw/public_html/mlf/php/content/content1/new_user.php on line 18
+[07-Jul-2018 09:24:33 UTC] PHP Notice:  Undefined index: username in /home/acc5d3330cdw/public_html/mlf/php/content/content1/new_user.php on line 50
+[10-Jul-2018 06:07:57 UTC] PHP Notice:  Undefined index: role_id in /home/acc5d3330cdw/public_html/mlf/php/content/content1/new_user.php on line 18
