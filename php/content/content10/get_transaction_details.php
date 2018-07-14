@@ -128,7 +128,7 @@
          $res = $res.'<tfoot>\
          <tr>\
            <th id=\"total\" colspan=\"3\">Overall Details</th>\
-<th>'.$topay.'</th>\
+<th></th>\
 <th>---</th>\
 <th>'.$topenality.'</th>\
 		<th>'.$paid.'</th>\

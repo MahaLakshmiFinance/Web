@@ -107,6 +107,37 @@
                     <label for="inputNewPassword">Installment Amount</label>
                     <input type="text" disabled name="installment" class="form-control" placeholder="YYYY-MM-DD">
                 </div>
+		<div class="col-lg-6 col-md-6 form-group">                  
+          <label for="inputUsername">Amount to be Paid</label>
+<script>
+	function changeInstallment(){
+	document.forms["transaction"]["d_amount"].disabled=false;
+
+	var abc = document.forms["transaction"]["d_amount"].value
+
+	if(abc%10<=5 && abc%10!=0){
+		console.log(abc)
+		var x = abc/10;
+		console.log(x)
+		x = parseInt(x)*10;
+		x +=5;
+		abc = x;
+	}
+	else if(abc%10!=0){
+	var x = abc/100.00;
+	x = x+0.1;
+	x*=10;
+	x = parseInt(x)*10;
+	abc= x;
+	
+	}
+document.forms["transaction"]["d_amount"].value = abc
+document.forms["transaction"]["d_amount"].disabled = true
+}
+
+</script>
+          <input type="Number" disabled value="0" name="d_amount" onchange="changeInstallment()" class="form-control" placeholder="Amount Received">                  
+        </div>
       </div>
       <hr>
       <div class="row form-group">
@@ -191,41 +222,17 @@ pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!0
         <div class="row form-group">
 
 
-        <div class="col-lg-6 col-md-6 form-group">                  
-          <label for="inputUsername">Amount to be Paid</label>
-<script>
-	function changeInstallment(){
-	document.forms["transaction"]["d_amount"].disabled=false;
-
-	var abc = document.forms["transaction"]["d_amount"].value
-
-	if(abc%10<=5 && abc%10!=0){
-		console.log(abc)
-		var x = abc/10;
-		console.log(x)
-		x = parseInt(x)*10;
-		x +=5;
-		abc = x;
-	}
-	else if(abc%10!=0){
-	var x = abc/100.00;
-	x = x+0.1;
-	x*=10;
-	x = parseInt(x)*10;
-	abc= x;
-	
-	}
-document.forms["transaction"]["d_amount"].value = abc
-document.forms["transaction"]["d_amount"].disabled = true
-}
-
-</script>
-          <input type="Number" disabled value="0" name="d_amount" onchange="changeInstallment()" class="form-control" placeholder="Amount Received">                  
-        </div>  
+          
         <div class="col-lg-6 col-md-6 form-group">                  
           <label for="inputUsername">Amount Paid</label>
           <input type="Number"value="0" name="amount" class="form-control" placeholder="Amount Received">                  
         </div>
+	<div class="col-lg-6 col-md-6 form-group">                 
+        </div>
+</div>
+
+<div class="row form-group">
+
         <div class="col-lg-6 col-md-6 form-group">                  
           <div class="templatemo-block margin-bottom-5">
             <input type="checkbox" name="ispen" id="ispenlity" value="1" onchange="addpen()"> 
