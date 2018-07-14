@@ -6,6 +6,12 @@ alert('PLEASE ENTER CUSTOMER ID.');
 emp_id.focus()
 return false;
 }
+var emp_name = document.forms['expenses']['emp_name']
+if(emp_name.value == ""){
+alert('INVALID EMPLOYEE ID');
+emp_name.focus()
+return false;
+}
 
 var location = document.forms['expenses']['loc']
 if(location.value == ""){
