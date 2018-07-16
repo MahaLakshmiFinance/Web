@@ -12,9 +12,9 @@ else{
 
 }
 ?>
-<script src="php/content/content2/content2.js"></script>
+<script src="php/content/content2/content2.js?v=1.0"></script>
 
-<script src="php/content/content2/validation.js"></script>
+<script src="php/content/content2/validation.js?v=1.0"></script>
 
 <div id="temp"></div>
 

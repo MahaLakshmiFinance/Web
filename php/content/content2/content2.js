@@ -59,6 +59,7 @@ function getTheDate(){
     var d = new Date()
     var year = d.getFullYear()
     var month = d.getMonth()+1
+    month = parseInt(month)<10?'0'+month:month
     var day = d.getDate()
     var date = year+"-"+month+"-"+day
     return date

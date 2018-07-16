@@ -12,13 +12,13 @@ function form_verify(){
     }
 
     var cstmr_name = document.forms['cash_finance']['cstmr_name'];
-    cstmr_name.disabled = false;
-    if(cstmr_name.value == ""){
+    //cstmr_name.disabled = false;
+    if(cstmr_name.value == "" || cstmr_name.value == " "){
         alert("INVALID CUSTOMER ID")
         username.focus();
         return false;
     }
-    cstmr_name.disabled = true;
+    //cstmr_name.disabled = true;
     var article_refno = document.forms['cash_finance']['article_refno'];
     if(article_refno.value == ""){
         foundEmpty(article_refno)

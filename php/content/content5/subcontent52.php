@@ -1,46 +1,9 @@
-<script src="php/content/content5/content5.js"></script>
-<script>function form_verify(){
-
-var emp_id = document.forms['expenses']['emp_id'];
-if(emp_id.value == ""){
-alert('PLEASE ENTER EMPLOYEE ID.');
-emp_id.focus()
-return false;
-}
-
-var cstmr_id = document.forms['expenses']['cstmr_id']
-if(cstmr_id.value == ""){
-alert('PLEASE ENTER CUSTOMER ID.');
-cstmr_id.focus()
-return false;
-}
-
-var expense = document.forms['expenses']['expense']
-if(expense.value == ""){
-alert('PLEASE ENTER EXPENSE AMOUNT.');
-expense.focus()
-return false;
-}
-
-var col_amt = document.forms['expenses']['col_amt']
-if(col_amt.value == ""){
-alert('PLEASE ENTER COLLECTED AMOUNT.');
-col_amt.focus()
-return false;
-}
-
-var remarks = document.forms['expenses']['remarks']
-if(remarks.value == ""){
-alert('PLEASE ENTER REMARKS');
-remarks.focus()
-return false;
-}
-
-}</script>
+<script src="php/content/content5/content5.js?v=1.0"></script>
+<script  src="php/content/content5/validation.js?v=1.1"></script>
 <div id="temp"></div>
 <div class="templatemo-content-container">
     <div class="templatemo-content-widget white-bg">
-        <form action="php/content/content5/expenses.php" class="templatemo-login-form" name="expenses" onsubmit="return form_verify()" method="POST" enctype="multipart/form-data">
+        <form action="php/content/content5/expenses.php" class="templatemo-login-form" name="expenses" onsubmit="return form_verify(2)" method="POST" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Employee Id</label><br>

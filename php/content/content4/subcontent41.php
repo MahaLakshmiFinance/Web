@@ -12,8 +12,8 @@ if($_SESSION['role']==1){
   }
 
 ?>
-<script src="php/content/content4/validation.js"></script>
-<script src="php/content/content4/content4.js"></script>
+<script src="php/content/content4/validation.js?v=1.2"></script>
+<script src="php/content/content4/content4.js?v=1.0"></script>
 <div id="temp"></div>
 <div class="templatemo-content-container">
 <div class="templatemo-content-widget white-bg">

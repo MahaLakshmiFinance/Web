@@ -1,27 +1,41 @@
 <?php
-session_start();
+    session_start();
     if(!isset($_SESSION['role'])){
         session_unset();
-        session_destroy();
         echo "<script>         window.top.location = 'index.php';     </script>";
                 die();
       }
+      else if($_SESSION['role']==2){
+        echo "<script>
+                setTimeout(function(){
+                    document.getElementById('rle_type').style='';
+                    alert('hello');
+                },1200);     
+            </script>";
+      }
 ?>
-<script src="php/content/content1/validation.js">
-</script>
-<script>
-
-</script>
+<script src="php/content/content1/validation.js?v=1.0"></script>
 <div class="templatemo-content-container">
     <div id="temp"></div>
     <div class="templatemo-content-widget white-bg">
         
-        <form action="php/content/content1/update_user.php"onsubmit="return user_form_modified('edit_user')" name="edit_user"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+        <form action="php/content/content1/update_user.php" onsubmit="return user_form_modified('edit_user')" name="edit_user"class="templatemo-login-form" method="POST" enctype="multipart/form-data">
 
 <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">                  
 <label for="inputFirstName">User ID</label><br>
 <input type="text" name="username" class="form-control" id="inputFirstName"  onfocusout="verify_usr('edit_user',2)"placeholder="Aadhar / Phone Number">                  
+</div>
+<div class="col-lg-6 col-md-6 form-group" id="rle_type" style="display:none;">                  
+<label for="inputFirstName">Role ID</label><br>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="role_id" id="r3" value="2" >
+<label for="r3" class="font-weight-400"><span></span>Employee</label>
+</div><br>
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="role_id" id="r4" value="3">
+<label for="r4" class="font-weight-400"><span></span>Customer</label>
+</div><br>
 </div>
 </div>
 

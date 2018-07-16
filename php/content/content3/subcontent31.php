@@ -13,9 +13,9 @@ else{
 }
 
 ?>
-<script src="php/content/content3/content3.js"></script>
+<script src="php/content/content3/content3.js?v=1.1"></script>
 
-<script src="php/content/content3/validation.js"></script>
+<script src="php/content/content3/validation.js?v=1.2"></script>
 
 <div id="temp"></div>
 

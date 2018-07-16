@@ -6,15 +6,15 @@ alert('PLEASE ENTER CUSTOMER ID.');
 username.focus()
 return false;
 }
-document.forms['exchange']['cstmr_name'].disabled = false;
+//document.forms['exchange']['cstmr_name'].disabled = false;
 var cstmr_name = document.forms['exchange']['cstmr_name'];
 
-if(cstmr_name.value == ""){
-alert('PLEASE ADD THE CUSTOMER TO DATABASE FIRST.');
-cstmr_name.focus()
-document.forms['exchange']['cstmr_name'].disabled = true;
+if(cstmr_name.value == "" || cstmr_name.value == " "){
+alert('INVALID CUSTOMER ID.');
+username.focus()
 return false;
 }
+//document.forms['exchange']['cstmr_name'].disabled = true;
 
 var serial = document.forms['exchange']['serial'];
 if(serial.style == "")

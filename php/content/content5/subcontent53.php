@@ -1,26 +1,9 @@
-<script src="php/content/content5/content5.js"></script>
-<script>function form_verify(){
-
-var emp_id = document.forms['expenses']['emp_id'];
-if(emp_id.value == ""){
-alert('PLEASE ENTER EMPLOYEE ID.');
-emp_id.focus()
-return false;
-}
-
-var salary = document.forms['expenses']['usal']
-if(salary.value == ""){
-alert('PLEASE ENTER UPDATE SALARY.');
-salary.focus()
-return false;
-}
-
-}</script>
+<script src="php/content/content5/content5.js?v=1.0"></script>
 <div id="temp"></div>
 
 <div class="templatemo-content-container">
     <div class="templatemo-content-widget white-bg">
-        <form action="php/content/content5/salary.php" name="expenses" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+        <form action="php/content/content5/salary.php" name="expenses" onsubmit="return form_verify(3)" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Employee ID </label><br>

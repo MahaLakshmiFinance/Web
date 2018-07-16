@@ -1,27 +1,11 @@
 <script src="php/content/content5/content5.js"></script>
-<script>function form_verify(){
-
-var emp_id = document.forms['expenses']['emp_id'];
-if(emp_id.value == ""){
-alert('PLEASE ENTER EMPLOYEE ID.');
-emp_id.focus()
-return false;
-}
-
-var location = document.forms['expenses']['loc']
-if(location.value == ""){
-alert('PLEASE SELECT THE LOCATION');
-location.focus()
-return false;
-}
-
-}</script>
+<script  src="php/content/content5/validation.js?v=1.0"></script>
 
 <div id="temp"></div>
 
 <div class="templatemo-content-container">
     <div class="templatemo-content-widget white-bg">
-        <form action="php/content/content5/details.php" name="expenses" onsubmit="return form_verify()" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+        <form action="php/content/content5/details.php" name="expenses" onsubmit="return form_verify(1)" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
             <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">Employee Id</label><br>
