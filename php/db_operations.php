@@ -7,7 +7,7 @@
         var $conn = null;
 
         function __construct(){
-            $this->serverName = "172.168.2.115";            
+            $this->serverName = "localhost";            
             $this->username = "admin";
             $this->password = "12345";
             $this->dbName = "mlf";
@@ -37,7 +37,7 @@
                     echo "<script>console.log('Connection Successful with 172.168.2.115.')</script>";
                 }
             }
-            else if($this->serverName == "redants.info"){
+            else if($this->serverName == "www.redants.info" ||$this->serverName == "redants.info" ){
                 $this->serverName = "localhost";
                 $this->username = "redants";
                 $this->password = "Sasi@123";
@@ -73,7 +73,7 @@
                     }
             }
             else{
-                echo "<script>alert('Connection ERROR.')</script>";
+                echo "<script>alert('UNABLE TO CONNECT TO THE SERVER.')</script>";
                 session_start();
                 session_unset();
                 session_destroy();
