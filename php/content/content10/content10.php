@@ -6,17 +6,36 @@
     document.getElementById('hello').innerHTML = '".$_SESSION['username']." ';
   },20);
   </script>";
-?>
-<?php
+
     if(!isset($_SESSION['role'])){
         session_unset();
         session_destroy();
         echo "<script>         window.top.location = 'index.php';     </script>";
                 die();
       }
+      echo "<div id='scrpts'></div>";
+      echo "<script>
+      var aef = 'php/content/content10/content10.js?v='
+      dte(aef)
+      aef = 'php/content/content10/validation.js?v='
+      dte(aef)
+    function dte(abc){
+      var abc = aef;
+      var n = new Date().getTime();
+      abc += n;
+      var scripta = document.createElement('script');
+    
+      console.log(scripta);
+    
+      scripta.src = ''+abc+'';
+    
+      var main = document.getElementById('scrpts');
+    
+      main.appendChild(scripta);
+    }
+    
+    </script>";
 ?>
-
-<script src="php/content/content10/content10.js"></script>
 
 <div class="templatemo-content col-1 light-gray-bg">
   <div class="templatemo-top-nav-container-1">

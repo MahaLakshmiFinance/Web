@@ -11,7 +11,7 @@ function form_verify(){
     }
 
     var cstmr_name = document.forms['article_finance']['cstmr_name'];
-    if(cstmr_name.value == ""){
+    if(cstmr_name.value == "" || cstmr_name.value == " "){
         alert("INVALID CUSTOMER ID")
         username.focus();
         return false;

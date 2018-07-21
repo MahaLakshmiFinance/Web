@@ -16,9 +16,6 @@
 
 ?>
 
-<script src="php/content/content10/content10.js?t=1531227893031"></script>
-<script src="php/content/content10/validation.js?t=1531227893031"></script>
-
 <div id="temp"></div>
 
 <div class="templatemo-content-container">

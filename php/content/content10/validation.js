@@ -15,15 +15,11 @@ function check(){
     }
 
     var cstmer_name = document.forms['transaction']['cstmr_name'];
-    cstmer_name.disabled = false
-    if(username.value != ""){
-        if(cstmer_name.value == ""){
-            alert("PLEASE ENTER CHECK USER ID.")
+        if(cstmer_name.value == "" || cstmer_name.value == " "){
+            alert("PLEASE CHECK USER ID.")
             username.focus()
             return false
         }
-    }
-    cstmer_name.disabled = true
 
     var finance_type = document.forms['transaction']['finance_type'];
 
