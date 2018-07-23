@@ -1,4 +1,5 @@
-<script src="php/content/content5/content5.js?v=1.0"></script>
+<script src="php/content/content5/content5.js?v=4.0"></script>
+<script  src="php/content/content5/validation.js?v=5.0"></script>
 <div id="temp"></div>
 
 <div class="templatemo-content-container">

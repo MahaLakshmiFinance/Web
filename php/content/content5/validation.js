@@ -1,8 +1,8 @@
-function form_verify(x=1){
+function form_verify(x){
 
     var emp_id = document.forms['expenses']['emp_id'];
     if(emp_id.value == ""){
-    alert('PLEASE ENTER CUSTOMER ID.');
+    alert('PLEASE ENTER EMPLOYEE ID.');
     emp_id.focus()
     return false;
     }
@@ -12,6 +12,7 @@ function form_verify(x=1){
     emp_id.focus()
     return false;
     }
+    
     if(x==1){
         var location = document.forms['expenses']['loc']
         if(location.value == ""){
@@ -64,7 +65,14 @@ function form_verify(x=1){
 
     }
     if(x==3){
+        var usal = document.forms['expenses']['usal']
+        if(usal.value == ""){
+        alert('PLEASE ENTER SALARY AMOUNT');
+        usal.focus()
+        return false;
+        }
 
     }
+    return false
 
 }
