@@ -73,6 +73,5 @@ function form_verify(x){
         }
 
     }
-    return false
 
 }
