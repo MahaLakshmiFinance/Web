@@ -1,7 +1,7 @@
 
 
 <script src="php/content/content7/content7.js?v=2.0"></script>
-<script src="php/content/content7/subcontent72.js?v=1.2"></script>
+<script src="php/content/content7/subcontent72.js?v=1.0"></script>
 <script  src="php/content/content7/validation.js?v=3.0"></script>
 
 <div id="temp"></div>
@@ -12,17 +12,17 @@
         <div class="row form-group">
 <div class="col-lg-6 col-md-6 form-group">         
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="condition1" id="r2" value="20" onchange="getUsers()">
+<input type="radio" name="condition1" id="r2" value="21" onchange="getUsers()">
 <label for="r2" class="font-weight-400"><span></span>Inprogress</label>
 </div>         
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="condition1" id="r1" value="21" onchange="getUsers()">
+<input type="radio" name="condition1" id="r1" value="20" checked onchange="getUsers()">
 <label for="r1" class="font-weight-400"><span></span>Completed</label>
-</div>
+</div><!--
 <div class="margin-right-15 templatemo-inline-block">
 <input type="radio" name="condition1" id="r3" value="22" checked onchange="getUsers()">
 <label for="r3" class="font-weight-400"><span></span>Over Due</label>
-</div>             
+</div>        -->     
 </div>
 <div class="col-lg-6 col-md-6 form-group">                                   
 </div>

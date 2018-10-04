@@ -1,95 +1,78 @@
 
 
 <script src="php/content/content7/content7.js?v=2.0"></script>
+<script src="php/content/content7/subcontent73.js?v=1.1"></script>
 <script  src="php/content/content7/validation.js?v=3.0"></script>
 
 <div id="temp"></div>
 
 <div class="templatemo-content-container">
     <div class="templatemo-content-widget white-bg">
-        <form action="php/content/content5/details.php" name="expenses" onsubmit="return form_verify(1)" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
+        <form action="php/content/content5/details.php" name="reports_article_finance" onsubmit="return form_verify(1)" class="templatemo-login-form" method="POST" enctype="multipart/form-data">
         <div class="row form-group">
-<div class="col-lg-6 col-md-6 form-group">                  
+<div class="col-lg-6 col-md-6 form-group">         
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="type" id="r1" value="0" checked onchange="revert_to_purchase()">
-<label for="r1" class="font-weight-400"><span></span>Article Finace</label>
-</div>
+<input type="radio" name="condition1" id="r2" value="31" onchange="getUsers()">
+<label for="r2" class="font-weight-400"><span></span>Inprogress</label>
+</div>         
 <div class="margin-right-15 templatemo-inline-block">
-<input type="radio" name="type" id="r2" value="1" onchange="get_existing_serial()">
-<label for="r2" class="font-weight-400"><span></span>Cash Finace</label>
-</div>                
+<input type="radio" name="condition1" id="r1" value="30" checked onchange="getUsers()">
+<label for="r1" class="font-weight-400"><span></span>Completed</label>
+</div><!--
+<div class="margin-right-15 templatemo-inline-block">
+<input type="radio" name="condition1" id="r3" value="22" checked onchange="getUsers()">
+<label for="r3" class="font-weight-400"><span></span>Over Due</label>
+</div>        -->     
 </div>
 <div class="col-lg-6 col-md-6 form-group">                                   
 </div>
 </div>
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputFirstName">Employee Id</label><br>
-                    <input  type="text" name="emp_id" onfocusout="emp()" class="form-control" placeholder="Id">                  
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputFirstName">Employee Name</label>
-                    <input disabled type="text" name="emp_name" class="form-control" placeholder="Name">                  
-                </div>
-                <div class="col-lg-6 col-md-6 form-group">                  
-                    <label for="inputLastName">Contact Number</label>
-                    <input disabled type="tel" name="emp_cntact_num" class="form-control" placeholder="+91">                  
-                </div> 
-            </div>
-            <hr>
-            <div class="row form-group">
-                <div class="col-lg-6 col-md-6 form-group">
-                    <label for="inputUsername" >Location </label>
-                    <select class="form-control" name="loc">
-                        <option value="">Select</option>
-                        <option value="PAL">Palakollu</option>
-                        <option value="TAD">Taderu</option>
-                        <option value="NAR">Narsapuram</option>
-                    </select >
-                </div>
-                <div class="col-lg-6 col-md-6 form-group">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-lg-12 col-md-6 form-group">
-                    <p><label for="inputFirstName">Services</label></p>
-                </div>
-                <div class="col-lg-2 col-md-2 form-group">
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="check1" id="customer" value="1"> 
-                        <label for="customer" class="font-weight-400"><span></span>Customer</label>
-                    </div>
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="check2" id="article_finace" value="2">
-                        <label for="article_finace" class="font-weight-400"><span></span>Article Finace</label>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 form-group">
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="check3" id="cash_finance" value="3"> 
-                        <label for="cash_finance" class="font-weight-400"><span></span>Cash Finance</label>
-                    </div>
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="check4" id="old_items" value="4"> 
-                        <label for="old_items" class="font-weight-400"><span></span>Buy Back Items</label>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 form-group">
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="check6" id="accessories" value="6"> 
-                        <label for="accessories" class="font-weight-400"><span></span>Accessories</label>
-                    </div>
-                    <div class="templatemo-block margin-bottom-5">
-                        <input type="checkbox" name="check10" id="transactions" value="10"> 
-                        <label for="transactions" class="font-weight-400"><span></span>Transactions</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group text-right">
-                <button type="submit" class="templatemo-blue-button">Submit</button>
-            </div>
+      <div class="row form-group">
+      <div class="col-lg-12 col-md-6 form-group">
+        <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+tfoot {
+    background-color: #2f435c;
+    color:white;
+}
+</style>
+
+<table id="table_transactions">
+  <tr>
+    <th>??</th>
+    <th>??</th>
+    <th>??</th>
+    <th>??</th>
+    <th>??</th>
+  </tr>
+  <tfoot>
+    <tr>
+      <th id="total" colspan="6" style="text-align:center">DATA WILL BE LOADED HERE</th>
+      <!--<td  colspan="6" ></td>-->
+    </tr>
+   </tfoot>
+</table>
+</div>
+</div>
+<hr>
         </form>
     </div>
 </div>
+
+<script>
+    getUsers()
+</script>

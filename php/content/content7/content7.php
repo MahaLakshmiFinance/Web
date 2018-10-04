@@ -12,7 +12,7 @@
     <div class="row">
       <nav class="templatemo-top-nav col-lg-12 col-md-12">
         <ul class="text-uppercase">
-          <li><a href="#add" onclick="nav(71)"><font style="color:  black">STATSTICS</font></a></li>
+          <!--<li><a href="#add" onclick="nav(71)"><font style="color:  black">STATSTICS</font></a></li>-->
           <li><a href="#add" onclick="nav(72)"><font style="color:  black">ARTICLE FINANCE</font></a></li>
           <li><a href="#add" onclick="nav(73)"><font style="color:  black">CASH FINANCE</font></a></li>
         </ul> 
@@ -21,7 +21,7 @@
     </div>
     <div id="subcontent">
       <script>
-        $('#subcontent').load('php/content/content7/subcontent71.php');
+        $('#subcontent').load('php/content/content7/subcontent72.php');
       </script>
     </div>
   </div>

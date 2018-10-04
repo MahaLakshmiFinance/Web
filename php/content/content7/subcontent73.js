@@ -3,11 +3,11 @@ function getUsers(){
     var info = document.forms["reports_article_finance"]["condition1"].value
     document.getElementById('table_transactions').innerHTML = '<tr>\
     <th>Customer Id</th>\
-    <th>Article Id</th>\
-    <th>Date</th>\
     <th>Finance Ref..No</th>\
-    <th>No.of EMI</th>\
-    <th>Amount</th>\
+    <th>Date</th>\
+    <th>Online Ref..No</th>\
+    <th>Finance Amount</th>\
+    <th>Cleared Amount</th>\
   </tr>'
     $.ajax({
         type: "POST",
@@ -24,14 +24,25 @@ function getUsers(){
             this.users[0] = this.users[0][this.users[0].length-1]
             this.users.length = this.users.length-1
             //console.log(this.users)
-            
             var i=0;
-            if(this.users.length>0)
+            if(this.users.length<=0){
+                document.getElementById('table_transactions').innerHTML += '<tfoot id="footer_table">\
+            <tr>\
+              <th id="total" colspan="6" style="text-align:center">loading..</th>\
+              <!--<td  colspan="6" ></td>-->\
+            </tr>\
+           </tfoot>'
+                document.getElementById('footer_table').innerHTML = '<tr>\
+                <th id="total" colspan="6" style="text-align:center">THE END!</th>\
+                <!--<td  colspan="6" ></td>-->\
+                </tr>'
+                return 0;
+            }
             var interval = setInterval(function(){
                 var user = this.users[i++]
                 $.ajax({
                     type: "POST",
-                    url: "php/content/content7/get_users_articles.php",
+                    url: "php/content/content7/get_users_cash.php",
                     data: "reference_number="+user,
                     async: false,
                     error: function(msg){

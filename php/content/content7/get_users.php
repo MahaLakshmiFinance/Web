@@ -14,7 +14,7 @@
 
         $info = $info % 20;
 
-        $result = $dbobj->sqlQury("select reference_number from mlf_article_finance;");
+        $result = $dbobj->sqlQury("select reference_number from mlf_article_finance where status='".$info."';");
         $string = '';
         while($row = $result -> fetch_assoc()){
             echo $row['reference_number']."<br>";
@@ -25,7 +25,7 @@
 
         $info = $info % 30;
 
-        $result = $dbobj->sqlQury("select customer_id from mlf_cash_finance;");
+        $result = $dbobj->sqlQury("select reference_number from mlf_cash_finance where status='".$info."';");
         $string = '';
         while($row = $result -> fetch_assoc()){
             echo $row['reference_number']."<br>";

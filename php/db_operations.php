@@ -202,7 +202,7 @@
             echo "<script>console.log('".$sqlQry."')</script>";
             
             $result = $this->conn->query($sqlQry);
-    
+
             if($result->num_rows > 0){
                echo "<script>console.log('Query Successful.')</script>";
             }
