@@ -8,8 +8,8 @@
 
         function __construct(){
             $this->serverName = "localhost";            
-            $this->username = "admin";
-            $this->password = "12345";
+            $this->username = "root";
+            $this->password = "";
             $this->dbName = "mlf";
         }
         function setTable($tableName){
